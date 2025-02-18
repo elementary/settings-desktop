@@ -1,5 +1,5 @@
 # Desktop Settings
-[![Translation status](https://l10n.elementary.io/widgets/switchboard/-/switchboard-plug-pantheon-shell/svg-badge.svg)](https://l10n.elementary.io/engage/switchboard/?utm_source=widget)
+[![Translation status](https://l10n.elementary.io/widget/settings/desktop/svg-badge.svg)](https://l10n.elementary.io/engage/settings/)
 
 ![screenshot](data/screenshot-appearance.png?raw=true)
 
