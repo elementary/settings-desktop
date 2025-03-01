@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2024-12-05 12:16+0000\n"
+"PO-Revision-Date: 2025-03-01 14:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/switchboard/"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/settings/"
 "desktop-plug-extra/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
@@ -35,7 +35,7 @@ msgstr "elementary, Inc."
 #: data/desktop.metainfo.xml.in:68 data/desktop.metainfo.xml.in:81
 #: data/desktop.metainfo.xml.in:99 data/desktop.metainfo.xml.in:120
 msgid "Other updates:"
-msgstr "そのほかのアップデート:"
+msgstr "その他のアップデート:"
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Add setting for fullscreen hotcorners"
