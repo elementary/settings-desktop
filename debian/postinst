@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+gsettings set org.gnome.desktop.interface enable-animations $(gsettings get io.elementary.desktop.wm.animations enable-animations) || true
+
+#DEBHELPER#
+
+exit 0
