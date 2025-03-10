@@ -51,6 +51,10 @@
           <li>Updated translations</li>
         </ul>
       </description>
+      <issues>
+        <issue url="https://github.com/elementary/settings-desktop/issues/431">Crash when entering custom command for hot corner</issue>
+        <issue url="https://github.com/elementary/settings-desktop/issues/432">The Multitasking window closes when typing or pasting commands into the input field</issue>
+      </issues>
     </release>
 
     <release version="8.1.0" date="2024-09-23" urgency="medium">
