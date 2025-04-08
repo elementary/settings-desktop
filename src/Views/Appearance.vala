@@ -23,6 +23,9 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
     private const string STYLESHEET_KEY = "gtk-theme";
     private const string STYLESHEET_PREFIX = "io.elementary.stylesheet.";
 
+    private const string FDO_ACCOUNTS_NAME = "org.freedesktop.Accounts";
+    private const string FDO_ACCOUNTS_PATH = "/org/freedesktop/Accounts";
+
     private enum AccentColor {
         NO_PREFERENCE,
         RED,
@@ -76,7 +79,10 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
     construct {
         var default_preview = new DesktopPreview ("default");
 
-        var prefer_default_radio = new Gtk.CheckButton ();
+        var prefer_default_radio = new Gtk.CheckButton () {
+            action_name = "desktop-appearance.prefers-color-scheme",
+            action_target = new Variant.int32 (Granite.Settings.ColorScheme.NO_PREFERENCE)
+        };
         prefer_default_radio.add_css_class ("image-button");
 
         var prefer_default_grid = new Gtk.Grid ();
@@ -87,6 +93,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var dark_preview = new DesktopPreview ("dark");
 
         var prefer_dark_radio = new Gtk.CheckButton () {
+            action_name = "desktop-appearance.prefers-color-scheme",
+            action_target = new Variant.int32 (Granite.Settings.ColorScheme.DARK),
             group = prefer_default_radio
         };
         prefer_dark_radio.add_css_class ("image-button");
@@ -160,163 +168,74 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
             mnemonic_widget = schedule_box
         };
 
-        Pantheon.AccountsService? pantheon_act = null;
-
-        string? user_path = null;
-        try {
-            FDO.Accounts? accounts_service = GLib.Bus.get_proxy_sync (
-                GLib.BusType.SYSTEM,
-               "org.freedesktop.Accounts",
-               "/org/freedesktop/Accounts"
-            );
-
-            user_path = accounts_service.find_user_by_name (GLib.Environment.get_user_name ());
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        if (user_path != null) {
-            try {
-                pantheon_act = GLib.Bus.get_proxy_sync (
-                    GLib.BusType.SYSTEM,
-                    "org.freedesktop.Accounts",
-                    user_path,
-                    GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES
-                );
-            } catch (Error e) {
-                warning ("Unable to get AccountsService proxy, color scheme preference may be incorrect");
-            }
-        }
-
         var grid = new Gtk.Grid () {
             row_spacing = 6
         };
+        grid.attach (prefer_style_box, 0, 2, 2);
+        grid.attach (dim_box, 0, 3, 2);
+        grid.attach (schedule_label, 0, 4, 2);
+        grid.attach (schedule_box, 0, 5, 2);
 
-        if (((GLib.DBusProxy) pantheon_act).get_cached_property ("PrefersColorScheme") != null) {
-            grid.attach (prefer_style_box, 0, 2, 2);
-            grid.attach (dim_box, 0, 3, 2);
-            grid.attach (schedule_label, 0, 4, 2);
-            grid.attach (schedule_box, 0, 5, 2);
+        var settings = new GLib.Settings ("io.elementary.settings-daemon.prefers-color-scheme");
 
-            switch (pantheon_act.prefers_color_scheme) {
-                case Granite.Settings.ColorScheme.DARK:
-                    prefer_dark_radio.active = true;
-                    break;
-                default:
-                    prefer_default_radio.active = true;
-                    break;
-            }
-
-            var settings = new GLib.Settings ("io.elementary.settings-daemon.prefers-color-scheme");
-
-            settings.bind_with_mapping (
-                "prefer-dark-schedule", schedule_disabled_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-                (value, variant, user_data) => {
-                    value.set_boolean (variant.get_string () == "disabled");
-                    return true;
-                },
-                (value, expected_type, user_data) => {
-                    if (value.get_boolean ()) {
-                        return new Variant ("s", "disabled");
-                    }
-
-                    return null;
-                },
-                null, null
-            );
-
-            settings.bind_with_mapping (
-                "prefer-dark-schedule", schedule_manual_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-                (value, variant, user_data) => {
-                    value.set_boolean (variant.get_string () == "manual");
-                    return true;
-                },
-                (value, expected_type, user_data) => {
-                    if (value.get_boolean ()) {
-                        return new Variant ("s", "manual");
-                    }
-
-                    return null;
-                },
-                null, null
-            );
-
-            settings.bind_with_mapping (
-                "prefer-dark-schedule", schedule_sunset_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-                (value, variant, user_data) => {
-                    value.set_boolean (variant.get_string () == "sunset-to-sunrise");
-                    return true;
-                },
-                (value, expected_type, user_data) => {
-                    if (value.get_boolean ()) {
-                        return new Variant ("s", "sunset-to-sunrise");
-                    }
-
-                    return null;
-                },
-                null, null
-            );
-
-            prefer_default_radio.toggled.connect (() => {
-                pantheon_act.prefers_color_scheme = Granite.Settings.ColorScheme.NO_PREFERENCE;
-
-                var mutter_settings = new GLib.Settings ("org.gnome.desktop.interface");
-                mutter_settings.set_enum ("color-scheme", Granite.Settings.ColorScheme.NO_PREFERENCE);
-            });
-
-            prefer_dark_radio.toggled.connect (() => {
-                pantheon_act.prefers_color_scheme = Granite.Settings.ColorScheme.DARK;
-
-                var mutter_settings = new GLib.Settings ("org.gnome.desktop.interface");
-                mutter_settings.set_enum ("color-scheme", Granite.Settings.ColorScheme.DARK);
-            });
-
-            /* Connect to focus_in_event so that this is only triggered
-             * through user interaction, not if scheduling changes the selection
-             */
-            var prefer_default_radio_controller = new Gtk.EventControllerFocus ();
-            prefer_default_radio.add_controller (prefer_default_radio_controller);
-            prefer_default_radio_controller.enter.connect (() => {
-                // Check if selection changed
-                if (pantheon_act.prefers_color_scheme != Granite.Settings.ColorScheme.NO_PREFERENCE) {
-                    schedule_disabled_radio.active = true;
+        settings.bind_with_mapping (
+            "prefer-dark-schedule", schedule_disabled_radio, "active", GLib.SettingsBindFlags.DEFAULT,
+            (value, variant, user_data) => {
+                value.set_boolean (variant.get_string () == "disabled");
+                return true;
+            },
+            (value, expected_type, user_data) => {
+                if (value.get_boolean ()) {
+                    return new Variant ("s", "disabled");
                 }
-            });
 
-            var prefer_dark_radio_controller = new Gtk.EventControllerFocus ();
-            prefer_dark_radio.add_controller (prefer_dark_radio_controller);
-            prefer_dark_radio_controller.enter.connect (() => {
-                // Check if selection changed
-                if (pantheon_act.prefers_color_scheme != Granite.Settings.ColorScheme.DARK) {
-                    schedule_disabled_radio.active = true;
+                return null;
+            },
+            null, null
+        );
+
+        settings.bind_with_mapping (
+            "prefer-dark-schedule", schedule_manual_radio, "active", GLib.SettingsBindFlags.DEFAULT,
+            (value, variant, user_data) => {
+                value.set_boolean (variant.get_string () == "manual");
+                return true;
+            },
+            (value, expected_type, user_data) => {
+                if (value.get_boolean ()) {
+                    return new Variant ("s", "manual");
                 }
-            });
 
-            ((GLib.DBusProxy) pantheon_act).g_properties_changed.connect ((changed, invalid) => {
-                var color_scheme = changed.lookup_value ("PrefersColorScheme", new VariantType ("i"));
-                if (color_scheme != null) {
-                    switch ((Granite.Settings.ColorScheme) color_scheme.get_int32 ()) {
-                        case Granite.Settings.ColorScheme.DARK:
-                            prefer_dark_radio.active = true;
-                            break;
-                        default:
-                            prefer_default_radio.active = true;
-                            break;
-                    }
+                return null;
+            },
+            null, null
+        );
+
+        settings.bind_with_mapping (
+            "prefer-dark-schedule", schedule_sunset_radio, "active", GLib.SettingsBindFlags.DEFAULT,
+            (value, variant, user_data) => {
+                value.set_boolean (variant.get_string () == "sunset-to-sunrise");
+                return true;
+            },
+            (value, expected_type, user_data) => {
+                if (value.get_boolean ()) {
+                    return new Variant ("s", "sunset-to-sunrise");
                 }
-            });
 
-            from_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-from"));
-            from_time.time_changed.connect (() => {
-                settings.set_double ("prefer-dark-schedule-from", date_time_double (from_time.time));
-            });
-            to_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-to"));
-            to_time.time_changed.connect (() => {
-                settings.set_double ("prefer-dark-schedule-to", date_time_double (to_time.time));
-            });
+                return null;
+            },
+            null, null
+        );
 
-            schedule_manual_radio.bind_property ("active", schedule_manual_box, "sensitive", BindingFlags.SYNC_CREATE);
-        }
+        from_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-from"));
+        from_time.time_changed.connect (() => {
+            settings.set_double ("prefer-dark-schedule-from", date_time_double (from_time.time));
+        });
+        to_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-to"));
+        to_time.time_changed.connect (() => {
+            settings.set_double ("prefer-dark-schedule-to", date_time_double (to_time.time));
+        });
+
+        schedule_manual_radio.bind_property ("active", schedule_manual_box, "sensitive", BindingFlags.SYNC_CREATE);
 
         var interface_settings = new GLib.Settings (INTERFACE_SCHEMA);
         var current_stylesheet = interface_settings.get_string (STYLESHEET_KEY);
@@ -324,37 +243,37 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         debug ("Current stylesheet: %s", current_stylesheet);
 
         if (current_stylesheet.has_prefix (STYLESHEET_PREFIX)) {
-            var blueberry_button = new PrefersAccentColorButton (pantheon_act, AccentColor.BLUE);
+            var blueberry_button = new PrefersAccentColorButton (AccentColor.BLUE);
             blueberry_button.tooltip_text = _("Blueberry");
 
-            var mint_button = new PrefersAccentColorButton (pantheon_act, AccentColor.MINT, blueberry_button);
+            var mint_button = new PrefersAccentColorButton (AccentColor.MINT, blueberry_button);
             mint_button.tooltip_text = _("Mint");
 
-            var lime_button = new PrefersAccentColorButton (pantheon_act, AccentColor.GREEN, blueberry_button);
+            var lime_button = new PrefersAccentColorButton (AccentColor.GREEN, blueberry_button);
             lime_button.tooltip_text = _("Lime");
 
-            var banana_button = new PrefersAccentColorButton (pantheon_act, AccentColor.YELLOW, blueberry_button);
+            var banana_button = new PrefersAccentColorButton (AccentColor.YELLOW, blueberry_button);
             banana_button.tooltip_text = _("Banana");
 
-            var orange_button = new PrefersAccentColorButton (pantheon_act, AccentColor.ORANGE, blueberry_button);
+            var orange_button = new PrefersAccentColorButton (AccentColor.ORANGE, blueberry_button);
             orange_button.tooltip_text = _("Orange");
 
-            var strawberry_button = new PrefersAccentColorButton (pantheon_act, AccentColor.RED, blueberry_button);
+            var strawberry_button = new PrefersAccentColorButton (AccentColor.RED, blueberry_button);
             strawberry_button.tooltip_text = _("Strawberry");
 
-            var bubblegum_button = new PrefersAccentColorButton (pantheon_act, AccentColor.PINK, blueberry_button);
+            var bubblegum_button = new PrefersAccentColorButton (AccentColor.PINK, blueberry_button);
             bubblegum_button.tooltip_text = _("Bubblegum");
 
-            var grape_button = new PrefersAccentColorButton (pantheon_act, AccentColor.PURPLE, blueberry_button);
+            var grape_button = new PrefersAccentColorButton (AccentColor.PURPLE, blueberry_button);
             grape_button.tooltip_text = _("Grape");
 
-            var cocoa_button = new PrefersAccentColorButton (pantheon_act, AccentColor.BROWN, blueberry_button);
+            var cocoa_button = new PrefersAccentColorButton (AccentColor.BROWN, blueberry_button);
             cocoa_button.tooltip_text = _("Cocoa");
 
-            var slate_button = new PrefersAccentColorButton (pantheon_act, AccentColor.GRAY, blueberry_button);
+            var slate_button = new PrefersAccentColorButton (AccentColor.GRAY, blueberry_button);
             slate_button.tooltip_text = _("Slate");
 
-            var auto_button = new PrefersAccentColorButton (pantheon_act, AccentColor.NO_PREFERENCE, blueberry_button);
+            var auto_button = new PrefersAccentColorButton (AccentColor.NO_PREFERENCE, blueberry_button);
             auto_button.tooltip_text = _("Automatic based on wallpaper");
 
             var accent_box = new Gtk.Box (HORIZONTAL, 6) {
@@ -431,17 +350,70 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
 
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
+
+        var accent_color_action = new SimpleAction.stateful ("prefers-accent-color", GLib.VariantType.INT32, new Variant.int32 (AccentColor.NO_PREFERENCE));
+        var color_scheme_action = new SimpleAction.stateful ("prefers-color-scheme", GLib.VariantType.INT32, new Variant.int32 (Granite.Settings.ColorScheme.NO_PREFERENCE));
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (accent_color_action);
+        action_group.add_action (color_scheme_action);
+
+        insert_action_group ("desktop-appearance", action_group);
+
+        setup_accounts_services.begin ((obj, res) => {
+            var pantheon_service = setup_accounts_services.end (res);
+            if (pantheon_service != null) {
+                accent_color_action.set_state (new Variant.int32 (pantheon_service.prefers_accent_color));
+                color_scheme_action.set_state (new Variant.int32 (pantheon_service.prefers_color_scheme));
+
+                ((DBusProxy) pantheon_service).g_properties_changed.connect ((changed, invalid) => {
+                    var accent_color = changed.lookup_value ("PrefersAccentColor", new VariantType ("i"));
+                    if (accent_color != null && !accent_color_action.get_state ().equal (accent_color)) {
+                        accent_color_action.set_state (accent_color);
+                    }
+
+                    var color_scheme = changed.lookup_value ("PrefersColorScheme", new VariantType ("i"));
+                    if (color_scheme != null && !color_scheme_action.get_state ().equal (color_scheme)) {
+                        color_scheme_action.set_state (color_scheme);
+                    }
+                });
+
+                accent_color_action.activate.connect ((value) => {
+                    if (!accent_color_action.get_state ().equal (value)) {
+                        accent_color_action.set_state (value);
+                        pantheon_service.prefers_accent_color = value.get_int32 ();
+
+                        if (value != AccentColor.NO_PREFERENCE) {
+                            interface_settings.set_string (
+                                STYLESHEET_KEY,
+                                STYLESHEET_PREFIX + ((AccentColor) value).to_string ()
+                            );
+                        }
+                    }
+                });
+
+                color_scheme_action.activate.connect ((value) => {
+                    if (!color_scheme_action.get_state ().equal (value)) {
+                        color_scheme_action.set_state (value);
+                        pantheon_service.prefers_color_scheme = value.get_int32 ();
+
+                        var mutter_settings = new GLib.Settings ("org.gnome.desktop.interface");
+                        mutter_settings.set_enum ("color-scheme", (Granite.Settings.ColorScheme) value.get_int32 ());
+
+                        schedule_disabled_radio.active = true;
+                    }
+                });
+            }
+        });
     }
 
     private class PrefersAccentColorButton : Gtk.CheckButton {
         public AccentColor color { get; construct; }
-        public Pantheon.AccountsService? pantheon_act { get; construct; default = null; }
 
         private static GLib.Settings interface_settings;
 
-        public PrefersAccentColorButton (Pantheon.AccountsService? pantheon_act, AccentColor color, Gtk.CheckButton? group_member = null) {
+        public PrefersAccentColorButton (AccentColor color, Gtk.CheckButton? group_member = null) {
             Object (
-                pantheon_act: pantheon_act,
                 color: color,
                 group: group_member
             );
@@ -457,22 +429,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
             add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
             add_css_class (color.to_string ());
 
-            realize.connect (() => {
-                active = color == pantheon_act.prefers_accent_color;
-
-                toggled.connect (() => {
-                    if (color != AccentColor.NO_PREFERENCE) {
-                        interface_settings.set_string (
-                            STYLESHEET_KEY,
-                            STYLESHEET_PREFIX + color.to_string ()
-                        );
-                    }
-
-                    if (((GLib.DBusProxy) pantheon_act).get_cached_property ("PrefersAccentColor") != null) {
-                        pantheon_act.prefers_accent_color = color;
-                    }
-                });
-            });
+            action_name = "desktop-appearance.prefers-accent-color";
+            action_target = new Variant.int32 (color);
         }
     }
 
@@ -601,6 +559,35 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
 
         ~DesktopPreview () {
             get_first_child ().unparent ();
+        }
+    }
+
+    private async Pantheon.AccountsService? setup_accounts_services () {
+        unowned GLib.DBusConnection connection;
+        string path;
+
+        try {
+            connection = yield GLib.Bus.get (SYSTEM);
+
+            var reply = yield connection.call (
+                FDO_ACCOUNTS_NAME, FDO_ACCOUNTS_PATH,
+                FDO_ACCOUNTS_NAME, "FindUserByName",
+                new Variant.tuple ({ new Variant.string (Environment.get_user_name ()) }),
+                new VariantType ("(o)"),
+                NONE,
+                -1
+            );
+            reply.get_child (0, "o", out path);
+        } catch {
+            critical ("Could not connect to AccountsService");
+            return null;
+        }
+
+        try {
+            return yield connection.get_proxy (FDO_ACCOUNTS_NAME, path, GET_INVALIDATED_PROPERTIES);
+        } catch {
+            critical ("Unable to get Pantheon's AccountsService proxy, Dark mode toggle will not be available");
+            return null;
         }
     }
 }
