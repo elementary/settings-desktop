@@ -77,8 +77,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var default_preview = new DesktopPreview ("default");
 
         var prefer_default_radio = new Gtk.CheckButton () {
-            action_name = "desktop-appearance.prefers-color-scheme",
-            action_target = new Variant.int32 (Granite.Settings.ColorScheme.NO_PREFERENCE)
+            action_name = "desktop-appearance.color-scheme",
+            action_target = new Variant.string ("no-preference")
         };
         prefer_default_radio.add_css_class ("image-button");
 
@@ -90,8 +90,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var dark_preview = new DesktopPreview ("dark");
 
         var prefer_dark_radio = new Gtk.CheckButton () {
-            action_name = "desktop-appearance.prefers-color-scheme",
-            action_target = new Variant.int32 (Granite.Settings.ColorScheme.DARK),
+            action_name = "desktop-appearance.color-scheme",
+            action_target = new Variant.string ("prefer-dark"),
             group = prefer_default_radio
         };
         prefer_dark_radio.add_css_class ("image-button");
@@ -121,12 +121,16 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         dim_box.append (dim_switch);
 
         var schedule_disabled_radio = new Gtk.CheckButton.with_label (_("Disabled")) {
+            action_name = "desktop-appearance.prefer-dark-schedule",
+            action_target = new Variant.string ("disabled"),
             margin_bottom = 3
         };
 
         var schedule_sunset_radio = new Gtk.CheckButton.with_label (
             _("Sunset to Sunrise")
         ) {
+            action_name = "desktop-appearance.prefer-dark-schedule",
+            action_target = new Variant.string ("sunset-to-sunrise"),
             group = schedule_disabled_radio
         };
 
@@ -150,6 +154,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         schedule_manual_box.append (to_time);
 
         var schedule_manual_radio = new Gtk.CheckButton () {
+            action_name = "desktop-appearance.prefer-dark-schedule",
+            action_target = new Variant.string ("manual"),
             child = schedule_manual_box,
             group = schedule_disabled_radio
         };
@@ -196,74 +202,23 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var grid = new Gtk.Grid () {
             row_spacing = 6
         };
+        grid.attach (prefer_style_box, 0, 2, 2);
+        grid.attach (dim_box, 0, 3, 2);
+        grid.attach (schedule_label, 0, 4, 2);
+        grid.attach (schedule_box, 0, 5, 2);
 
-        if (((GLib.DBusProxy) pantheon_act).get_cached_property ("PrefersColorScheme") != null) {
-            grid.attach (prefer_style_box, 0, 2, 2);
-            grid.attach (dim_box, 0, 3, 2);
-            grid.attach (schedule_label, 0, 4, 2);
-            grid.attach (schedule_box, 0, 5, 2);
+        var settings = new GLib.Settings ("io.elementary.settings-daemon.prefers-color-scheme");
 
-            var settings = new GLib.Settings ("io.elementary.settings-daemon.prefers-color-scheme");
+        from_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-from"));
+        from_time.time_changed.connect (() => {
+            settings.set_double ("prefer-dark-schedule-from", date_time_double (from_time.time));
+        });
+        to_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-to"));
+        to_time.time_changed.connect (() => {
+            settings.set_double ("prefer-dark-schedule-to", date_time_double (to_time.time));
+        });
 
-            settings.bind_with_mapping (
-                "prefer-dark-schedule", schedule_disabled_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-                (value, variant, user_data) => {
-                    value.set_boolean (variant.get_string () == "disabled");
-                    return true;
-                },
-                (value, expected_type, user_data) => {
-                    if (value.get_boolean ()) {
-                        return new Variant ("s", "disabled");
-                    }
-
-                    return null;
-                },
-                null, null
-            );
-
-            settings.bind_with_mapping (
-                "prefer-dark-schedule", schedule_manual_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-                (value, variant, user_data) => {
-                    value.set_boolean (variant.get_string () == "manual");
-                    return true;
-                },
-                (value, expected_type, user_data) => {
-                    if (value.get_boolean ()) {
-                        return new Variant ("s", "manual");
-                    }
-
-                    return null;
-                },
-                null, null
-            );
-
-            settings.bind_with_mapping (
-                "prefer-dark-schedule", schedule_sunset_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-                (value, variant, user_data) => {
-                    value.set_boolean (variant.get_string () == "sunset-to-sunrise");
-                    return true;
-                },
-                (value, expected_type, user_data) => {
-                    if (value.get_boolean ()) {
-                        return new Variant ("s", "sunset-to-sunrise");
-                    }
-
-                    return null;
-                },
-                null, null
-            );
-
-            from_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-from"));
-            from_time.time_changed.connect (() => {
-                settings.set_double ("prefer-dark-schedule-from", date_time_double (from_time.time));
-            });
-            to_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-to"));
-            to_time.time_changed.connect (() => {
-                settings.set_double ("prefer-dark-schedule-to", date_time_double (to_time.time));
-            });
-
-            schedule_manual_radio.bind_property ("active", schedule_manual_box, "sensitive", BindingFlags.SYNC_CREATE);
-        }
+        schedule_manual_radio.bind_property ("active", schedule_manual_box, "sensitive", BindingFlags.SYNC_CREATE);
 
         var interface_settings = new GLib.Settings (INTERFACE_SCHEMA);
         var current_stylesheet = interface_settings.get_string (STYLESHEET_KEY);
@@ -380,27 +335,24 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
 
         var accent_color_action = new SimpleAction.stateful ("prefers-accent-color", GLib.VariantType.INT32, new Variant.int32 (AccentColor.NO_PREFERENCE));
-        var color_scheme_action = new SimpleAction.stateful ("prefers-color-scheme", GLib.VariantType.INT32, new Variant.int32 (Granite.Settings.ColorScheme.NO_PREFERENCE));
+
+        var color_scheme_action = settings.create_action ("color-scheme");
+        var prefer_dark_action = settings.create_action ("prefer-dark-schedule");
 
         var action_group = new SimpleActionGroup ();
         action_group.add_action (accent_color_action);
         action_group.add_action (color_scheme_action);
+        action_group.add_action (prefer_dark_action);
 
         insert_action_group ("desktop-appearance", action_group);
 
         if (pantheon_act != null) {
             accent_color_action.set_state (new Variant.int32 (pantheon_act.prefers_accent_color));
-            color_scheme_action.set_state (new Variant.int32 (pantheon_act.prefers_color_scheme));
 
             ((DBusProxy) pantheon_act).g_properties_changed.connect ((changed, invalid) => {
                 var accent_color = changed.lookup_value ("PrefersAccentColor", new VariantType ("i"));
                 if (accent_color != null && !accent_color_action.get_state ().equal (accent_color)) {
                     accent_color_action.set_state (accent_color);
-                }
-
-                var color_scheme = changed.lookup_value ("PrefersColorScheme", new VariantType ("i"));
-                if (color_scheme != null && !color_scheme_action.get_state ().equal (color_scheme)) {
-                    color_scheme_action.set_state (color_scheme);
                 }
             });
 
@@ -415,18 +367,6 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
                             STYLESHEET_PREFIX + ((AccentColor) value).to_string ()
                         );
                     }
-                }
-            });
-
-            color_scheme_action.activate.connect ((value) => {
-                if (!color_scheme_action.get_state ().equal (value)) {
-                    color_scheme_action.set_state (value);
-                    pantheon_act.prefers_color_scheme = value.get_int32 ();
-
-                    var mutter_settings = new GLib.Settings ("org.gnome.desktop.interface");
-                    mutter_settings.set_enum ("color-scheme", (Granite.Settings.ColorScheme) value.get_int32 ());
-
-                    schedule_disabled_radio.active = true;
                 }
             });
         }
