@@ -121,12 +121,16 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         dim_box.append (dim_switch);
 
         var schedule_disabled_radio = new Gtk.CheckButton.with_label (_("Disabled")) {
+            action_name = "desktop-appearance.prefer-dark-schedule",
+            action_target = new Variant.string ("disabled"),
             margin_bottom = 3
         };
 
         var schedule_sunset_radio = new Gtk.CheckButton.with_label (
             _("Sunset to Sunrise")
         ) {
+            action_name = "desktop-appearance.prefer-dark-schedule",
+            action_target = new Variant.string ("sunset-to-sunrise"),
             group = schedule_disabled_radio
         };
 
@@ -150,6 +154,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         schedule_manual_box.append (to_time);
 
         var schedule_manual_radio = new Gtk.CheckButton () {
+            action_name = "desktop-appearance.prefer-dark-schedule",
+            action_target = new Variant.string ("manual"),
             child = schedule_manual_box,
             group = schedule_disabled_radio
         };
@@ -202,54 +208,6 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         grid.attach (schedule_box, 0, 5, 2);
 
         var settings = new GLib.Settings ("io.elementary.settings-daemon.prefers-color-scheme");
-
-        settings.bind_with_mapping (
-            "prefer-dark-schedule", schedule_disabled_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-            (value, variant, user_data) => {
-                value.set_boolean (variant.get_string () == "disabled");
-                return true;
-            },
-            (value, expected_type, user_data) => {
-                if (value.get_boolean ()) {
-                    return new Variant ("s", "disabled");
-                }
-
-                return null;
-            },
-            null, null
-        );
-
-        settings.bind_with_mapping (
-            "prefer-dark-schedule", schedule_manual_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-            (value, variant, user_data) => {
-                value.set_boolean (variant.get_string () == "manual");
-                return true;
-            },
-            (value, expected_type, user_data) => {
-                if (value.get_boolean ()) {
-                    return new Variant ("s", "manual");
-                }
-
-                return null;
-            },
-            null, null
-        );
-
-        settings.bind_with_mapping (
-            "prefer-dark-schedule", schedule_sunset_radio, "active", GLib.SettingsBindFlags.DEFAULT,
-            (value, variant, user_data) => {
-                value.set_boolean (variant.get_string () == "sunset-to-sunrise");
-                return true;
-            },
-            (value, expected_type, user_data) => {
-                if (value.get_boolean ()) {
-                    return new Variant ("s", "sunset-to-sunrise");
-                }
-
-                return null;
-            },
-            null, null
-        );
 
         from_time.time = double_date_time (settings.get_double ("prefer-dark-schedule-from"));
         from_time.time_changed.connect (() => {
@@ -379,10 +337,12 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var accent_color_action = new SimpleAction.stateful ("prefers-accent-color", GLib.VariantType.INT32, new Variant.int32 (AccentColor.NO_PREFERENCE));
 
         var color_scheme_action = settings.create_action ("color-scheme");
+        var prefer_dark_action = settings.create_action ("prefer-dark-schedule");
 
         var action_group = new SimpleActionGroup ();
         action_group.add_action (accent_color_action);
         action_group.add_action (color_scheme_action);
+        action_group.add_action (prefer_dark_action);
 
         insert_action_group ("desktop-appearance", action_group);
 
