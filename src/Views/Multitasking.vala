@@ -118,6 +118,8 @@ public class PantheonShell.Multitasking : Switchboard.SettingsPage {
             label.add_css_class ("hotcorner");
             label.add_css_class (position);
 
+            var text_direction = get_default_direction ();
+
             var combo = new Gtk.ComboBoxText () {
                 hexpand = true,
                 valign = Gtk.Align.END
@@ -125,7 +127,13 @@ public class PantheonShell.Multitasking : Switchboard.SettingsPage {
             combo.append ("none", _("Do nothing"));
             combo.append ("show-workspace-view", _("Multitasking View"));
             combo.append ("maximize-current", _("Maximize current window"));
-            combo.append ("open-launcher", _("Show Applications Menu"));
+            // Only show Applications Menu hotcorner for the same panel corner
+            if (
+                position == "topleft" && text_direction == LTR ||
+                position == "topright" && text_direction == RTL
+            ) {
+                combo.append ("open-launcher", _("Show Applications Menu"));
+            }
             combo.append ("window-overview-all", _("Show all windows"));
             combo.append ("switch-to-workspace-previous", _("Switch to previous workspace"));
             combo.append ("switch-to-workspace-next", _("Switch to next workspace"));
