@@ -52,6 +52,7 @@
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/settings-desktop/issues/429">Appearance schedule resets after switch to dark mode</issue>
         <issue url="https://github.com/elementary/settings-desktop/issues/431">Crash when entering custom command for hot corner</issue>
         <issue url="https://github.com/elementary/settings-desktop/issues/432">The Multitasking window closes when typing or pasting commands into the input field</issue>
       </issues>
