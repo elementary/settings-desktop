@@ -19,10 +19,6 @@
 */
 
 public class PantheonShell.Appearance : Switchboard.SettingsPage {
-    private const string INTERFACE_SCHEMA = "org.gnome.desktop.interface";
-    private const string STYLESHEET_KEY = "gtk-theme";
-    private const string STYLESHEET_PREFIX = "io.elementary.stylesheet.";
-
     private enum AccentColor {
         NO_PREFERENCE,
         RED,
@@ -58,9 +54,9 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
                     return "cocoa";
                 case GRAY:
                     return "slate";
+                default:
+                    return "auto";
             }
-
-            return "auto";
         }
     }
 
@@ -220,68 +216,61 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
 
         schedule_manual_radio.bind_property ("active", schedule_manual_box, "sensitive", BindingFlags.SYNC_CREATE);
 
-        var interface_settings = new GLib.Settings (INTERFACE_SCHEMA);
-        var current_stylesheet = interface_settings.get_string (STYLESHEET_KEY);
+        var blueberry_button = new PrefersAccentColorButton (AccentColor.BLUE);
+        blueberry_button.tooltip_text = _("Blueberry");
 
-        debug ("Current stylesheet: %s", current_stylesheet);
+        var mint_button = new PrefersAccentColorButton (AccentColor.MINT, blueberry_button);
+        mint_button.tooltip_text = _("Mint");
 
-        if (current_stylesheet.has_prefix (STYLESHEET_PREFIX)) {
-            var blueberry_button = new PrefersAccentColorButton (AccentColor.BLUE);
-            blueberry_button.tooltip_text = _("Blueberry");
+        var lime_button = new PrefersAccentColorButton (AccentColor.GREEN, blueberry_button);
+        lime_button.tooltip_text = _("Lime");
 
-            var mint_button = new PrefersAccentColorButton (AccentColor.MINT, blueberry_button);
-            mint_button.tooltip_text = _("Mint");
+        var banana_button = new PrefersAccentColorButton (AccentColor.YELLOW, blueberry_button);
+        banana_button.tooltip_text = _("Banana");
 
-            var lime_button = new PrefersAccentColorButton (AccentColor.GREEN, blueberry_button);
-            lime_button.tooltip_text = _("Lime");
+        var orange_button = new PrefersAccentColorButton (AccentColor.ORANGE, blueberry_button);
+        orange_button.tooltip_text = _("Orange");
 
-            var banana_button = new PrefersAccentColorButton (AccentColor.YELLOW, blueberry_button);
-            banana_button.tooltip_text = _("Banana");
+        var strawberry_button = new PrefersAccentColorButton (AccentColor.RED, blueberry_button);
+        strawberry_button.tooltip_text = _("Strawberry");
 
-            var orange_button = new PrefersAccentColorButton (AccentColor.ORANGE, blueberry_button);
-            orange_button.tooltip_text = _("Orange");
+        var bubblegum_button = new PrefersAccentColorButton (AccentColor.PINK, blueberry_button);
+        bubblegum_button.tooltip_text = _("Bubblegum");
 
-            var strawberry_button = new PrefersAccentColorButton (AccentColor.RED, blueberry_button);
-            strawberry_button.tooltip_text = _("Strawberry");
+        var grape_button = new PrefersAccentColorButton (AccentColor.PURPLE, blueberry_button);
+        grape_button.tooltip_text = _("Grape");
 
-            var bubblegum_button = new PrefersAccentColorButton (AccentColor.PINK, blueberry_button);
-            bubblegum_button.tooltip_text = _("Bubblegum");
+        var cocoa_button = new PrefersAccentColorButton (AccentColor.BROWN, blueberry_button);
+        cocoa_button.tooltip_text = _("Cocoa");
 
-            var grape_button = new PrefersAccentColorButton (AccentColor.PURPLE, blueberry_button);
-            grape_button.tooltip_text = _("Grape");
+        var slate_button = new PrefersAccentColorButton (AccentColor.GRAY, blueberry_button);
+        slate_button.tooltip_text = _("Slate");
 
-            var cocoa_button = new PrefersAccentColorButton (AccentColor.BROWN, blueberry_button);
-            cocoa_button.tooltip_text = _("Cocoa");
+        var auto_button = new PrefersAccentColorButton (AccentColor.NO_PREFERENCE, blueberry_button);
+        auto_button.tooltip_text = _("Automatic based on wallpaper");
 
-            var slate_button = new PrefersAccentColorButton (AccentColor.GRAY, blueberry_button);
-            slate_button.tooltip_text = _("Slate");
+        var accent_box = new Gtk.Box (HORIZONTAL, 6) {
+            accessible_role = Gtk.AccessibleRole.LIST
+        };
+        accent_box.append (blueberry_button);
+        accent_box.append (mint_button);
+        accent_box.append (lime_button);
+        accent_box.append (banana_button);
+        accent_box.append (orange_button);
+        accent_box.append (strawberry_button);
+        accent_box.append (bubblegum_button);
+        accent_box.append (grape_button);
+        accent_box.append (cocoa_button);
+        accent_box.append (slate_button);
+        accent_box.append (auto_button);
 
-            var auto_button = new PrefersAccentColorButton (AccentColor.NO_PREFERENCE, blueberry_button);
-            auto_button.tooltip_text = _("Automatic based on wallpaper");
+        var accent_label = new Granite.HeaderLabel (_("Accent Color")) {
+            margin_top = 18,
+            mnemonic_widget = accent_box
+        };
 
-            var accent_box = new Gtk.Box (HORIZONTAL, 6) {
-                accessible_role = Gtk.AccessibleRole.LIST
-            };
-            accent_box.append (blueberry_button);
-            accent_box.append (mint_button);
-            accent_box.append (lime_button);
-            accent_box.append (banana_button);
-            accent_box.append (orange_button);
-            accent_box.append (strawberry_button);
-            accent_box.append (bubblegum_button);
-            accent_box.append (grape_button);
-            accent_box.append (cocoa_button);
-            accent_box.append (slate_button);
-            accent_box.append (auto_button);
-
-            var accent_label = new Granite.HeaderLabel (_("Accent Color")) {
-                margin_top = 18,
-                mnemonic_widget = accent_box
-            };
-
-            grid.attach (accent_label, 0, 8, 2);
-            grid.attach (accent_box, 0, 9, 2);
-        }
+        grid.attach (accent_label, 0, 8, 2);
+        grid.attach (accent_box, 0, 9, 2);
 
         var animations_switch = new Gtk.Switch () {
             halign = Gtk.Align.END,
@@ -328,6 +317,7 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
             animations_settings.set_boolean ("enable-animations", !animations_switch.active);
         });
 
+        var interface_settings = new GLib.Settings ("org.gnome.desktop.interface");
         interface_settings.bind ("overlay-scrolling", scrollbar_switch, "active", INVERT_BOOLEAN);
         interface_settings.bind ("enable-animations", animations_switch, "active", INVERT_BOOLEAN);
 
@@ -360,13 +350,6 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
                 if (!accent_color_action.get_state ().equal (value)) {
                     accent_color_action.set_state (value);
                     pantheon_act.prefers_accent_color = value.get_int32 ();
-
-                    if (value != AccentColor.NO_PREFERENCE) {
-                        interface_settings.set_string (
-                            STYLESHEET_KEY,
-                            STYLESHEET_PREFIX + ((AccentColor) value).to_string ()
-                        );
-                    }
                 }
             });
         }
