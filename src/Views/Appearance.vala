@@ -412,6 +412,12 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
                 content_fit = COVER
             };
 
+            var dock = new Gtk.Box (HORIZONTAL, 0) {
+                halign = CENTER,
+                valign = END
+            };
+            dock.add_css_class ("dock");
+
             var window_back = new Gtk.Box (HORIZONTAL, 0) {
                 halign = CENTER,
                 valign = CENTER
@@ -434,6 +440,7 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
                 overflow = HIDDEN
             };
             overlay.add_overlay (shell);
+            overlay.add_overlay (dock);
             overlay.add_overlay (window_back);
             overlay.add_overlay (window_front);
             overlay.add_css_class (Granite.STYLE_CLASS_CARD);
