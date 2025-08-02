@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2023-07-01 08:07+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"switchboard/switchboard-plug-pantheon-shell/zh_Hans/>\n"
+"PO-Revision-Date: 2025-08-03 07:55+0000\n"
+"Last-Translator: JieXu <xujie0739@qq.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"l10n.elementaryos.org/projects/settings/desktop/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 07:03+0000\n"
 
 #: src/Plug.vala:49
@@ -76,17 +76,15 @@ msgstr "透明顶栏"
 
 #: src/Plug.vala:132 src/Views/Dock.vala:123
 msgid "Scroll on the panel to switch workspaces"
-msgstr ""
+msgstr "在面板上滚动以切换工作区"
 
 #: src/Plug.vala:134
 msgid "Dark style"
 msgstr "暗色风格"
 
 #: src/Plug.vala:135 src/Views/Appearance.vala:107
-#, fuzzy
-#| msgid "Dark style"
 msgid "Dim Wallpaper With Dark Style"
-msgstr "暗色风格"
+msgstr "深色模式时调暗壁纸"
 
 #: src/Plug.vala:136 src/Views/Appearance.vala:375
 msgid "Accent Color"
@@ -94,11 +92,11 @@ msgstr "强调色"
 
 #: src/Plug.vala:137 src/Views/Appearance.vala:405
 msgid "Always Show Scrollbars"
-msgstr ""
+msgstr "始终显示滚动条"
 
 #: src/Plug.vala:138 src/Views/Appearance.vala:390
 msgid "Reduce Motion"
-msgstr ""
+msgstr "减弱动态效果"
 
 #: src/Plug.vala:139
 msgid "Window animations"
@@ -117,23 +115,17 @@ msgid "Hot Corners"
 msgstr "热区"
 
 #: src/Plug.vala:145 src/Views/Multitasking.vala:47
-#, fuzzy
-#| msgid "When entering fullscreen"
 msgid "Activate Hot Corners in fullscreen"
-msgstr "进入全屏时"
+msgstr "全屏模式显示时启用热角"
 
 #: src/Plug.vala:146 src/Views/Multitasking.vala:59
 msgid "Move windows to a new workspace"
 msgstr "移至新工作区"
 
 #: src/Views/Appearance.vala:70
-#, fuzzy
-#| msgid ""
-#| "Preferred visual style for system components. Apps may also choose to "
-#| "follow this preference."
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
-msgstr "系统组件的视觉风格偏好。应用程序可能也会遵循这个设置。"
+msgstr "应用程序可能会遵循这些设置，但也能选择它们自己的外观样式。"
 
 #: src/Views/Appearance.vala:84 src/Views/Dock.vala:37
 msgid "Default"
@@ -210,17 +202,15 @@ msgstr "基于壁纸自动"
 #: src/Views/Appearance.vala:392
 msgid ""
 "Disable animations in the window manager and some other interface elements."
-msgstr ""
+msgstr "禁用窗口管理器及其他界面部分元素的动画效果。"
 
 #: src/Views/Appearance.vala:408
 msgid "Scrollbars will take up space, even when not in use."
-msgstr ""
+msgstr "滚动条即使未使用也会占用空间。"
 
 #: src/Views/Dock.vala:20
-#, fuzzy
-#| msgid "Icon Size"
 msgid "Dock Icon Size"
-msgstr "图标大小"
+msgstr "Dock 栏图标大小"
 
 #: src/Views/Dock.vala:27
 msgid "Small"
@@ -231,54 +221,40 @@ msgid "Large"
 msgstr "较大"
 
 #: src/Views/Dock.vala:64
-#, fuzzy
-#| msgid "Hide Mode"
 msgid "Hide Dock"
-msgstr "隐藏模式"
+msgstr "隐藏 Dock 栏"
 
 #: src/Views/Dock.vala:66
 msgid "Never"
 msgstr "永不"
 
 #: src/Views/Dock.vala:69
-#, fuzzy
-#| msgid "Focused window is maximized"
 msgid "When the focused window is maximized"
-msgstr "焦点窗口最大化时"
+msgstr "当前窗口最大化时"
 
 #: src/Views/Dock.vala:75
-#, fuzzy
-#| msgid "Focused window overlaps the dock"
 msgid "When the focused window overlaps the dock"
-msgstr "焦点窗口与程序坞重叠时"
+msgstr "当前窗口遮挡 Dock 时"
 
 #: src/Views/Dock.vala:81
-#, fuzzy
-#| msgid "Any window overlaps the dock"
 msgid "When any window overlaps the dock"
-msgstr "任何窗口与程序坞重叠时"
+msgstr "任何窗口遮挡程序坞时"
 
 #: src/Views/Dock.vala:87
-#, fuzzy
-#| msgid "Not being used"
 msgid "When not being used"
-msgstr "不使用时"
+msgstr "未在使用时"
 
 #: src/Views/Dock.vala:106
-#, fuzzy
-#| msgid "Panel translucency"
 msgid "Panel Translucency"
-msgstr "透明顶栏"
+msgstr "面板透明度"
 
 #: src/Views/Dock.vala:108
-#, fuzzy
-#| msgid "Automatic based on wallpaper"
 msgid "Automatically transparent or opaque based on the wallpaper"
-msgstr "基于壁纸自动"
+msgstr "根据壁纸自动调整为透明或不透明"
 
 #: src/Views/Dock.vala:121
 msgid "Panel Scroll"
-msgstr ""
+msgstr "面板滚动"
 
 #: src/Views/Dock.vala:130
 msgid "Show in Panel"
@@ -290,11 +266,11 @@ msgstr "通用辅助"
 
 #: src/Views/Dock.vala:147
 msgid "Caps Lock ⇪"
-msgstr ""
+msgstr "大写锁定⇪"
 
 #: src/Views/Dock.vala:148
 msgid "Num Lock"
-msgstr ""
+msgstr "数字键锁定"
 
 #: src/Views/Multitasking.vala:34
 msgid "When the pointer enters a display corner"
@@ -318,7 +294,7 @@ msgstr "右下角"
 
 #: src/Views/Multitasking.vala:48
 msgid "May interfere with fullscreen video games, for example"
-msgstr ""
+msgstr "可能干扰全屏模式下的游戏体验"
 
 #: src/Views/Multitasking.vala:61
 msgid "When entering fullscreen"
@@ -349,16 +325,12 @@ msgid "Show all windows"
 msgstr "显示全部窗口"
 
 #: src/Views/Multitasking.vala:130
-#, fuzzy
-#| msgid "Switch to new workspace"
 msgid "Switch to previous workspace"
-msgstr "切换至新工作区"
+msgstr "切换到上一个工作区"
 
 #: src/Views/Multitasking.vala:131
-#, fuzzy
-#| msgid "Switch to new workspace"
 msgid "Switch to next workspace"
-msgstr "切换至新工作区"
+msgstr "切换到下一个工作区"
 
 #: src/Views/Multitasking.vala:132
 msgid "Switch to new workspace"
@@ -395,8 +367,6 @@ msgid "Import"
 msgstr "导入"
 
 #: src/Views/Wallpaper.vala:131
-#, fuzzy
-#| msgid "Import Photo"
 msgid "Import Photos"
 msgstr "导入照片"
 
