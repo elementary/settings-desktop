@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-03-01 14:57+0000\n"
+"PO-Revision-Date: 2025-08-30 22:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/settings/"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
-msgstr "デスクトップの設定"
+msgstr "デスクトップ設定"
 
 #: data/desktop.metainfo.xml.in:11
 msgid "Configure the dock, hot corners, and change wallpaper"
@@ -57,7 +57,7 @@ msgstr "新機能:"
 
 #: data/desktop.metainfo.xml.in:79
 msgid "Always Show Scrollbars setting"
-msgstr "“スクロールバーを常に表示”の設定"
+msgstr "“スクロールバーを常に表示”設定"
 
 #: data/desktop.metainfo.xml.in:83
 msgid "Redundant labels have been cleaned up on the Appearance tab"
@@ -65,15 +65,14 @@ msgstr "“外観”タブの不要ラベルを除去"
 
 #: data/desktop.metainfo.xml.in:84
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
-msgstr "“壁紙を暗くする”の設定を“外観”タブに移動"
+msgstr "“壁紙を暗くする”設定を“外観”タブに移動"
 
 #: data/desktop.metainfo.xml.in:85
 msgid ""
 "The style selector now shows of a preview of your wallpaper as well as "
 "previewing the dim setting"
-msgstr ""
-"スタイル選択のボタンに、壁紙のプレビュー機能、および“壁紙を暗くする”の設定に"
-"追従する機能を追加"
+msgstr "スタイル選択ボタンに、壁紙のプレビュー機能、および“壁紙を暗くする”設定に追従"
+"する機能を追加"
 
 #: data/desktop.metainfo.xml.in:86
 msgid "Improved screen reader accessibility"
@@ -81,8 +80,7 @@ msgstr "スクリーンリーダーのアクセシビリティを改善"
 
 #: data/desktop.metainfo.xml.in:101
 msgid "Redesign Dock &amp; Panel settings with helpful description text"
-msgstr ""
-"“ドックとパネル”の設定をデザイン変更 (わかりやすいように説明テキストを追加)"
+msgstr "“ドックとパネル”設定のデザインを変更 (わかりやすいように説明テキストを追加)"
 
 #: data/desktop.metainfo.xml.in:102
 msgid "Show or hide optional panel indicators"
