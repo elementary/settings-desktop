@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2024-12-05 12:16+0000\n"
+"PO-Revision-Date: 2025-10-12 00:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/switchboard/"
-"switchboard-plug-pantheon-shell/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
+"desktop/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-02-17 05:46+0000\n"
 
 #: src/Plug.vala:49
@@ -225,7 +225,7 @@ msgstr "ドックを隠す"
 
 #: src/Views/Dock.vala:66
 msgid "Never"
-msgstr "なし"
+msgstr "しない"
 
 #: src/Views/Dock.vala:69
 msgid "When the focused window is maximized"
