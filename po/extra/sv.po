@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2024-08-07 18:17+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Swedish <https://l10n.elementary.io/projects/switchboard/"
+"PO-Revision-Date: 2025-10-21 18:23+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
@@ -29,7 +29,7 @@ msgstr "Ställ in dockan, aktiva hörn och byt bakgrundsbild"
 
 #: data/desktop.metainfo.xml.in:40
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:58
 #: data/desktop.metainfo.xml.in:68 data/desktop.metainfo.xml.in:81
@@ -45,7 +45,7 @@ msgstr ""
 #: data/desktop.metainfo.xml.in:70 data/desktop.metainfo.xml.in:87
 #: data/desktop.metainfo.xml.in:105 data/desktop.metainfo.xml.in:123
 msgid "Updated translations"
-msgstr ""
+msgstr "Uppdaterade översättningar"
 
 #: data/desktop.metainfo.xml.in:60
 msgid "Add setting for scroll to switch workspaces"
@@ -98,7 +98,7 @@ msgstr ""
 
 #: data/desktop.metainfo.xml.in:116
 msgid "New features:"
-msgstr ""
+msgstr "Nya funktioner:"
 
 #: data/desktop.metainfo.xml.in:118
 msgid "Add an option to dim wallpapers when dark style is active"
