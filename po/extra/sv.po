@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-10-21 18:23+0000\n"
+"PO-Revision-Date: 2025-10-22 05:26+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/sv/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
-msgstr ""
+msgstr "Skrivbordsinställningar"
 
 #: data/desktop.metainfo.xml.in:11
 msgid "Configure the dock, hot corners, and change wallpaper"
@@ -35,11 +35,11 @@ msgstr "elementary, Inc."
 #: data/desktop.metainfo.xml.in:68 data/desktop.metainfo.xml.in:81
 #: data/desktop.metainfo.xml.in:99 data/desktop.metainfo.xml.in:120
 msgid "Other updates:"
-msgstr ""
+msgstr "Övriga uppdateringar:"
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Add setting for fullscreen hotcorners"
-msgstr ""
+msgstr "Lägg till inställning för hotcorners i helskärm"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:70 data/desktop.metainfo.xml.in:87
@@ -49,52 +49,59 @@ msgstr "Uppdaterade översättningar"
 
 #: data/desktop.metainfo.xml.in:60
 msgid "Add setting for scroll to switch workspaces"
-msgstr ""
+msgstr "Lägg till inställning för rullning för att byta arbetsyta"
 
 #: data/desktop.metainfo.xml.in:77
 msgid "New Features:"
-msgstr ""
+msgstr "Nya funktioner:"
 
 #: data/desktop.metainfo.xml.in:79
 msgid "Always Show Scrollbars setting"
-msgstr ""
+msgstr "Inställning Visa alltid rullningslister"
 
 #: data/desktop.metainfo.xml.in:83
 msgid "Redundant labels have been cleaned up on the Appearance tab"
-msgstr ""
+msgstr "Överflödiga etiketter har rensats upp på fliken Utseende"
 
 #: data/desktop.metainfo.xml.in:84
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
-msgstr ""
+msgstr "Inställningen Dim Wallpaper har flyttats till fliken Utseende"
 
 #: data/desktop.metainfo.xml.in:85
 msgid ""
 "The style selector now shows of a preview of your wallpaper as well as "
 "previewing the dim setting"
 msgstr ""
+"Stilväljaren visar nu en förhandsgranskning av din bakgrundsbild samt en "
+"förhandsgranskning av diminställningen"
 
 #: data/desktop.metainfo.xml.in:86
 msgid "Improved screen reader accessibility"
-msgstr ""
+msgstr "Förbättrad tillgänglighet för skärmläsare"
 
 #: data/desktop.metainfo.xml.in:101
 msgid "Redesign Dock &amp; Panel settings with helpful description text"
 msgstr ""
+"Omarbeta Dock &amp; Panel-inställningarna med användbar beskrivningstext"
 
 #: data/desktop.metainfo.xml.in:102
 msgid "Show or hide optional panel indicators"
-msgstr ""
+msgstr "Visa eller dölja valfria panelindikatorer"
 
 #: data/desktop.metainfo.xml.in:103
 msgid ""
 "Fix translation of slideshow delay value and \"Dim with dark style\" label"
 msgstr ""
+"Rätt översättning av värdet för fördröjning av bildspel och etiketten "
+"\"Dim med mörk stil\""
 
 #: data/desktop.metainfo.xml.in:104
 msgid ""
 "Fix an issue where wallpapers were not removed when closing System Settings "
 "immediately after"
 msgstr ""
+"Åtgärdat ett problem där bakgrundsbilder inte togs bort när "
+"Systeminställningar stängdes omedelbart efter"
 
 #: data/desktop.metainfo.xml.in:116
 msgid "New features:"
@@ -103,7 +110,8 @@ msgstr "Nya funktioner:"
 #: data/desktop.metainfo.xml.in:118
 msgid "Add an option to dim wallpapers when dark style is active"
 msgstr ""
+"Lägg till ett alternativ för att dämpa bakgrundsbilder när mörk stil är aktiv"
 
 #: data/desktop.metainfo.xml.in:122
 msgid "Use a more vertical layout in the Text view"
-msgstr ""
+msgstr "Använd en mer vertikal layout i textvyn"
