@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-10-21 18:23+0000\n"
+"PO-Revision-Date: 2025-10-22 09:08+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop/sv/>\n"
@@ -47,7 +47,7 @@ msgstr "Text"
 #: src/Plug.vala:129 src/Plug.vala:130 src/Plug.vala:131 src/Plug.vala:132
 #: src/Views/Dock.vala:13
 msgid "Dock & Panel"
-msgstr ""
+msgstr "Docka och panel"
 
 #: src/Plug.vala:69 src/Plug.vala:143 src/Plug.vala:144 src/Plug.vala:145
 #: src/Plug.vala:146 src/Views/Multitasking.vala:27
@@ -226,7 +226,7 @@ msgstr "Stor"
 
 #: src/Views/Dock.vala:64
 msgid "Hide Dock"
-msgstr "Hide Dock"
+msgstr "Dölj docka"
 
 #: src/Views/Dock.vala:66
 msgid "Never"
