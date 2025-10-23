@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-10-22 09:08+0000\n"
+"PO-Revision-Date: 2025-10-23 13:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop/sv/>\n"
@@ -183,7 +183,7 @@ msgstr "Jordgubbar"
 
 #: src/Views/Appearance.vala:346
 msgid "Bubblegum"
-msgstr "Bubblegum"
+msgstr "Tuggummi"
 
 #: src/Views/Appearance.vala:349
 msgid "Grape"
@@ -278,7 +278,7 @@ msgstr "Numlås"
 
 #: src/Views/Multitasking.vala:34
 msgid "When the pointer enters a display corner"
-msgstr "När pekaren går in i ett hörn på displayen"
+msgstr "När pekaren går in i ett hörn på skärmen"
 
 #: src/Views/Multitasking.vala:38
 msgid "Top Left"
