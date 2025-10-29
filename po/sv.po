@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-10-23 13:55+0000\n"
+"PO-Revision-Date: 2025-10-30 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop/sv/>\n"
@@ -84,7 +84,7 @@ msgstr "Mörk stil"
 
 #: src/Plug.vala:135 src/Views/Appearance.vala:107
 msgid "Dim Wallpaper With Dark Style"
-msgstr "Dim tapet med mörk stil"
+msgstr "Dämpa bakgrundsbild med mörk stil"
 
 #: src/Plug.vala:136 src/Views/Appearance.vala:375
 msgid "Accent Color"
@@ -96,7 +96,7 @@ msgstr "Visa alltid rullningslister"
 
 #: src/Plug.vala:138 src/Views/Appearance.vala:390
 msgid "Reduce Motion"
-msgstr "Minska rörelsen"
+msgstr "Minska rörelse"
 
 #: src/Plug.vala:139
 msgid "Window animations"
@@ -116,7 +116,7 @@ msgstr "Aktiva hörn"
 
 #: src/Plug.vala:145 src/Views/Multitasking.vala:47
 msgid "Activate Hot Corners in fullscreen"
-msgstr "Aktivera Hot Corners i helskärm"
+msgstr "Aktivera Aktiva hörn i helskärm"
 
 #: src/Plug.vala:146 src/Views/Multitasking.vala:59
 msgid "Move windows to a new workspace"
@@ -126,8 +126,8 @@ msgstr "Flytta fönster till en ny arbetsyta"
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
 msgstr ""
-"Apparna kan följa dessa preferenser, men kan också välja sina egna accenter "
-"eller sin egen stil."
+"Apparna kan följa dessa inställningar, men kan också välja sina egna "
+"accenter eller sin egen stil."
 
 #: src/Views/Appearance.vala:84 src/Views/Dock.vala:37
 msgid "Default"
@@ -175,11 +175,11 @@ msgstr "Banan"
 
 #: src/Views/Appearance.vala:340
 msgid "Orange"
-msgstr "Orange"
+msgstr "Apelsin"
 
 #: src/Views/Appearance.vala:343
 msgid "Strawberry"
-msgstr "Jordgubbar"
+msgstr "Jordgubbe"
 
 #: src/Views/Appearance.vala:346
 msgid "Bubblegum"
@@ -210,11 +210,11 @@ msgstr ""
 
 #: src/Views/Appearance.vala:408
 msgid "Scrollbars will take up space, even when not in use."
-msgstr "Scrollbars tar upp plats, även när de inte används."
+msgstr "Rullningslister tar upp plats, även när de inte används."
 
 #: src/Views/Dock.vala:20
 msgid "Dock Icon Size"
-msgstr "Dock-ikonens storlek"
+msgstr "Dockikonens storlek"
 
 #: src/Views/Dock.vala:27
 msgid "Small"
@@ -238,7 +238,7 @@ msgstr "När det fokuserade fönstret är maximerat"
 
 #: src/Views/Dock.vala:75
 msgid "When the focused window overlaps the dock"
-msgstr "När det fokuserade fönstret överlappar dockningsstationen"
+msgstr "När det fokuserade fönstret överlappar dockan"
 
 #: src/Views/Dock.vala:81
 msgid "When any window overlaps the dock"
@@ -254,11 +254,11 @@ msgstr "Panelens genomskinlighet"
 
 #: src/Views/Dock.vala:108
 msgid "Automatically transparent or opaque based on the wallpaper"
-msgstr "Automatiskt transparent eller ogenomskinlig beroende på bakgrundsbilden"
+msgstr "Automatiskt transparent eller opak beroende på bakgrundsbilden"
 
 #: src/Views/Dock.vala:121
 msgid "Panel Scroll"
-msgstr "Panel Scroll"
+msgstr "Panelrullning"
 
 #: src/Views/Dock.vala:130
 msgid "Show in Panel"
@@ -266,7 +266,7 @@ msgstr "Visa i panel"
 
 #: src/Views/Dock.vala:137
 msgid "Accessibility"
-msgstr "Tillgänglighet"
+msgstr "Hjälpmedel"
 
 #: src/Views/Dock.vala:147
 msgid "Caps Lock ⇪"
@@ -274,7 +274,7 @@ msgstr "Caps Lock ⇪"
 
 #: src/Views/Dock.vala:148
 msgid "Num Lock"
-msgstr "Numlås"
+msgstr "Num Lock"
 
 #: src/Views/Multitasking.vala:34
 msgid "When the pointer enters a display corner"
@@ -302,7 +302,7 @@ msgstr "Kan störa videospel i helskärm, till exempel"
 
 #: src/Views/Multitasking.vala:61
 msgid "When entering fullscreen"
-msgstr "När du går till helskärm"
+msgstr "Vid växling till helskärm"
 
 #: src/Views/Multitasking.vala:62
 msgid "When maximizing"
@@ -318,7 +318,7 @@ msgstr "Multitaskingvy"
 
 #: src/Views/Multitasking.vala:127
 msgid "Maximize current window"
-msgstr "Maximera nuvarande fönster"
+msgstr "Maximera aktuellt fönster"
 
 #: src/Views/Multitasking.vala:128
 msgid "Show Applications Menu"
@@ -338,23 +338,23 @@ msgstr "Växla till nästa arbetsyta"
 
 #: src/Views/Multitasking.vala:132
 msgid "Switch to new workspace"
-msgstr "Skifta till ny arbetsyta"
+msgstr "Växla till ny arbetsyta"
 
 #: src/Views/Multitasking.vala:133
 msgid "Execute custom command"
-msgstr "Utför egendefinierat kommando"
+msgstr "Kör anpassat kommando"
 
 #: src/Views/Text.vala:71
 msgid ""
 "Bottom-heavy shapes and increased character spacing can help improve "
 "legibility and reading speed."
 msgstr ""
-"Bottenstarka former och ökat teckenavstånd kan bidra till att förbättra "
+"Bottentunga former och ökat teckenavstånd kan bidra till att förbättra "
 "läsbarheten och läshastigheten."
 
 #: src/Views/Wallpaper.vala:82
 msgid "Import Photo…"
-msgstr "Importera bild…"
+msgstr "Importera foto…"
 
 #: src/Views/Wallpaper.vala:87
 msgid "Centered"
@@ -362,11 +362,11 @@ msgstr "Centrerad"
 
 #: src/Views/Wallpaper.vala:88
 msgid "Zoom"
-msgstr "Zooma in"
+msgstr "Zooma"
 
 #: src/Views/Wallpaper.vala:89
 msgid "Spanned"
-msgstr "Sträckt för att passa bilden"
+msgstr "Utsträckt"
 
 #: src/Views/Wallpaper.vala:128
 msgid "Import"
@@ -378,7 +378,7 @@ msgstr "Importera foton"
 
 #: src/Views/Wallpaper.vala:475
 msgid "Wallpaper Deleted"
-msgstr "Bakgrund raderad"
+msgstr "Bakgrundsbild borttagen"
 
 #: src/Views/Wallpaper.vala:476
 msgid "Undo"
@@ -391,7 +391,7 @@ msgstr "Ta bort"
 #: src/Widgets/WallpaperContainer.vala:200
 #, c-format
 msgid "Artist: %s"
-msgstr "Artist: %s"
+msgstr "Konstnär: %s"
 
 #~ msgid "Set as _Desktop Background"
 #~ msgstr "Använd som skrivbords_bakgrund"
