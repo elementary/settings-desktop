@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-10-22 05:26+0000\n"
+"PO-Revision-Date: 2025-10-30 09:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/sv/>\n"
@@ -39,7 +39,7 @@ msgstr "Övriga uppdateringar:"
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Add setting for fullscreen hotcorners"
-msgstr "Lägg till inställning för hotcorners i helskärm"
+msgstr "Lägg till inställning för aktiva hörn i helskärm"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:70 data/desktop.metainfo.xml.in:87
@@ -49,7 +49,7 @@ msgstr "Uppdaterade översättningar"
 
 #: data/desktop.metainfo.xml.in:60
 msgid "Add setting for scroll to switch workspaces"
-msgstr "Lägg till inställning för rullning för att byta arbetsyta"
+msgstr "Lägg till inställning för rullning för byte av arbetsyta"
 
 #: data/desktop.metainfo.xml.in:77
 msgid "New Features:"
@@ -57,7 +57,7 @@ msgstr "Nya funktioner:"
 
 #: data/desktop.metainfo.xml.in:79
 msgid "Always Show Scrollbars setting"
-msgstr "Inställning Visa alltid rullningslister"
+msgstr "Visa alltid inställning för rullningslister"
 
 #: data/desktop.metainfo.xml.in:83
 msgid "Redundant labels have been cleaned up on the Appearance tab"
@@ -65,7 +65,7 @@ msgstr "Överflödiga etiketter har rensats upp på fliken Utseende"
 
 #: data/desktop.metainfo.xml.in:84
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
-msgstr "Inställningen Dim Wallpaper har flyttats till fliken Utseende"
+msgstr "Inställningen Dämpa bakgrundsbild har flyttats till fliken Utseende"
 
 #: data/desktop.metainfo.xml.in:85
 msgid ""
@@ -73,7 +73,7 @@ msgid ""
 "previewing the dim setting"
 msgstr ""
 "Stilväljaren visar nu en förhandsgranskning av din bakgrundsbild samt en "
-"förhandsgranskning av diminställningen"
+"förhandsgranskning av dämpningsinställningen"
 
 #: data/desktop.metainfo.xml.in:86
 msgid "Improved screen reader accessibility"
@@ -81,8 +81,7 @@ msgstr "Förbättrad tillgänglighet för skärmläsare"
 
 #: data/desktop.metainfo.xml.in:101
 msgid "Redesign Dock &amp; Panel settings with helpful description text"
-msgstr ""
-"Omarbeta Dock &amp; Panel-inställningarna med användbar beskrivningstext"
+msgstr "Omarbeta Docka och panel-inställningarna med användbar beskrivningstext"
 
 #: data/desktop.metainfo.xml.in:102
 msgid "Show or hide optional panel indicators"
@@ -93,7 +92,7 @@ msgid ""
 "Fix translation of slideshow delay value and \"Dim with dark style\" label"
 msgstr ""
 "Rätt översättning av värdet för fördröjning av bildspel och etiketten "
-"\"Dim med mörk stil\""
+"\"Dämpa med mörk stil\""
 
 #: data/desktop.metainfo.xml.in:104
 msgid ""
