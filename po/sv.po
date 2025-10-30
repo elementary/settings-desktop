@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-10-30 09:55+0000\n"
+"PO-Revision-Date: 2025-10-31 18:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop/sv/>\n"
@@ -354,7 +354,7 @@ msgstr ""
 
 #: src/Views/Wallpaper.vala:82
 msgid "Import Photo…"
-msgstr "Importera foto…"
+msgstr "Importera bild…"
 
 #: src/Views/Wallpaper.vala:87
 msgid "Centered"
@@ -374,7 +374,7 @@ msgstr "Importera"
 
 #: src/Views/Wallpaper.vala:131
 msgid "Import Photos"
-msgstr "Importera foton"
+msgstr "Importera bilder"
 
 #: src/Views/Wallpaper.vala:475
 msgid "Wallpaper Deleted"
