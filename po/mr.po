@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 00:56+0000\n"
+"POT-Creation-Date: 2025-11-04 18:05+0000\n"
 "PO-Revision-Date: 2022-08-10 18:19+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/switchboard/"
@@ -29,7 +29,7 @@ msgstr "वॉलपेपर"
 
 #: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
-#: src/Views/Appearance.vala:69
+#: src/Views/Appearance.vala:65
 msgid "Appearance"
 msgstr "दर्शन"
 
@@ -79,23 +79,23 @@ msgstr ""
 msgid "Dark style"
 msgstr "गडद शैली"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:107
+#: src/Plug.vala:135 src/Views/Appearance.vala:108
 #, fuzzy
 #| msgid "Dark style"
 msgid "Dim Wallpaper With Dark Style"
 msgstr "गडद शैली"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:375
+#: src/Plug.vala:136 src/Views/Appearance.vala:267
 #, fuzzy
 #| msgid "Accent color"
 msgid "Accent Color"
 msgstr "एक्सेंट रंग"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:405
+#: src/Plug.vala:137 src/Views/Appearance.vala:296
 msgid "Always Show Scrollbars"
 msgstr ""
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:390
+#: src/Plug.vala:138 src/Views/Appearance.vala:281
 msgid "Reduce Motion"
 msgstr ""
 
@@ -131,89 +131,89 @@ msgstr "पूर्णस्क्रीनमध्ये प्रवेश �
 msgid "Move windows to a new workspace"
 msgstr "विंडोज एका नवीन कार्यक्षेत्रात हलवा:"
 
-#: src/Views/Appearance.vala:70
+#: src/Views/Appearance.vala:66
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
 msgstr ""
 
-#: src/Views/Appearance.vala:84 src/Views/Dock.vala:37
+#: src/Views/Appearance.vala:83 src/Views/Dock.vala:37
 msgid "Default"
 msgstr "डिफॉल्ट"
 
-#: src/Views/Appearance.vala:96
+#: src/Views/Appearance.vala:97
 msgid "Dark"
 msgstr "गडद"
 
-#: src/Views/Appearance.vala:118
+#: src/Views/Appearance.vala:119
 msgid "Disabled"
 msgstr "अक्षम"
 
-#: src/Views/Appearance.vala:123
+#: src/Views/Appearance.vala:126
 msgid "Sunset to Sunrise"
 msgstr "सूर्योदयापासून सूर्यास्तापर्यंत"
 
-#: src/Views/Appearance.vala:128
+#: src/Views/Appearance.vala:133
 msgid "From:"
 msgstr "पासून:"
 
-#: src/Views/Appearance.vala:135
+#: src/Views/Appearance.vala:140
 msgid "To:"
 msgstr "पर्यंत:"
 
-#: src/Views/Appearance.vala:159
+#: src/Views/Appearance.vala:166
 msgid "Schedule"
 msgstr "निर्धारित करा"
 
-#: src/Views/Appearance.vala:328
+#: src/Views/Appearance.vala:220
 msgid "Blueberry"
 msgstr "ब्लूबेरी"
 
-#: src/Views/Appearance.vala:331
+#: src/Views/Appearance.vala:223
 msgid "Mint"
 msgstr "पुदीना"
 
-#: src/Views/Appearance.vala:334
+#: src/Views/Appearance.vala:226
 msgid "Lime"
 msgstr "लिंबू"
 
-#: src/Views/Appearance.vala:337
+#: src/Views/Appearance.vala:229
 msgid "Banana"
 msgstr "केळे"
 
-#: src/Views/Appearance.vala:340
+#: src/Views/Appearance.vala:232
 msgid "Orange"
 msgstr "नारिंगी"
 
-#: src/Views/Appearance.vala:343
+#: src/Views/Appearance.vala:235
 msgid "Strawberry"
 msgstr "स्ट्रॉबेरी"
 
-#: src/Views/Appearance.vala:346
+#: src/Views/Appearance.vala:238
 msgid "Bubblegum"
 msgstr "बबलगम"
 
-#: src/Views/Appearance.vala:349
+#: src/Views/Appearance.vala:241
 msgid "Grape"
 msgstr "द्राक्ष"
 
-#: src/Views/Appearance.vala:352
+#: src/Views/Appearance.vala:244
 msgid "Cocoa"
 msgstr "कोकाआ"
 
-#: src/Views/Appearance.vala:355
+#: src/Views/Appearance.vala:247
 msgid "Slate"
 msgstr "स्लेट"
 
-#: src/Views/Appearance.vala:358
+#: src/Views/Appearance.vala:250
 msgid "Automatic based on wallpaper"
 msgstr ""
 
-#: src/Views/Appearance.vala:392
+#: src/Views/Appearance.vala:283
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 
-#: src/Views/Appearance.vala:408
+#: src/Views/Appearance.vala:299
 msgid "Scrollbars will take up space, even when not in use."
 msgstr ""
 
@@ -333,43 +333,43 @@ msgstr "पूर्णस्क्रीनमध्ये प्रवेश �
 msgid "When maximizing"
 msgstr "जास्तीत जास्त करताना:"
 
-#: src/Views/Multitasking.vala:125
+#: src/Views/Multitasking.vala:127
 msgid "Do nothing"
 msgstr "काही करू नका"
 
-#: src/Views/Multitasking.vala:126
+#: src/Views/Multitasking.vala:128
 msgid "Multitasking View"
 msgstr "मल्टीटास्किंग प्रदर्शन"
 
-#: src/Views/Multitasking.vala:127
+#: src/Views/Multitasking.vala:129
 msgid "Maximize current window"
 msgstr "वर्तमान विंडो मोठ्यात मोठी करा"
 
-#: src/Views/Multitasking.vala:128
+#: src/Views/Multitasking.vala:135
 msgid "Show Applications Menu"
 msgstr "अप्लिकेशन मेनू दर्शवा"
 
-#: src/Views/Multitasking.vala:129
+#: src/Views/Multitasking.vala:137
 msgid "Show all windows"
 msgstr "सर्व विंडोज दाखवा"
 
-#: src/Views/Multitasking.vala:130
+#: src/Views/Multitasking.vala:138
 #, fuzzy
 #| msgid "Switch to new workspace"
 msgid "Switch to previous workspace"
 msgstr "नवीन कार्यक्षेत्रावर स्विच करा"
 
-#: src/Views/Multitasking.vala:131
+#: src/Views/Multitasking.vala:139
 #, fuzzy
 #| msgid "Switch to new workspace"
 msgid "Switch to next workspace"
 msgstr "नवीन कार्यक्षेत्रावर स्विच करा"
 
-#: src/Views/Multitasking.vala:132
+#: src/Views/Multitasking.vala:140
 msgid "Switch to new workspace"
 msgstr "नवीन कार्यक्षेत्रावर स्विच करा"
 
-#: src/Views/Multitasking.vala:133
+#: src/Views/Multitasking.vala:141
 msgid "Execute custom command"
 msgstr "सानुकूल आज्ञा चालवा"
 
