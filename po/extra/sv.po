@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-04 18:05+0000\n"
-"PO-Revision-Date: 2025-10-30 09:55+0000\n"
+"PO-Revision-Date: 2025-11-06 01:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/sv/>\n"
@@ -40,7 +40,7 @@ msgstr "Övriga uppdateringar:"
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Update dock style"
-msgstr ""
+msgstr "Uppdatera dockstilen"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
