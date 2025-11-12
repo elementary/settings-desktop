@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-04 18:05+0000\n"
-"PO-Revision-Date: 2025-10-30 09:55+0000\n"
+"PO-Revision-Date: 2025-11-13 07:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/he/>\n"
@@ -40,7 +40,7 @@ msgstr "עדכונים אחרים:"
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Update dock style"
-msgstr ""
+msgstr "עדכון סגנון מעגן"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
