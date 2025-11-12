@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-04 18:05+0000\n"
-"PO-Revision-Date: 2025-08-30 22:55+0000\n"
+"PO-Revision-Date: 2025-11-13 07:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/ja/>\n"
@@ -40,7 +40,7 @@ msgstr "その他のアップデート:"
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Update dock style"
-msgstr ""
+msgstr "ドックのスタイルを更新"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
