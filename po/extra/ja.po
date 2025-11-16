@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2025-08-30 22:55+0000\n"
+"POT-Creation-Date: 2025-11-04 18:05+0000\n"
+"PO-Revision-Date: 2025-11-13 07:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/ja/>\n"
@@ -32,68 +32,76 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:58
-#: data/desktop.metainfo.xml.in:68 data/desktop.metainfo.xml.in:81
-#: data/desktop.metainfo.xml.in:99 data/desktop.metainfo.xml.in:120
+#: data/desktop.metainfo.xml.in:74 data/desktop.metainfo.xml.in:84
+#: data/desktop.metainfo.xml.in:97 data/desktop.metainfo.xml.in:115
+#: data/desktop.metainfo.xml.in:136
 msgid "Other updates:"
 msgstr "その他のアップデート:"
 
 #: data/desktop.metainfo.xml.in:50
-msgid "Add setting for fullscreen hotcorners"
-msgstr "全画面表示中のホットコーナーを有効化/無効化する設定を追加"
+msgid "Update dock style"
+msgstr "ドックのスタイルを更新"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
-#: data/desktop.metainfo.xml.in:70 data/desktop.metainfo.xml.in:87
-#: data/desktop.metainfo.xml.in:105 data/desktop.metainfo.xml.in:123
+#: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
+#: data/desktop.metainfo.xml.in:103 data/desktop.metainfo.xml.in:121
+#: data/desktop.metainfo.xml.in:139
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
 #: data/desktop.metainfo.xml.in:60
+msgid "Add setting for fullscreen hotcorners"
+msgstr "全画面表示中のホットコーナーを有効化/無効化する設定を追加"
+
+#: data/desktop.metainfo.xml.in:76
 msgid "Add setting for scroll to switch workspaces"
 msgstr "スクロールでワークスペースを切り替える設定を追加"
 
-#: data/desktop.metainfo.xml.in:77
+#: data/desktop.metainfo.xml.in:93
 msgid "New Features:"
 msgstr "新機能:"
 
-#: data/desktop.metainfo.xml.in:79
+#: data/desktop.metainfo.xml.in:95
 msgid "Always Show Scrollbars setting"
 msgstr "“スクロールバーを常に表示”設定"
 
-#: data/desktop.metainfo.xml.in:83
+#: data/desktop.metainfo.xml.in:99
 msgid "Redundant labels have been cleaned up on the Appearance tab"
 msgstr "“外観”タブの不要ラベルを除去"
 
-#: data/desktop.metainfo.xml.in:84
+#: data/desktop.metainfo.xml.in:100
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
 msgstr "“壁紙を暗くする”設定を“外観”タブに移動"
 
-#: data/desktop.metainfo.xml.in:85
+#: data/desktop.metainfo.xml.in:101
 msgid ""
 "The style selector now shows of a preview of your wallpaper as well as "
 "previewing the dim setting"
-msgstr "スタイル選択ボタンに、壁紙のプレビュー機能、および“壁紙を暗くする”設定に追従"
+msgstr ""
+"スタイル選択ボタンに、壁紙のプレビュー機能、および“壁紙を暗くする”設定に追従"
 "する機能を追加"
 
-#: data/desktop.metainfo.xml.in:86
+#: data/desktop.metainfo.xml.in:102
 msgid "Improved screen reader accessibility"
 msgstr "スクリーンリーダーのアクセシビリティを改善"
 
-#: data/desktop.metainfo.xml.in:101
+#: data/desktop.metainfo.xml.in:117
 msgid "Redesign Dock &amp; Panel settings with helpful description text"
-msgstr "“ドックとパネル”設定のデザインを変更 (わかりやすいように説明テキストを追加)"
+msgstr ""
+"“ドックとパネル”設定のデザインを変更 (わかりやすいように説明テキストを追加)"
 
-#: data/desktop.metainfo.xml.in:102
+#: data/desktop.metainfo.xml.in:118
 msgid "Show or hide optional panel indicators"
 msgstr "オプションのパネルインジケーターを表示/非表示にできる機能を追加"
 
-#: data/desktop.metainfo.xml.in:103
+#: data/desktop.metainfo.xml.in:119
 msgid ""
 "Fix translation of slideshow delay value and \"Dim with dark style\" label"
 msgstr ""
 "スライドショーの表示時間と \"ダークモード時に壁紙を暗くする\" ラベルがシステ"
 "ム言語で表示されない不具合を修正"
 
-#: data/desktop.metainfo.xml.in:104
+#: data/desktop.metainfo.xml.in:120
 msgid ""
 "Fix an issue where wallpapers were not removed when closing System Settings "
 "immediately after"
@@ -101,15 +109,15 @@ msgstr ""
 "壁紙の削除操作直後に“システム設定”を終了すると、壁紙が削除されていない不具合"
 "を修正"
 
-#: data/desktop.metainfo.xml.in:116
+#: data/desktop.metainfo.xml.in:132
 msgid "New features:"
 msgstr "新機能:"
 
-#: data/desktop.metainfo.xml.in:118
+#: data/desktop.metainfo.xml.in:134
 msgid "Add an option to dim wallpapers when dark style is active"
 msgstr "ダークモード有効時に壁紙を暗くするオプションを追加"
 
-#: data/desktop.metainfo.xml.in:122
+#: data/desktop.metainfo.xml.in:138
 msgid "Use a more vertical layout in the Text view"
 msgstr "“テキスト”ビューを縦のレイアウトに変更"
 

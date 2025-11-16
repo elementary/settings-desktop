@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 00:56+0000\n"
+"POT-Creation-Date: 2025-11-04 18:05+0000\n"
 "PO-Revision-Date: 2024-12-04 06:16+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/switchboard/"
@@ -30,7 +30,7 @@ msgstr "Обои"
 
 #: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
-#: src/Views/Appearance.vala:69
+#: src/Views/Appearance.vala:65
 msgid "Appearance"
 msgstr "Внешний вид"
 
@@ -78,19 +78,19 @@ msgstr "Прокрутите на панели, чтобы переключит�
 msgid "Dark style"
 msgstr "Тёмный стиль"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:107
+#: src/Plug.vala:135 src/Views/Appearance.vala:108
 msgid "Dim Wallpaper With Dark Style"
 msgstr "Затемнять обои в тёмном стиле"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:375
+#: src/Plug.vala:136 src/Views/Appearance.vala:267
 msgid "Accent Color"
 msgstr "Цветовой акцент"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:405
+#: src/Plug.vala:137 src/Views/Appearance.vala:296
 msgid "Always Show Scrollbars"
 msgstr "Всегда показывать полосы прокрутки"
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:390
+#: src/Plug.vala:138 src/Views/Appearance.vala:281
 msgid "Reduce Motion"
 msgstr "Уменьшить анимации"
 
@@ -118,92 +118,92 @@ msgstr "Включить активные углы в полноэкранном
 msgid "Move windows to a new workspace"
 msgstr "Перемещать окно на новый рабочий стол"
 
-#: src/Views/Appearance.vala:70
+#: src/Views/Appearance.vala:66
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
 msgstr ""
 "Приложения могут следовать этим настройкам, но могут использовать "
 "собственные акценты или стиль."
 
-#: src/Views/Appearance.vala:84 src/Views/Dock.vala:37
+#: src/Views/Appearance.vala:83 src/Views/Dock.vala:37
 msgid "Default"
 msgstr "По умолчанию"
 
-#: src/Views/Appearance.vala:96
+#: src/Views/Appearance.vala:97
 msgid "Dark"
 msgstr "Тёмный"
 
-#: src/Views/Appearance.vala:118
+#: src/Views/Appearance.vala:119
 msgid "Disabled"
 msgstr "Отключено"
 
-#: src/Views/Appearance.vala:123
+#: src/Views/Appearance.vala:126
 msgid "Sunset to Sunrise"
 msgstr "От заката до рассвета"
 
-#: src/Views/Appearance.vala:128
+#: src/Views/Appearance.vala:133
 msgid "From:"
 msgstr "С:"
 
-#: src/Views/Appearance.vala:135
+#: src/Views/Appearance.vala:140
 msgid "To:"
 msgstr "До:"
 
-#: src/Views/Appearance.vala:159
+#: src/Views/Appearance.vala:166
 msgid "Schedule"
 msgstr "Расписание"
 
-#: src/Views/Appearance.vala:328
+#: src/Views/Appearance.vala:220
 msgid "Blueberry"
 msgstr "Черничный"
 
-#: src/Views/Appearance.vala:331
+#: src/Views/Appearance.vala:223
 msgid "Mint"
 msgstr "Мятный"
 
-#: src/Views/Appearance.vala:334
+#: src/Views/Appearance.vala:226
 msgid "Lime"
 msgstr "Лаймовый"
 
-#: src/Views/Appearance.vala:337
+#: src/Views/Appearance.vala:229
 msgid "Banana"
 msgstr "Банановый"
 
-#: src/Views/Appearance.vala:340
+#: src/Views/Appearance.vala:232
 msgid "Orange"
 msgstr "Апельсиновый"
 
-#: src/Views/Appearance.vala:343
+#: src/Views/Appearance.vala:235
 msgid "Strawberry"
 msgstr "Клубничный"
 
-#: src/Views/Appearance.vala:346
+#: src/Views/Appearance.vala:238
 msgid "Bubblegum"
 msgstr "Бубльгумовый"
 
-#: src/Views/Appearance.vala:349
+#: src/Views/Appearance.vala:241
 msgid "Grape"
 msgstr "Виноградный"
 
-#: src/Views/Appearance.vala:352
+#: src/Views/Appearance.vala:244
 msgid "Cocoa"
 msgstr "Какао"
 
-#: src/Views/Appearance.vala:355
+#: src/Views/Appearance.vala:247
 msgid "Slate"
 msgstr "Каменно-серый"
 
-#: src/Views/Appearance.vala:358
+#: src/Views/Appearance.vala:250
 msgid "Automatic based on wallpaper"
 msgstr "Автоматическая на основе обоев"
 
-#: src/Views/Appearance.vala:392
+#: src/Views/Appearance.vala:283
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 "Отключить анимации менеджера окон и некоторых других элементов интерфейса."
 
-#: src/Views/Appearance.vala:408
+#: src/Views/Appearance.vala:299
 msgid "Scrollbars will take up space, even when not in use."
 msgstr "Полосы прокрутки будут занимать место, даже когда не используются."
 
@@ -303,39 +303,39 @@ msgstr "При входе в полноэкранный режим"
 msgid "When maximizing"
 msgstr "Во время развертывания"
 
-#: src/Views/Multitasking.vala:125
+#: src/Views/Multitasking.vala:127
 msgid "Do nothing"
 msgstr "Ничего не делать"
 
-#: src/Views/Multitasking.vala:126
+#: src/Views/Multitasking.vala:128
 msgid "Multitasking View"
 msgstr "Многозадачный вид"
 
-#: src/Views/Multitasking.vala:127
+#: src/Views/Multitasking.vala:129
 msgid "Maximize current window"
 msgstr "Развернуть текущее окно"
 
-#: src/Views/Multitasking.vala:128
+#: src/Views/Multitasking.vala:135
 msgid "Show Applications Menu"
 msgstr "Показать меню приложений"
 
-#: src/Views/Multitasking.vala:129
+#: src/Views/Multitasking.vala:137
 msgid "Show all windows"
 msgstr "Показать все окна"
 
-#: src/Views/Multitasking.vala:130
+#: src/Views/Multitasking.vala:138
 msgid "Switch to previous workspace"
 msgstr "Переключиться на предыдущий рабочий стол"
 
-#: src/Views/Multitasking.vala:131
+#: src/Views/Multitasking.vala:139
 msgid "Switch to next workspace"
 msgstr "Переключиться на следующий рабочий стол"
 
-#: src/Views/Multitasking.vala:132
+#: src/Views/Multitasking.vala:140
 msgid "Switch to new workspace"
 msgstr "Переключиться на новый рабочий стол"
 
-#: src/Views/Multitasking.vala:133
+#: src/Views/Multitasking.vala:141
 msgid "Execute custom command"
 msgstr "Выполнить пользовательскую команду"
 
