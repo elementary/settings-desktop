@@ -1,7 +1,7 @@
 project(
     'desktop',
     'vala', 'c',
-    version: '8.2.0'
+    version: '8.2.1'
 )
 gettext_name = 'io.elementary.settings.' + meson.project_name()
 gnome = import('gnome')
