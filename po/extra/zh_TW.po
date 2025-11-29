@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-04 18:05+0000\n"
-"PO-Revision-Date: 2024-12-09 11:10+0000\n"
+"PO-Revision-Date: 2025-11-30 18:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese (Traditional Han script) <https://l10n.elementary.io/"
-"projects/switchboard/desktop-plug-extra/zh_Hant/>\n"
+"Language-Team: Chinese (Traditional Han script) <https://"
+"l10n.elementaryos.org/projects/settings/desktop-plug-extra/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
@@ -40,7 +40,7 @@ msgstr "其他更新："
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Update dock style"
-msgstr ""
+msgstr "更新 dock 風格"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
