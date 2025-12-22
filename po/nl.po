@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-04 18:05+0000\n"
-"PO-Revision-Date: 2025-03-17 18:47+0000\n"
-"Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
+"PO-Revision-Date: 2025-12-23 08:55+0000\n"
+"Last-Translator: Bas Ernst <50556177+ErnstBas@users.noreply.github.com>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/settings/"
 "desktop/nl/>\n"
 "Language: nl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-02-12 06:15+0000\n"
 
 #: src/Plug.vala:49
@@ -117,25 +117,19 @@ msgid "Hot Corners"
 msgstr "Interactieve hoeken"
 
 #: src/Plug.vala:145 src/Views/Multitasking.vala:47
-#, fuzzy
-#| msgid "When entering fullscreen"
 msgid "Activate Hot Corners in fullscreen"
-msgstr "Bij het openen van volledig scherm"
+msgstr "Activeer Interactieve Hoeken bij volledig scherm"
 
 #: src/Plug.vala:146 src/Views/Multitasking.vala:59
 msgid "Move windows to a new workspace"
 msgstr "Verplaats vensters naar een nieuw werkblad"
 
 #: src/Views/Appearance.vala:66
-#, fuzzy
-#| msgid ""
-#| "Preferred visual style for system components. Apps may also choose to "
-#| "follow this preference."
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
 msgstr ""
-"Voorkeur voor visuele stijl van systeemcomponenten. Apps kunnen er ook voor "
-"kiezen deze voorkeur te volgen."
+"Apps kunnen deze voorkeuren volgen, maar kunnen ook voor eigen accenten of "
+"stijlen kiezen."
 
 #: src/Views/Appearance.vala:83 src/Views/Dock.vala:37
 msgid "Default"
@@ -307,7 +301,7 @@ msgstr "Rechtsonder"
 
 #: src/Views/Multitasking.vala:48
 msgid "May interfere with fullscreen video games, for example"
-msgstr ""
+msgstr "Het kan bijvoorbeeld problemen geven bij games in volledig scherm"
 
 #: src/Views/Multitasking.vala:61
 msgid "When entering fullscreen"
