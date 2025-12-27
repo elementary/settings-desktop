@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-04 18:05+0000\n"
-"PO-Revision-Date: 2025-03-10 10:30+0000\n"
-"Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
+"PO-Revision-Date: 2025-12-28 16:55+0000\n"
+"Last-Translator: Bas Ernst <50556177+ErnstBas@users.noreply.github.com>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/nl/>\n"
 "Language: nl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
@@ -42,7 +42,7 @@ msgstr "Andere updates:"
 
 #: data/desktop.metainfo.xml.in:50
 msgid "Update dock style"
-msgstr ""
+msgstr "Dock stijl bijwerken"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
@@ -52,10 +52,8 @@ msgid "Updated translations"
 msgstr "Bijgewerkte vertalingen"
 
 #: data/desktop.metainfo.xml.in:60
-#, fuzzy
-#| msgid "Add setting for scroll to switch workspaces"
 msgid "Add setting for fullscreen hotcorners"
-msgstr "Voeg instelling toe om tussen werkruimtes te scrollen"
+msgstr "Instelling voor volledig scherm interactieve hoeken toevoegen"
 
 #: data/desktop.metainfo.xml.in:76
 msgid "Add setting for scroll to switch workspaces"
@@ -71,17 +69,19 @@ msgstr "Toon scrollbalken altijd-instelling"
 
 #: data/desktop.metainfo.xml.in:99
 msgid "Redundant labels have been cleaned up on the Appearance tab"
-msgstr ""
+msgstr "Overbodige labels zijn opgeruimd op het tabblad Weergave"
 
 #: data/desktop.metainfo.xml.in:100
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
-msgstr ""
+msgstr "De instelling Dim Achtergrond is verplaats naar het tabblad Weergave"
 
 #: data/desktop.metainfo.xml.in:101
 msgid ""
 "The style selector now shows of a preview of your wallpaper as well as "
 "previewing the dim setting"
 msgstr ""
+"De stijlkiezer toont nu een voorbeeld van je achtergrond en een voorbeeld "
+"van de dim instelling"
 
 #: data/desktop.metainfo.xml.in:102
 msgid "Improved screen reader accessibility"
@@ -90,21 +90,26 @@ msgstr "Verbeterde schermlezertoegankelijkheid"
 #: data/desktop.metainfo.xml.in:117
 msgid "Redesign Dock &amp; Panel settings with helpful description text"
 msgstr ""
+"Herontwerp de Dock &amp; Paneelinstellingen met behulpzame tekstbeschrijving"
 
 #: data/desktop.metainfo.xml.in:118
 msgid "Show or hide optional panel indicators"
-msgstr ""
+msgstr "Toon of verberg optionele paneelindicatoren"
 
 #: data/desktop.metainfo.xml.in:119
 msgid ""
 "Fix translation of slideshow delay value and \"Dim with dark style\" label"
 msgstr ""
+"Herstel de vertaling van de vertragingswaarde van de diavoorstelling en "
+"\"Dim met donkere stijl\"-label"
 
 #: data/desktop.metainfo.xml.in:120
 msgid ""
 "Fix an issue where wallpapers were not removed when closing System Settings "
 "immediately after"
 msgstr ""
+"Herstel een probleem wanneer achtergronden niet werden verwijderd direct na "
+"het sluiten van de systeeminstellingen"
 
 #: data/desktop.metainfo.xml.in:132
 msgid "New features:"
@@ -113,10 +118,11 @@ msgstr "Nieuwe functies:"
 #: data/desktop.metainfo.xml.in:134
 msgid "Add an option to dim wallpapers when dark style is active"
 msgstr ""
+"Voeg een optie toe om achtergronden te dimmen als de donkere stijl actief is"
 
 #: data/desktop.metainfo.xml.in:138
 msgid "Use a more vertical layout in the Text view"
-msgstr ""
+msgstr "Gebruik een meer verticale lay-out in de Tekstweergave"
 
 #~ msgid "Fixes:"
 #~ msgstr "Oplossingen:"
