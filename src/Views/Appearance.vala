@@ -30,7 +30,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         PURPLE,
         PINK,
         BROWN,
-        GRAY;
+        GRAY,
+        LATTE;
 
         public string to_string () {
             switch (this) {
@@ -54,6 +55,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
                     return "cocoa";
                 case GRAY:
                     return "slate";
+                case LATTE:
+                    return "latte";
                 default:
                     return "auto";
             }
@@ -246,6 +249,9 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var slate_button = new PrefersAccentColorButton (AccentColor.GRAY, blueberry_button);
         slate_button.tooltip_text = _("Slate");
 
+        var latte_button = new PrefersAccentColorButton (AccentColor.LATTE, blueberry_button);
+        latte_button.tooltip_text = _("Latte");
+
         var auto_button = new PrefersAccentColorButton (AccentColor.NO_PREFERENCE, blueberry_button);
         auto_button.tooltip_text = _("Automatic based on wallpaper");
 
@@ -262,6 +268,7 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         accent_box.append (grape_button);
         accent_box.append (cocoa_button);
         accent_box.append (slate_button);
+        accent_box.append (latte_button);
         accent_box.append (auto_button);
 
         var accent_label = new Granite.HeaderLabel (_("Accent Color")) {
