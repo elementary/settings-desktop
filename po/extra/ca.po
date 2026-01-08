@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2024-12-04 06:16+0000\n"
+"POT-Creation-Date: 2025-11-04 18:05+0000\n"
+"PO-Revision-Date: 2025-11-06 01:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/switchboard/"
+"Language-Team: Catalan <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
@@ -33,43 +33,49 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:58
-#: data/desktop.metainfo.xml.in:68 data/desktop.metainfo.xml.in:81
-#: data/desktop.metainfo.xml.in:99 data/desktop.metainfo.xml.in:120
+#: data/desktop.metainfo.xml.in:74 data/desktop.metainfo.xml.in:84
+#: data/desktop.metainfo.xml.in:97 data/desktop.metainfo.xml.in:115
+#: data/desktop.metainfo.xml.in:136
 msgid "Other updates:"
 msgstr "Altres actualitzacions:"
 
 #: data/desktop.metainfo.xml.in:50
-msgid "Add setting for fullscreen hotcorners"
-msgstr "Afegeix una configuració per als cantons actius en pantalla completa"
+msgid "Update dock style"
+msgstr "Actualitza l'estil de l'acoblador"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
-#: data/desktop.metainfo.xml.in:70 data/desktop.metainfo.xml.in:87
-#: data/desktop.metainfo.xml.in:105 data/desktop.metainfo.xml.in:123
+#: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
+#: data/desktop.metainfo.xml.in:103 data/desktop.metainfo.xml.in:121
+#: data/desktop.metainfo.xml.in:139
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
 #: data/desktop.metainfo.xml.in:60
+msgid "Add setting for fullscreen hotcorners"
+msgstr "Afegeix una configuració per als cantons actius en pantalla completa"
+
+#: data/desktop.metainfo.xml.in:76
 msgid "Add setting for scroll to switch workspaces"
 msgstr ""
 "Afegir una configuració per al desplaçament per canviar d'espai de treball"
 
-#: data/desktop.metainfo.xml.in:77
+#: data/desktop.metainfo.xml.in:93
 msgid "New Features:"
 msgstr "Característiques noves:"
 
-#: data/desktop.metainfo.xml.in:79
+#: data/desktop.metainfo.xml.in:95
 msgid "Always Show Scrollbars setting"
 msgstr "Mostra sempre la configuració de les barres de desplaçament."
 
-#: data/desktop.metainfo.xml.in:83
+#: data/desktop.metainfo.xml.in:99
 msgid "Redundant labels have been cleaned up on the Appearance tab"
 msgstr "Les etiquetes redundants s'han netejat a la pestanya d'aparença."
 
-#: data/desktop.metainfo.xml.in:84
+#: data/desktop.metainfo.xml.in:100
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
 msgstr "La configuració de fons atenuat s'ha mogut a la pestanya d'aparença."
 
-#: data/desktop.metainfo.xml.in:85
+#: data/desktop.metainfo.xml.in:101
 msgid ""
 "The style selector now shows of a preview of your wallpaper as well as "
 "previewing the dim setting"
@@ -77,28 +83,28 @@ msgstr ""
 "El selector d'estil ara mostra una vista prèvia del fons de pantalla, així "
 "com una vista prèvia de la configuració tènue."
 
-#: data/desktop.metainfo.xml.in:86
+#: data/desktop.metainfo.xml.in:102
 msgid "Improved screen reader accessibility"
 msgstr "Millora de l'accessibilitat del lector de pantalla"
 
-#: data/desktop.metainfo.xml.in:101
+#: data/desktop.metainfo.xml.in:117
 msgid "Redesign Dock &amp; Panel settings with helpful description text"
 msgstr ""
 "Redisseny de l'acoblador i configuració del plafó amb un text de descripció "
 "útil"
 
-#: data/desktop.metainfo.xml.in:102
+#: data/desktop.metainfo.xml.in:118
 msgid "Show or hide optional panel indicators"
 msgstr "Mostra o amaga els indicadors del plafó opcionals"
 
-#: data/desktop.metainfo.xml.in:103
+#: data/desktop.metainfo.xml.in:119
 msgid ""
 "Fix translation of slideshow delay value and \"Dim with dark style\" label"
 msgstr ""
 "Correcció de la traducció del valor del retard de la presentació de "
 "diapositives i de l'etiqueta \"Atenuació amb estil fosc\""
 
-#: data/desktop.metainfo.xml.in:104
+#: data/desktop.metainfo.xml.in:120
 msgid ""
 "Fix an issue where wallpapers were not removed when closing System Settings "
 "immediately after"
@@ -106,17 +112,17 @@ msgstr ""
 "Solució d'un problema en què no s'eliminaven fons de pantalla en tancar la "
 "configuració del sistema immediatament després"
 
-#: data/desktop.metainfo.xml.in:116
+#: data/desktop.metainfo.xml.in:132
 msgid "New features:"
 msgstr "Característiques noves:"
 
-#: data/desktop.metainfo.xml.in:118
+#: data/desktop.metainfo.xml.in:134
 msgid "Add an option to dim wallpapers when dark style is active"
 msgstr ""
 "Afegeix una opció per atenuar els fons de pantalla quan l'estil fosc està "
 "actiu"
 
-#: data/desktop.metainfo.xml.in:122
+#: data/desktop.metainfo.xml.in:138
 msgid "Use a more vertical layout in the Text view"
 msgstr "Un disseny més vertical a la vista de text"
 

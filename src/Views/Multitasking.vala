@@ -113,8 +113,8 @@ public class PantheonShell.Multitasking : Switchboard.SettingsPage {
                 wrap_mode = Pango.WrapMode.WORD_CHAR
             };
 
-            label.add_css_class (Granite.STYLE_CLASS_CARD);
-            label.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+            label.add_css_class (Granite.CssClass.SMALL);
+            label.add_css_class (Granite.CssClass.CARD);
             label.add_css_class ("hotcorner");
             label.add_css_class (position);
 

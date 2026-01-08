@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 00:56+0000\n"
-"PO-Revision-Date: 2024-12-05 12:16+0000\n"
+"POT-Creation-Date: 2025-11-04 18:05+0000\n"
+"PO-Revision-Date: 2025-11-13 07:55+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/switchboard/"
+"Language-Team: Hebrew <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
@@ -29,45 +29,51 @@ msgstr "הגדרת המעגן, הפינות החמות והחלפת רקע שו�
 
 #: data/desktop.metainfo.xml.in:40
 msgid "elementary, Inc."
-msgstr "elementary בע״מ"
+msgstr "elementary בע״מ."
 
 #: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:58
-#: data/desktop.metainfo.xml.in:68 data/desktop.metainfo.xml.in:81
-#: data/desktop.metainfo.xml.in:99 data/desktop.metainfo.xml.in:120
+#: data/desktop.metainfo.xml.in:74 data/desktop.metainfo.xml.in:84
+#: data/desktop.metainfo.xml.in:97 data/desktop.metainfo.xml.in:115
+#: data/desktop.metainfo.xml.in:136
 msgid "Other updates:"
 msgstr "עדכונים אחרים:"
 
 #: data/desktop.metainfo.xml.in:50
-msgid "Add setting for fullscreen hotcorners"
-msgstr "נוספה הגדרה לפינות חמות במסך מלא"
+msgid "Update dock style"
+msgstr "עדכון סגנון מעגן"
 
 #: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
-#: data/desktop.metainfo.xml.in:70 data/desktop.metainfo.xml.in:87
-#: data/desktop.metainfo.xml.in:105 data/desktop.metainfo.xml.in:123
+#: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
+#: data/desktop.metainfo.xml.in:103 data/desktop.metainfo.xml.in:121
+#: data/desktop.metainfo.xml.in:139
 msgid "Updated translations"
 msgstr "תרגומים עודכנו"
 
 #: data/desktop.metainfo.xml.in:60
+msgid "Add setting for fullscreen hotcorners"
+msgstr "נוספה הגדרה לפינות חמות במסך מלא"
+
+#: data/desktop.metainfo.xml.in:76
 msgid "Add setting for scroll to switch workspaces"
 msgstr "נוספה הגדרה לגלול כדי להחליף מרחבי עבודה"
 
-#: data/desktop.metainfo.xml.in:77
+#: data/desktop.metainfo.xml.in:93
 msgid "New Features:"
 msgstr "יכולות חדשות:"
 
-#: data/desktop.metainfo.xml.in:79
+#: data/desktop.metainfo.xml.in:95
 msgid "Always Show Scrollbars setting"
 msgstr "תמיד להציג הגדרות סרגלי גלילה"
 
-#: data/desktop.metainfo.xml.in:83
+#: data/desktop.metainfo.xml.in:99
 msgid "Redundant labels have been cleaned up on the Appearance tab"
 msgstr "תוויות מיותרות הוסרו מלשונית המראה"
 
-#: data/desktop.metainfo.xml.in:84
+#: data/desktop.metainfo.xml.in:100
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
 msgstr "הגדרת עמעום תמונת רקע הועברה ללשונית המראה"
 
-#: data/desktop.metainfo.xml.in:85
+#: data/desktop.metainfo.xml.in:101
 msgid ""
 "The style selector now shows of a preview of your wallpaper as well as "
 "previewing the dim setting"
@@ -75,39 +81,39 @@ msgstr ""
 "בורר העיצוב מציג תצוגה מקדימה של תמונת הרקע שלך לצד תצוגה מקדימה של המצב "
 "המעומעם"
 
-#: data/desktop.metainfo.xml.in:86
+#: data/desktop.metainfo.xml.in:102
 msgid "Improved screen reader accessibility"
 msgstr "נגישות מקריא המסך השתפרה"
 
-#: data/desktop.metainfo.xml.in:101
+#: data/desktop.metainfo.xml.in:117
 msgid "Redesign Dock &amp; Panel settings with helpful description text"
 msgstr "הגדרות המעגן והלוח עוצבו מחדש וסופק טקסט תיאור מועיל"
 
-#: data/desktop.metainfo.xml.in:102
+#: data/desktop.metainfo.xml.in:118
 msgid "Show or hide optional panel indicators"
 msgstr "הצגה או הסתרה של מחווני לוח כרשות"
 
-#: data/desktop.metainfo.xml.in:103
+#: data/desktop.metainfo.xml.in:119
 msgid ""
 "Fix translation of slideshow delay value and \"Dim with dark style\" label"
 msgstr "תוקן תרגום ערך השהיית מצגת והתווית „עמעום עם סגנון כהה”"
 
-#: data/desktop.metainfo.xml.in:104
+#: data/desktop.metainfo.xml.in:120
 msgid ""
 "Fix an issue where wallpapers were not removed when closing System Settings "
 "immediately after"
 msgstr ""
 "תוקנה תקלה שבה תמונות הרקע לא הוסרו בעת סגירת הגדרות המערכת מיידית לאחר מכן"
 
-#: data/desktop.metainfo.xml.in:116
+#: data/desktop.metainfo.xml.in:132
 msgid "New features:"
 msgstr "יכולות חדשות:"
 
-#: data/desktop.metainfo.xml.in:118
+#: data/desktop.metainfo.xml.in:134
 msgid "Add an option to dim wallpapers when dark style is active"
 msgstr "נוספה אפשרות לעמעם את תמונות הרקע כאשר מצב כהה פעיל"
 
-#: data/desktop.metainfo.xml.in:122
+#: data/desktop.metainfo.xml.in:138
 msgid "Use a more vertical layout in the Text view"
 msgstr "נעשה שימוש בפריסה אנכית יותר בתצוגת טקסט"
 

@@ -1,7 +1,7 @@
 project(
     'desktop',
     'vala', 'c',
-    version: '8.2.0'
+    version: '8.2.1'
 )
 gettext_name = 'io.elementary.settings.' + meson.project_name()
 gnome = import('gnome')
@@ -21,7 +21,7 @@ add_project_arguments(
 gio_dep = dependency('gio-2.0')
 glib_dep = dependency('glib-2.0')
 gobject_dep = dependency('gobject-2.0')
-granite_dep = dependency('granite-7', version: '>=7.5.0')
+granite_dep = dependency('granite-7', version: '>=7.7.0')
 gtk_dep = dependency('gtk4', version: '>=4.10')
 hdy_dep = dependency ('libadwaita-1')
 posix_dep = meson.get_compiler('vala').find_library('posix')

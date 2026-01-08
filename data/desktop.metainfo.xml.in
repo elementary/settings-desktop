@@ -12,19 +12,19 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.0.0/data/screenshot-wallpaper.png</image>
+      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.2.1/data/screenshot-wallpaper.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.0.0/data/screenshot-appearance.png</image>
+      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.2.1/data/screenshot-appearance.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.0.0/data/screenshot-text.png</image>
+      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.2.1/data/screenshot-text.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.0.0/data/screenshot-dock-panel.png</image>
+      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.2.1/data/screenshot-dock-panel.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.0.0/data/screenshot-multitasking.png</image>
+      <image>https://raw.githubusercontent.com/elementary/settings-desktop/8.2.1/data/screenshot-multitasking.png</image>
     </screenshot>
   </screenshots>
 
@@ -43,6 +43,16 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.2.1" date="2025-11-17" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Update dock style</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="8.2.0" date="2025-05-16" urgency="medium">
       <description>
         <p>Other updates:</p>

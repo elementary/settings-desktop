@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 00:56+0000\n"
+"POT-Creation-Date: 2025-11-04 18:05+0000\n"
 "PO-Revision-Date: 2023-07-01 08:07+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/switchboard/"
@@ -34,7 +34,7 @@ msgstr "Duvar Kağıdı"
 
 #: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
-#: src/Views/Appearance.vala:69
+#: src/Views/Appearance.vala:65
 msgid "Appearance"
 msgstr "Görünüm"
 
@@ -82,21 +82,21 @@ msgstr ""
 msgid "Dark style"
 msgstr "Koyu renk tema"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:107
+#: src/Plug.vala:135 src/Views/Appearance.vala:108
 #, fuzzy
 #| msgid "Dim with dark style:"
 msgid "Dim Wallpaper With Dark Style"
 msgstr "Koyu renk tema kullanırken karart:"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:375
+#: src/Plug.vala:136 src/Views/Appearance.vala:267
 msgid "Accent Color"
 msgstr "Vurgu Rengi"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:405
+#: src/Plug.vala:137 src/Views/Appearance.vala:296
 msgid "Always Show Scrollbars"
 msgstr ""
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:390
+#: src/Plug.vala:138 src/Views/Appearance.vala:281
 msgid "Reduce Motion"
 msgstr "Animasyonları Azalt"
 
@@ -126,7 +126,7 @@ msgstr "Tam ekrana girerken"
 msgid "Move windows to a new workspace"
 msgstr "Pencereleri yeni bir çalışma alanına taşı"
 
-#: src/Views/Appearance.vala:70
+#: src/Views/Appearance.vala:66
 #, fuzzy
 #| msgid ""
 #| "Preferred visual style for system components. Apps may also choose to "
@@ -137,86 +137,86 @@ msgstr ""
 "Sistem bileşenleri için tercih edilen görsel stil. Uygulamalar da bu tercihi "
 "takip etmeyi seçebilir."
 
-#: src/Views/Appearance.vala:84 src/Views/Dock.vala:37
+#: src/Views/Appearance.vala:83 src/Views/Dock.vala:37
 msgid "Default"
 msgstr "Varsayılan"
 
-#: src/Views/Appearance.vala:96
+#: src/Views/Appearance.vala:97
 msgid "Dark"
 msgstr "Koyu"
 
-#: src/Views/Appearance.vala:118
+#: src/Views/Appearance.vala:119
 msgid "Disabled"
 msgstr "Devre dışı bırakıldı"
 
-#: src/Views/Appearance.vala:123
+#: src/Views/Appearance.vala:126
 msgid "Sunset to Sunrise"
 msgstr "Otomatik"
 
-#: src/Views/Appearance.vala:128
+#: src/Views/Appearance.vala:133
 msgid "From:"
 msgstr "Başlangıç:"
 
-#: src/Views/Appearance.vala:135
+#: src/Views/Appearance.vala:140
 msgid "To:"
 msgstr "Bitiş:"
 
-#: src/Views/Appearance.vala:159
+#: src/Views/Appearance.vala:166
 msgid "Schedule"
 msgstr "Zamanlama"
 
-#: src/Views/Appearance.vala:328
+#: src/Views/Appearance.vala:220
 msgid "Blueberry"
 msgstr "Yaban mersini"
 
-#: src/Views/Appearance.vala:331
+#: src/Views/Appearance.vala:223
 msgid "Mint"
 msgstr "Nane yeşili"
 
-#: src/Views/Appearance.vala:334
+#: src/Views/Appearance.vala:226
 msgid "Lime"
 msgstr "Limon yeşili"
 
-#: src/Views/Appearance.vala:337
+#: src/Views/Appearance.vala:229
 msgid "Banana"
 msgstr "Muz sarısı"
 
-#: src/Views/Appearance.vala:340
+#: src/Views/Appearance.vala:232
 msgid "Orange"
 msgstr "Turuncu"
 
-#: src/Views/Appearance.vala:343
+#: src/Views/Appearance.vala:235
 msgid "Strawberry"
 msgstr "Çilek kırmızısı"
 
-#: src/Views/Appearance.vala:346
+#: src/Views/Appearance.vala:238
 msgid "Bubblegum"
 msgstr "Pembe"
 
-#: src/Views/Appearance.vala:349
+#: src/Views/Appearance.vala:241
 msgid "Grape"
 msgstr "Mor"
 
-#: src/Views/Appearance.vala:352
+#: src/Views/Appearance.vala:244
 msgid "Cocoa"
 msgstr "Kahverengi"
 
-#: src/Views/Appearance.vala:355
+#: src/Views/Appearance.vala:247
 msgid "Slate"
 msgstr "Koyu gri"
 
-#: src/Views/Appearance.vala:358
+#: src/Views/Appearance.vala:250
 msgid "Automatic based on wallpaper"
 msgstr "Duvar kağıdına göre otomatik"
 
-#: src/Views/Appearance.vala:392
+#: src/Views/Appearance.vala:283
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 "Pencere yöneticisinde ve diğer bazı arayüz ögelerinde animasyonları devre "
 "dışı bırakın."
 
-#: src/Views/Appearance.vala:408
+#: src/Views/Appearance.vala:299
 msgid "Scrollbars will take up space, even when not in use."
 msgstr ""
 
@@ -332,39 +332,39 @@ msgstr "Tam ekrana girerken"
 msgid "When maximizing"
 msgstr "Ekranı kaplarken"
 
-#: src/Views/Multitasking.vala:125
+#: src/Views/Multitasking.vala:127
 msgid "Do nothing"
 msgstr "Hiçbir şey yapma"
 
-#: src/Views/Multitasking.vala:126
+#: src/Views/Multitasking.vala:128
 msgid "Multitasking View"
 msgstr "Çoklu Görev Görünümü"
 
-#: src/Views/Multitasking.vala:127
+#: src/Views/Multitasking.vala:129
 msgid "Maximize current window"
 msgstr "Geçerli pencereye ekranı kaplat"
 
-#: src/Views/Multitasking.vala:128
+#: src/Views/Multitasking.vala:135
 msgid "Show Applications Menu"
 msgstr "Uygulamalar Menüsünü Göster"
 
-#: src/Views/Multitasking.vala:129
+#: src/Views/Multitasking.vala:137
 msgid "Show all windows"
 msgstr "Tüm pencereleri göster"
 
-#: src/Views/Multitasking.vala:130
+#: src/Views/Multitasking.vala:138
 msgid "Switch to previous workspace"
 msgstr "Önceki çalışma alanına geç"
 
-#: src/Views/Multitasking.vala:131
+#: src/Views/Multitasking.vala:139
 msgid "Switch to next workspace"
 msgstr "Sonraki çalışma alanına geç"
 
-#: src/Views/Multitasking.vala:132
+#: src/Views/Multitasking.vala:140
 msgid "Switch to new workspace"
 msgstr "Yeni bir çalışma alanına geç"
 
-#: src/Views/Multitasking.vala:133
+#: src/Views/Multitasking.vala:141
 msgid "Execute custom command"
 msgstr "Özel komut çalıştır"
 
