@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-04 18:05+0000\n"
+"POT-Creation-Date: 2026-01-08 17:25+0000\n"
 "PO-Revision-Date: 2025-08-03 07:55+0000\n"
 "Last-Translator: JieXu <xujie0739@qq.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
@@ -34,7 +34,7 @@ msgstr "壁纸"
 
 #: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
-#: src/Views/Appearance.vala:65
+#: src/Views/Appearance.vala:68
 msgid "Appearance"
 msgstr "外观"
 
@@ -82,19 +82,19 @@ msgstr "在面板上滚动以切换工作区"
 msgid "Dark style"
 msgstr "暗色风格"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:108
+#: src/Plug.vala:135 src/Views/Appearance.vala:111
 msgid "Dim Wallpaper With Dark Style"
 msgstr "深色模式时调暗壁纸"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:267
+#: src/Plug.vala:136 src/Views/Appearance.vala:274
 msgid "Accent Color"
 msgstr "强调色"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:296
+#: src/Plug.vala:137 src/Views/Appearance.vala:303
 msgid "Always Show Scrollbars"
 msgstr "始终显示滚动条"
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:281
+#: src/Plug.vala:138 src/Views/Appearance.vala:288
 msgid "Reduce Motion"
 msgstr "减弱动态效果"
 
@@ -122,89 +122,93 @@ msgstr "全屏模式显示时启用热角"
 msgid "Move windows to a new workspace"
 msgstr "移至新工作区"
 
-#: src/Views/Appearance.vala:66
+#: src/Views/Appearance.vala:69
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
 msgstr "应用程序可能会遵循这些设置，但也能选择它们自己的外观样式。"
 
-#: src/Views/Appearance.vala:83 src/Views/Dock.vala:37
+#: src/Views/Appearance.vala:86 src/Views/Dock.vala:37
 msgid "Default"
 msgstr "默认"
 
-#: src/Views/Appearance.vala:97
+#: src/Views/Appearance.vala:100
 msgid "Dark"
 msgstr "深色"
 
-#: src/Views/Appearance.vala:119
+#: src/Views/Appearance.vala:122
 msgid "Disabled"
 msgstr "已禁用"
 
-#: src/Views/Appearance.vala:126
+#: src/Views/Appearance.vala:129
 msgid "Sunset to Sunrise"
 msgstr "日落至日出"
 
-#: src/Views/Appearance.vala:133
+#: src/Views/Appearance.vala:136
 msgid "From:"
 msgstr "开始时间："
 
-#: src/Views/Appearance.vala:140
+#: src/Views/Appearance.vala:143
 msgid "To:"
 msgstr "结束时间："
 
-#: src/Views/Appearance.vala:166
+#: src/Views/Appearance.vala:169
 msgid "Schedule"
 msgstr "计划"
 
-#: src/Views/Appearance.vala:220
+#: src/Views/Appearance.vala:223
 msgid "Blueberry"
 msgstr "蓝莓色"
 
-#: src/Views/Appearance.vala:223
+#: src/Views/Appearance.vala:226
 msgid "Mint"
 msgstr "薄荷绿"
 
-#: src/Views/Appearance.vala:226
+#: src/Views/Appearance.vala:229
 msgid "Lime"
 msgstr "青柠色"
 
-#: src/Views/Appearance.vala:229
+#: src/Views/Appearance.vala:232
 msgid "Banana"
 msgstr "香蕉黄"
 
-#: src/Views/Appearance.vala:232
+#: src/Views/Appearance.vala:235
 msgid "Orange"
 msgstr "橘子橙"
 
-#: src/Views/Appearance.vala:235
+#: src/Views/Appearance.vala:238
 msgid "Strawberry"
 msgstr "草莓红"
 
-#: src/Views/Appearance.vala:238
+#: src/Views/Appearance.vala:241
 msgid "Bubblegum"
 msgstr "泡泡糖"
 
-#: src/Views/Appearance.vala:241
+#: src/Views/Appearance.vala:244
 msgid "Grape"
 msgstr "葡萄紫"
 
-#: src/Views/Appearance.vala:244
+#: src/Views/Appearance.vala:247
 msgid "Cocoa"
 msgstr "可可色"
 
-#: src/Views/Appearance.vala:247
+#: src/Views/Appearance.vala:250
 msgid "Slate"
 msgstr "石头灰"
 
-#: src/Views/Appearance.vala:250
+#: src/Views/Appearance.vala:253
+msgid "Latte"
+msgstr ""
+
+#: src/Views/Appearance.vala:256
 msgid "Automatic based on wallpaper"
 msgstr "基于壁纸自动"
 
-#: src/Views/Appearance.vala:283
+#: src/Views/Appearance.vala:290
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr "禁用窗口管理器及其他界面部分元素的动画效果。"
 
-#: src/Views/Appearance.vala:299
+#: src/Views/Appearance.vala:306
 msgid "Scrollbars will take up space, even when not in use."
 msgstr "滚动条即使未使用也会占用空间。"
 

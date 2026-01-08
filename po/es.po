@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-04 18:05+0000\n"
+"POT-Creation-Date: 2026-01-08 17:25+0000\n"
 "PO-Revision-Date: 2024-12-04 06:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/switchboard/"
@@ -34,7 +34,7 @@ msgstr "Fondo de escritorio"
 
 #: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
-#: src/Views/Appearance.vala:65
+#: src/Views/Appearance.vala:68
 msgid "Appearance"
 msgstr "Apariencia"
 
@@ -82,19 +82,19 @@ msgstr "Desplácese sobre el panel para cambiar espacios de trabajo"
 msgid "Dark style"
 msgstr "Estilo oscuro"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:108
+#: src/Plug.vala:135 src/Views/Appearance.vala:111
 msgid "Dim Wallpaper With Dark Style"
 msgstr "Atenuar el fondo de escritorio con el estilo oscuro"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:267
+#: src/Plug.vala:136 src/Views/Appearance.vala:274
 msgid "Accent Color"
 msgstr "Color de énfasis"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:296
+#: src/Plug.vala:137 src/Views/Appearance.vala:303
 msgid "Always Show Scrollbars"
 msgstr "Siempre mostrar las barras de desplazamiento"
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:281
+#: src/Plug.vala:138 src/Views/Appearance.vala:288
 msgid "Reduce Motion"
 msgstr "Reducir el movimiento"
 
@@ -122,93 +122,97 @@ msgstr "Activar esquinas activas en pantalla completa"
 msgid "Move windows to a new workspace"
 msgstr "Mover ventanas a un nuevo espacio de trabajo"
 
-#: src/Views/Appearance.vala:66
+#: src/Views/Appearance.vala:69
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
 msgstr ""
 "Las aplicaciones pueden utilizar estas preferencias, pero también pueden "
 "escoger su propio estilo."
 
-#: src/Views/Appearance.vala:83 src/Views/Dock.vala:37
+#: src/Views/Appearance.vala:86 src/Views/Dock.vala:37
 msgid "Default"
 msgstr "Predeterminado"
 
-#: src/Views/Appearance.vala:97
+#: src/Views/Appearance.vala:100
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/Views/Appearance.vala:119
+#: src/Views/Appearance.vala:122
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: src/Views/Appearance.vala:126
+#: src/Views/Appearance.vala:129
 msgid "Sunset to Sunrise"
 msgstr "Del atardecer al amanecer"
 
-#: src/Views/Appearance.vala:133
+#: src/Views/Appearance.vala:136
 msgid "From:"
 msgstr "Desde:"
 
-#: src/Views/Appearance.vala:140
+#: src/Views/Appearance.vala:143
 msgid "To:"
 msgstr "Hasta:"
 
-#: src/Views/Appearance.vala:166
+#: src/Views/Appearance.vala:169
 msgid "Schedule"
 msgstr "Programar"
 
-#: src/Views/Appearance.vala:220
+#: src/Views/Appearance.vala:223
 msgid "Blueberry"
 msgstr "Arándano"
 
-#: src/Views/Appearance.vala:223
+#: src/Views/Appearance.vala:226
 msgid "Mint"
 msgstr "Menta"
 
-#: src/Views/Appearance.vala:226
+#: src/Views/Appearance.vala:229
 msgid "Lime"
 msgstr "Lima"
 
-#: src/Views/Appearance.vala:229
+#: src/Views/Appearance.vala:232
 msgid "Banana"
 msgstr "Plátano"
 
-#: src/Views/Appearance.vala:232
+#: src/Views/Appearance.vala:235
 msgid "Orange"
 msgstr "Naranja"
 
-#: src/Views/Appearance.vala:235
+#: src/Views/Appearance.vala:238
 msgid "Strawberry"
 msgstr "Fresa"
 
-#: src/Views/Appearance.vala:238
+#: src/Views/Appearance.vala:241
 msgid "Bubblegum"
 msgstr "Chicle"
 
-#: src/Views/Appearance.vala:241
+#: src/Views/Appearance.vala:244
 msgid "Grape"
 msgstr "Uva"
 
-#: src/Views/Appearance.vala:244
+#: src/Views/Appearance.vala:247
 msgid "Cocoa"
 msgstr "Cacao"
 
-#: src/Views/Appearance.vala:247
+#: src/Views/Appearance.vala:250
 msgid "Slate"
 msgstr "Pizarra"
 
-#: src/Views/Appearance.vala:250
+#: src/Views/Appearance.vala:253
+msgid "Latte"
+msgstr ""
+
+#: src/Views/Appearance.vala:256
 msgid "Automatic based on wallpaper"
 msgstr "Automático, en función del fondo"
 
-#: src/Views/Appearance.vala:283
+#: src/Views/Appearance.vala:290
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 "Deshabilita las animaciones en la gestión de ventana y en otros elementos de "
 "la interfaz."
 
-#: src/Views/Appearance.vala:299
+#: src/Views/Appearance.vala:306
 msgid "Scrollbars will take up space, even when not in use."
 msgstr ""
 "Las barras de desplazamiento ocuparán espacio, incluso cuando no están en "

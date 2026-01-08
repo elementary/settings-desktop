@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-04 18:05+0000\n"
+"POT-Creation-Date: 2026-01-08 17:25+0000\n"
 "PO-Revision-Date: 2024-06-18 10:45+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/switchboard/"
@@ -29,7 +29,7 @@ msgstr "ფონური გამოსახულება"
 
 #: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
-#: src/Views/Appearance.vala:65
+#: src/Views/Appearance.vala:68
 msgid "Appearance"
 msgstr "გარემოს იერსახე"
 
@@ -77,19 +77,19 @@ msgstr ""
 msgid "Dark style"
 msgstr "მუქი სტილი"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:108
+#: src/Plug.vala:135 src/Views/Appearance.vala:111
 msgid "Dim Wallpaper With Dark Style"
 msgstr "დაბნელება ბნელი სტილით"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:267
+#: src/Plug.vala:136 src/Views/Appearance.vala:274
 msgid "Accent Color"
 msgstr "აქცენტის ფერი"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:296
+#: src/Plug.vala:137 src/Views/Appearance.vala:303
 msgid "Always Show Scrollbars"
 msgstr ""
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:281
+#: src/Plug.vala:138 src/Views/Appearance.vala:288
 msgid "Reduce Motion"
 msgstr "მოძრაობის შემცირება"
 
@@ -119,89 +119,93 @@ msgstr "მთელ ეკრანზე გადასვლისას"
 msgid "Move windows to a new workspace"
 msgstr "ფანჯრების ახალ სამუშაო სივრცეში გადატანა"
 
-#: src/Views/Appearance.vala:66
+#: src/Views/Appearance.vala:69
 msgid ""
 "Apps may follow these preferences, but can choose their own accents or style."
 msgstr ""
 
-#: src/Views/Appearance.vala:83 src/Views/Dock.vala:37
+#: src/Views/Appearance.vala:86 src/Views/Dock.vala:37
 msgid "Default"
 msgstr "ნაგულისხმები"
 
-#: src/Views/Appearance.vala:97
+#: src/Views/Appearance.vala:100
 msgid "Dark"
 msgstr "ბნელი"
 
-#: src/Views/Appearance.vala:119
+#: src/Views/Appearance.vala:122
 msgid "Disabled"
 msgstr "გამორთულია"
 
-#: src/Views/Appearance.vala:126
+#: src/Views/Appearance.vala:129
 msgid "Sunset to Sunrise"
 msgstr "დაისიდან აისამდე"
 
-#: src/Views/Appearance.vala:133
+#: src/Views/Appearance.vala:136
 msgid "From:"
 msgstr "საიდან:"
 
-#: src/Views/Appearance.vala:140
+#: src/Views/Appearance.vala:143
 msgid "To:"
 msgstr "სადამდე:"
 
-#: src/Views/Appearance.vala:166
+#: src/Views/Appearance.vala:169
 msgid "Schedule"
 msgstr "განრიგი"
 
-#: src/Views/Appearance.vala:220
+#: src/Views/Appearance.vala:223
 msgid "Blueberry"
 msgstr "მოცვი"
 
-#: src/Views/Appearance.vala:223
+#: src/Views/Appearance.vala:226
 msgid "Mint"
 msgstr "პიტნა"
 
-#: src/Views/Appearance.vala:226
+#: src/Views/Appearance.vala:229
 msgid "Lime"
 msgstr "ლიმონის ფერი"
 
-#: src/Views/Appearance.vala:229
+#: src/Views/Appearance.vala:232
 msgid "Banana"
 msgstr "ბანანი"
 
-#: src/Views/Appearance.vala:232
+#: src/Views/Appearance.vala:235
 msgid "Orange"
 msgstr "ნარინჯისფერი"
 
-#: src/Views/Appearance.vala:235
+#: src/Views/Appearance.vala:238
 msgid "Strawberry"
 msgstr "მარწყვი"
 
-#: src/Views/Appearance.vala:238
+#: src/Views/Appearance.vala:241
 msgid "Bubblegum"
 msgstr "საღეჭი რეზინი"
 
-#: src/Views/Appearance.vala:241
+#: src/Views/Appearance.vala:244
 msgid "Grape"
 msgstr "ყურძენი"
 
-#: src/Views/Appearance.vala:244
+#: src/Views/Appearance.vala:247
 msgid "Cocoa"
 msgstr "კოკო"
 
-#: src/Views/Appearance.vala:247
+#: src/Views/Appearance.vala:250
 msgid "Slate"
 msgstr "ფიქალი"
 
-#: src/Views/Appearance.vala:250
+#: src/Views/Appearance.vala:253
+msgid "Latte"
+msgstr ""
+
+#: src/Views/Appearance.vala:256
 msgid "Automatic based on wallpaper"
 msgstr "ავტომატური, ფონის სურათზე დაყრდნობით"
 
-#: src/Views/Appearance.vala:283
+#: src/Views/Appearance.vala:290
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 
-#: src/Views/Appearance.vala:299
+#: src/Views/Appearance.vala:306
 msgid "Scrollbars will take up space, even when not in use."
 msgstr ""
 
