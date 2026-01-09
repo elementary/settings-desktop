@@ -66,7 +66,6 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         wallpaper_view.bind_model (wallpaper_model, create_widget_func);
         wallpaper_view.add_css_class (Granite.STYLE_CLASS_VIEW);
         wallpaper_view.child_activated.connect (update_checked_wallpaper);
-        wallpaper_view.set_sort_func (wallpapers_sort_function);
         wallpaper_view.add_controller (drop_target);
 
         var color = gnome_background_settings.get_string ("primary-color");
@@ -229,7 +228,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             set_combo_disabled_if_necessary ();
             create_solid_color_container (color_button.rgba.to_string ());
 
-            wallpaper_model.append (solid_color);
+            wallpaper_model.insert_sorted (solid_color, wallpapers_sort_function);
 
             wallpaper_view.select_child (solid_color);
 
@@ -403,7 +402,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             var thumb_path = info.get_attribute_as_string (FileAttribute.THUMBNAIL_PATH);
             var thumb_valid = info.get_attribute_boolean (FileAttribute.THUMBNAIL_IS_VALID);
             var wallpaper = new WallpaperContainer (uri, thumb_path, thumb_valid);
-            wallpaper_model.append (wallpaper);
+            wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
 
             wallpaper.trash.connect (() => {
                 send_undo_toast ();
@@ -430,9 +429,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         }
     }
 
-    private int wallpapers_sort_function (Gtk.FlowBoxChild _child1, Gtk.FlowBoxChild _child2) {
-        var child1 = (WallpaperContainer) _child1;
-        var child2 = (WallpaperContainer) _child2;
+    private int wallpapers_sort_function (Object object1, Object object2) {
+        var child1 = (WallpaperContainer) object1;
+        var child2 = (WallpaperContainer) object2;
         var uri1 = child1.uri;
         var uri2 = child2.uri;
 
