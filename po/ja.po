@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-08 17:25+0000\n"
-"PO-Revision-Date: 2025-10-12 00:55+0000\n"
+"PO-Revision-Date: 2026-01-10 11:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
 "desktop/ja/>\n"
@@ -194,7 +194,7 @@ msgstr "スレート"
 
 #: src/Views/Appearance.vala:253
 msgid "Latte"
-msgstr ""
+msgstr "ラテ"
 
 #: src/Views/Appearance.vala:256
 msgid "Automatic based on wallpaper"
