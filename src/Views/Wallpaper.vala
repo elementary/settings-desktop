@@ -58,17 +58,17 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
         wallpaper_selection = new Gtk.SingleSelection (wallpaper_model);
 
-        var wallpaper_view = new Gtk.FlowBox () {
-            activate_on_single_click = true,
-            homogeneous = true,
-            selection_mode = SINGLE,
-            min_children_per_line = 3,
-            max_children_per_line = 5
+        var factory = new Gtk.SignalListItemFactory ();
+        factory.bind.connect (on_bind);
+
+        var wallpaper_view = new Gtk.GridView (wallpaper_selection, factory) {
+            min_columns = 3,
+            max_columns = 5,
+            single_click_activate = true
         };
-        wallpaper_view.bind_model (wallpaper_selection, create_widget_func);
-        wallpaper_view.add_css_class (Granite.STYLE_CLASS_VIEW);
-        wallpaper_view.child_activated.connect (update_checked_wallpaper);
+        wallpaper_view.activate.connect (update_checked_wallpaper);
         wallpaper_view.add_controller (drop_target);
+
 
         var color = gnome_background_settings.get_string ("primary-color");
         create_solid_color_container (color);
@@ -125,8 +125,10 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         drop_target.drop.connect (on_drag_data_received);
     }
 
-    private Gtk.Widget create_widget_func (Object object) {
-        return (WallpaperContainer) object;
+    private void on_bind (Object obj) {
+        var list_item = (Gtk.ListItem) obj;
+        var wallpaper_container = (WallpaperContainer) list_item.item;
+        list_item.child = wallpaper_container;
     }
 
     private void show_wallpaper_chooser () {
@@ -196,8 +198,8 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         gnome_background_settings.set_string ("picture-uri-dark", "");
     }
 
-    private void update_checked_wallpaper (Gtk.FlowBox box, Gtk.FlowBoxChild child) {
-        var children = (WallpaperContainer) wallpaper_selection.get_selected_item ();
+    private void update_checked_wallpaper (uint position) {
+        var children = (WallpaperContainer) wallpaper_selection.get_item (position);
 
         if (!(children is SolidColorContainer)) {
             current_wallpaper_path = children.uri;
