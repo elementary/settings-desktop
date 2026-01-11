@@ -23,11 +23,12 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     private static GLib.Settings gnome_background_settings;
 
     private Gtk.ScrolledWindow wallpaper_scrolled_window;
-    private Gtk.FlowBox wallpaper_view;
     private Gtk.Overlay view_overlay;
     private Gtk.ComboBoxText combo;
     private Gtk.ColorButton color_button;
 
+    private GLib.ListStore wallpaper_model;
+    private Gtk.SingleSelection wallpaper_selection;
     private WallpaperContainer active_wallpaper = null;
     private SolidColorContainer solid_color = null;
     private WallpaperContainer wallpaper_for_removal = null;
@@ -53,17 +54,21 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     construct {
         var drop_target = new Gtk.DropTarget (typeof (Gdk.FileList), Gdk.DragAction.COPY);
 
-        wallpaper_view = new Gtk.FlowBox () {
-            activate_on_single_click = true,
-            homogeneous = true,
-            selection_mode = SINGLE,
-            min_children_per_line = 3,
-            max_children_per_line = 5
+        wallpaper_model = new GLib.ListStore (typeof (WallpaperContainer));
+
+        wallpaper_selection = new Gtk.SingleSelection (wallpaper_model);
+
+        var factory = new Gtk.SignalListItemFactory ();
+        factory.bind.connect (on_bind);
+
+        var wallpaper_view = new Gtk.GridView (wallpaper_selection, factory) {
+            min_columns = 3,
+            max_columns = 5,
+            single_click_activate = true
         };
-        wallpaper_view.add_css_class (Granite.STYLE_CLASS_VIEW);
-        wallpaper_view.child_activated.connect (update_checked_wallpaper);
-        wallpaper_view.set_sort_func (wallpapers_sort_function);
+        wallpaper_view.activate.connect (update_checked_wallpaper);
         wallpaper_view.add_controller (drop_target);
+
 
         var color = gnome_background_settings.get_string ("primary-color");
         create_solid_color_container (color);
@@ -118,6 +123,12 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         add_wallpaper_button.clicked.connect (show_wallpaper_chooser);
 
         drop_target.drop.connect (on_drag_data_received);
+    }
+
+    private void on_bind (Object obj) {
+        var list_item = (Gtk.ListItem) obj;
+        var wallpaper_container = (WallpaperContainer) list_item.item;
+        list_item.child = wallpaper_container;
     }
 
     private void show_wallpaper_chooser () {
@@ -187,8 +198,8 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         gnome_background_settings.set_string ("picture-uri-dark", "");
     }
 
-    private void update_checked_wallpaper (Gtk.FlowBox box, Gtk.FlowBoxChild child) {
-        var children = (WallpaperContainer) wallpaper_view.get_selected_children ().data;
+    private void update_checked_wallpaper (uint position) {
+        var children = (WallpaperContainer) wallpaper_selection.get_item (position);
 
         if (!(children is SolidColorContainer)) {
             current_wallpaper_path = children.uri;
@@ -220,8 +231,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         if (finished) {
             set_combo_disabled_if_necessary ();
             create_solid_color_container (color_button.rgba.to_string ());
-            wallpaper_view.append (solid_color);
-            wallpaper_view.select_child (solid_color);
+
+            var pos = wallpaper_model.insert_sorted (solid_color, wallpapers_sort_function);
+            wallpaper_selection.set_selected (pos);
 
             if (active_wallpaper != null) {
                 active_wallpaper.checked = false;
@@ -242,17 +254,17 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             if (active_wallpaper == solid_color) {
                 active_wallpaper.checked = false;
 
-                var child = wallpaper_view.get_first_child ();
-                while (child != null) {
+                var child = wallpaper_selection.get_item (0);
+                for (var pos = 0; child != null; pos++) {
                     var container = (WallpaperContainer) child;
                     if (container.uri == current_wallpaper_path) {
                         container.checked = true;
-                        wallpaper_view.select_child (container);
+                        wallpaper_selection.set_selected (pos);
                         active_wallpaper = container;
                         break;
                     }
 
-                    child = child.get_next_sibling ();
+                    child = wallpaper_selection.get_item (pos);
                 }
             }
         } else {
@@ -324,13 +336,16 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
             if (toplevel_folder) {
                 create_solid_color_container (color_button.rgba.to_string ());
-                wallpaper_view.append (solid_color);
+                wallpaper_model.append (solid_color);
                 finished = true;
 
                 if (gnome_background_settings.get_string ("picture-options") == "none") {
-                    wallpaper_view.select_child (solid_color);
-                    solid_color.checked = true;
-                    active_wallpaper = solid_color;
+                    uint pos = -1;
+                    if (wallpaper_model.find (solid_color, out pos)) {
+                        wallpaper_selection.set_selected (pos);
+                        solid_color.checked = true;
+                        active_wallpaper = solid_color;
+                    }
                 }
 
                 if (active_wallpaper != null) {
@@ -347,9 +362,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void create_solid_color_container (string color) {
-        if (solid_color != null) {
-            wallpaper_view.unselect_child (solid_color);
-            wallpaper_view.remove (solid_color);
+        uint pos = -1;
+        if (solid_color != null && wallpaper_model.find (solid_color, out pos)) {
+            wallpaper_model.remove (pos);
             solid_color.destroy ();
         }
 
@@ -357,10 +372,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void clean_wallpapers () {
-        while (wallpaper_view.get_first_child () != null) {
-            wallpaper_view.remove (wallpaper_view.get_first_child ());
-        }
-
+        wallpaper_model.remove_all ();
         solid_color = null;
     }
 
@@ -391,7 +403,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             var thumb_path = info.get_attribute_as_string (FileAttribute.THUMBNAIL_PATH);
             var thumb_valid = info.get_attribute_boolean (FileAttribute.THUMBNAIL_IS_VALID);
             var wallpaper = new WallpaperContainer (uri, thumb_path, thumb_valid);
-            wallpaper_view.append (wallpaper);
+            var pos = wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
 
             wallpaper.trash.connect (() => {
                 send_undo_toast ();
@@ -400,7 +412,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
             // Select the wallpaper if it is the current wallpaper
             if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
-                this.wallpaper_view.select_child (wallpaper);
+                wallpaper_selection.set_selected (pos);
                 // Set the widget activated without activating it
                 wallpaper.checked = true;
                 active_wallpaper = wallpaper;
@@ -408,8 +420,6 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         } catch (Error e) {
             critical ("Unable to add wallpaper: %s", e.message);
         }
-
-        wallpaper_view.invalidate_sort ();
     }
 
     public void cancel_thumbnail_generation () {
@@ -418,9 +428,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         }
     }
 
-    private int wallpapers_sort_function (Gtk.FlowBoxChild _child1, Gtk.FlowBoxChild _child2) {
-        var child1 = (WallpaperContainer) _child1;
-        var child2 = (WallpaperContainer) _child2;
+    private int wallpapers_sort_function (Object object1, Object object2) {
+        var child1 = (WallpaperContainer) object1;
+        var child2 = (WallpaperContainer) object2;
         var uri1 = child1.uri;
         var uri2 = child2.uri;
 
@@ -486,8 +496,11 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void mark_for_removal (WallpaperContainer wallpaper) {
-        wallpaper_view.remove (wallpaper);
-        wallpaper_for_removal = wallpaper;
+        uint pos = -1;
+        if (wallpaper_model.find (wallpaper, out pos)) {
+            wallpaper_model.remove (pos);
+            wallpaper_for_removal = wallpaper;
+        }
     }
 
     public void confirm_removal () {
@@ -502,7 +515,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void undo_removal () {
-        wallpaper_view.append (wallpaper_for_removal);
+        wallpaper_model.append (wallpaper_for_removal);
         wallpaper_for_removal = null;
     }
 }
