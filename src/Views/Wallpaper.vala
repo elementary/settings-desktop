@@ -124,7 +124,13 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private Gtk.Widget create_widget_func (Object object) {
-        return (WallpaperContainer) object;
+        var wallpaper_container = (WallpaperContainer) object;
+
+        var flowbox_child = new Gtk.FlowBoxChild () {
+            child = wallpaper_container
+        };
+
+        return flowbox_child;
     }
 
     private void show_wallpaper_chooser () {
@@ -195,7 +201,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void update_checked_wallpaper (Gtk.FlowBox box, Gtk.FlowBoxChild child) {
-        var children = (WallpaperContainer) wallpaper_view.get_selected_children ().data;
+        var children = (WallpaperContainer) child.get_child ();
 
         if (!(children is SolidColorContainer)) {
             current_wallpaper_path = children.uri;
@@ -230,7 +236,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
             wallpaper_model.insert_sorted (solid_color, wallpapers_sort_function);
 
-            wallpaper_view.select_child (solid_color);
+            wallpaper_view.select_child ((Gtk.FlowBoxChild) solid_color.get_parent ());
 
             if (active_wallpaper != null) {
                 active_wallpaper.checked = false;
@@ -256,7 +262,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                     var container = (WallpaperContainer) child;
                     if (container.uri == current_wallpaper_path) {
                         container.checked = true;
-                        wallpaper_view.select_child (container);
+                        wallpaper_view.select_child ((Gtk.FlowBoxChild) container.get_parent ());
                         active_wallpaper = container;
                         break;
                     }
@@ -337,7 +343,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                 finished = true;
 
                 if (gnome_background_settings.get_string ("picture-options") == "none") {
-                    wallpaper_view.select_child (solid_color);
+                    wallpaper_view.select_child ((Gtk.FlowBoxChild) solid_color.get_parent ());
                     solid_color.checked = true;
                     active_wallpaper = solid_color;
                 }
@@ -357,7 +363,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
     private void create_solid_color_container (string color) {
         if (solid_color != null) {
-            wallpaper_view.unselect_child (solid_color);
+            wallpaper_view.unselect_child ((Gtk.FlowBoxChild) solid_color.get_parent ());
 
             uint pos = -1;
             if (wallpaper_model.find (solid_color, out pos)) {
@@ -411,7 +417,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
             // Select the wallpaper if it is the current wallpaper
             if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
-                this.wallpaper_view.select_child (wallpaper);
+                this.wallpaper_view.select_child ((Gtk.FlowBoxChild) wallpaper.get_parent ());
                 // Set the widget activated without activating it
                 wallpaper.checked = true;
                 active_wallpaper = wallpaper;

@@ -53,30 +53,23 @@
     background-position: calc(100% + 24px) calc(100% + 24px), 0;
 }
 
-.wallpaper-container {
-    background-color: transparent;
+.wallpaper flowboxchild {
+    border-radius: 0.75em;
     margin: 1em;
 }
 
-.wallpaper-container picture {
+.wallpaper flowboxchild picture {
     margin: 0.666em; /* Needs to be separate to position checkbutton */
 }
 
-.wallpaper-container .card:checked {
-    box-shadow:
-        0 0 0 4px alpha(@text_color, 0.2),
-        0 0 0 1px alpha(#000, 0.05),
-        0 3px 3px alpha(#000, 0.22);
-}
-
-.wallpaper-container:focus .card {
+.wallpaper flowboxchild:checked .card {
     box-shadow:
         0 0 0 4px @accent_color,
         0 0 0 1px alpha(#000, 0.05),
         0 3px 3px alpha(#000, 0.22);
 }
 
-.wallpaper-container check {
+.wallpaper flowboxchild check {
     border-radius: 50%;
     min-height: 20px;
     min-width: 20px;
