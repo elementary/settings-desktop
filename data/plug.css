@@ -53,9 +53,9 @@
     background-position: calc(100% + 24px) calc(100% + 24px), 0;
 }
 
-.wallpaper-container {
-    background-color: transparent;
+gridview child {
     margin: 1em;
+    border-radius: 0.75em;
 }
 
 .wallpaper-container picture {
