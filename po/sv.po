@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-08 17:25+0000\n"
-"PO-Revision-Date: 2025-10-31 18:55+0000\n"
+"PO-Revision-Date: 2026-01-10 11:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop/sv/>\n"
@@ -199,7 +199,7 @@ msgstr "Skiffer"
 
 #: src/Views/Appearance.vala:253
 msgid "Latte"
-msgstr ""
+msgstr "Latte"
 
 #: src/Views/Appearance.vala:256
 msgid "Automatic based on wallpaper"
