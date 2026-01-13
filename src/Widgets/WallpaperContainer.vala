@@ -74,8 +74,7 @@ public class PantheonShell.WallpaperContainer : Gtk.FlowBoxChild {
             content_fit = COVER,
             height_request = THUMB_HEIGHT
         };
-        image.add_css_class (Granite.STYLE_CLASS_CARD);
-        image.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+        image.add_css_class (Granite.CssClass.CARD);
 
         var check = new Gtk.CheckButton () {
             active = true,
