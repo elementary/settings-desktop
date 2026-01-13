@@ -28,6 +28,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     private Gtk.ColorButton color_button;
 
     private GLib.ListStore wallpaper_model;
+    private Gtk.GridView wallpaper_view;
     private Gtk.SingleSelection wallpaper_selection;
     private WallpaperContainer active_wallpaper = null;
     private SolidColorContainer solid_color = null;
@@ -61,7 +62,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         var factory = new Gtk.SignalListItemFactory ();
         factory.bind.connect (on_bind);
 
-        var wallpaper_view = new Gtk.GridView (wallpaper_selection, factory) {
+        wallpaper_view = new Gtk.GridView (wallpaper_selection, factory) {
             min_columns = 3,
             max_columns = 5,
             single_click_activate = true
@@ -348,10 +349,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                     }
                 }
 
-                if (active_wallpaper != null) {
-                    Gtk.Allocation alloc;
-                    active_wallpaper.get_allocation (out alloc);
-                    wallpaper_scrolled_window.get_vadjustment ().value = alloc.y;
+                uint pos = -1;
+                if (active_wallpaper != null && wallpaper_model.find (active_wallpaper, out pos)) {
+                    wallpaper_view.scroll_to (pos, NONE, null);
                 }
             }
         } catch (Error err) {
