@@ -60,7 +60,6 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             activate_on_single_click = true,
             homogeneous = true,
             selection_mode = SINGLE,
-            min_children_per_line = 3,
             max_children_per_line = 5
         };
         wallpaper_view.bind_model (wallpaper_model, create_widget_func);
