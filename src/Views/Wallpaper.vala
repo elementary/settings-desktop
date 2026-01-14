@@ -406,7 +406,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             return;
         }
 
-        var wallpaper = new WallpaperContainer (uri);
+        var wallpaper = new WallpaperContainer () {
+            uri = uri
+        };
         wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
 
         wallpaper.trash.connect (() => {
