@@ -53,23 +53,23 @@
     background-position: calc(100% + 24px) calc(100% + 24px), 0;
 }
 
-.wallpaper flowboxchild {
+.wallpaper gridview child {
     border-radius: 0.75em;
-    margin: 1em;
+    margin: 0.5em;
 }
 
-.wallpaper flowboxchild picture {
+.wallpaper gridview child picture {
     margin: 0.666em; /* Needs to be separate to position checkbutton */
 }
 
-.wallpaper flowboxchild:checked .card {
+.wallpaper gridview child:checked .card {
     box-shadow:
         0 0 0 4px @accent_color,
         0 0 0 1px alpha(#000, 0.05),
         0 3px 3px alpha(#000, 0.22);
 }
 
-.wallpaper flowboxchild check {
+.wallpaper gridview child check {
     border-radius: 50%;
     min-height: 20px;
     min-width: 20px;
