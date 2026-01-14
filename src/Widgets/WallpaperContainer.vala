@@ -19,8 +19,6 @@
  */
 
 public class PantheonShell.WallpaperContainer : Granite.Bin {
-    public signal void trash ();
-
     protected const int THUMB_WIDTH = 256;
     protected const int THUMB_HEIGHT = 144;
     protected Gtk.Picture image;
@@ -84,25 +82,27 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
         child = overlay;
 
         if (uri != null) {
-            var remove_wallpaper_action = new SimpleAction ("trash", null);
-            remove_wallpaper_action.activate.connect (() => trash ());
-
-            var action_group = new SimpleActionGroup ();
-            action_group.add_action (remove_wallpaper_action);
-
-            insert_action_group ("wallpaper", action_group);
+            var detailed_action_name = "wallpaper.trash";
 
             var file = File.new_for_uri (uri);
             try {
                 var info = file.query_info ("*", FileQueryInfoFlags.NONE);
                 creation_date = info.get_attribute_uint64 (GLib.FileAttribute.TIME_CREATED);
-                remove_wallpaper_action.set_enabled (info.get_attribute_boolean (GLib.FileAttribute.ACCESS_CAN_DELETE));
+
+                if (info.get_attribute_boolean (GLib.FileAttribute.ACCESS_CAN_DELETE)) {
+                    detailed_action_name = GLib.Action.print_detailed_name (
+                        "wallpaper.trash", new Variant.string (uri)
+                    );
+                }
             } catch (Error e) {
                 critical (e.message);
             }
 
             var menu_model = new Menu ();
-            menu_model.append (_("Remove"), "wallpaper.trash");
+            menu_model.append (
+                _("Remove"),
+                detailed_action_name
+            );
 
             var context_menu = new Gtk.PopoverMenu.from_model (menu_model) {
                 halign = START,

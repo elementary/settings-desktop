@@ -124,6 +124,14 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         add_wallpaper_button.clicked.connect (show_wallpaper_chooser);
 
         drop_target.drop.connect (on_drag_data_received);
+
+        var remove_wallpaper_action = new SimpleAction ("trash", VariantType.STRING);
+        remove_wallpaper_action.activate.connect (mark_for_removal);
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (remove_wallpaper_action);
+
+        insert_action_group ("wallpaper", action_group);
     }
 
     private Gtk.Widget create_widget_func (Object object) {
@@ -413,11 +421,6 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             var wallpaper = new WallpaperContainer (uri, thumb_path, thumb_valid);
             wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
 
-            wallpaper.trash.connect (() => {
-                send_undo_toast ();
-                mark_for_removal (wallpaper);
-            });
-
             // Select the wallpaper if it is the current wallpaper
             if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
                 this.wallpaper_view.select_child ((Gtk.FlowBoxChild) wallpaper.get_parent ());
@@ -488,10 +491,6 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             child = child.get_next_sibling ();
         }
 
-        if (wallpaper_for_removal != null) {
-            confirm_removal ();
-        }
-
         var toast = new Granite.Toast (_("Wallpaper Deleted"));
         toast.set_default_action (_("Undo"));
 
@@ -505,11 +504,21 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         toast.send_notification ();
     }
 
-    private void mark_for_removal (WallpaperContainer wallpaper) {
-        uint pos = -1;
-        if (wallpaper_model.find (wallpaper, out pos)) {
-            wallpaper_model.remove (pos);
-            wallpaper_for_removal = wallpaper;
+    private void mark_for_removal (GLib.Variant? object) {
+        var uri = object.get_string ();
+
+        for (var i = 0; i <= wallpaper_model.get_n_items (); i++) {
+            var wallpaper_container = (WallpaperContainer) wallpaper_model.get_item (i);
+            if (wallpaper_container.uri == uri) {
+                if (wallpaper_for_removal != null) {
+                    confirm_removal ();
+                }
+                wallpaper_for_removal = wallpaper_container;
+                wallpaper_model.remove (i);
+
+                send_undo_toast ();
+                break;
+            }
         }
     }
 
@@ -525,7 +534,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void undo_removal () {
-        wallpaper_model.append (wallpaper_for_removal);
+        wallpaper_model.insert_sorted (wallpaper_for_removal, wallpapers_sort_function);
         wallpaper_for_removal = null;
     }
 }
