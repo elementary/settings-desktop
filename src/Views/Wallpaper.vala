@@ -22,13 +22,12 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
     private static GLib.Settings gnome_background_settings;
 
-    private Gtk.ScrolledWindow wallpaper_scrolled_window;
+    private Gtk.GridView wallpaper_view;
     private Gtk.Overlay view_overlay;
     private Gtk.ComboBoxText combo;
     private Gtk.ColorButton color_button;
 
     private GLib.ListStore wallpaper_model;
-    private Gtk.GridView wallpaper_view;
     private Gtk.SingleSelection wallpaper_selection;
     private WallpaperContainer active_wallpaper = null;
     private SolidColorContainer solid_color = null;
@@ -63,18 +62,16 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         factory.bind.connect (on_bind);
 
         wallpaper_view = new Gtk.GridView (wallpaper_selection, factory) {
-            min_columns = 3,
             max_columns = 5,
             single_click_activate = true
         };
         wallpaper_view.activate.connect (update_checked_wallpaper);
         wallpaper_view.add_controller (drop_target);
 
-
         var color = gnome_background_settings.get_string ("primary-color");
         create_solid_color_container (color);
 
-        wallpaper_scrolled_window = new Gtk.ScrolledWindow () {
+        var wallpaper_scrolled_window = new Gtk.ScrolledWindow () {
             child = wallpaper_view,
             hscrollbar_policy = NEVER,
             hexpand = true,
@@ -237,6 +234,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             create_solid_color_container (color_button.rgba.to_string ());
 
             var pos = wallpaper_model.insert_sorted (solid_color, wallpapers_sort_function);
+
             wallpaper_selection.set_selected (pos);
 
             if (active_wallpaper != null) {
