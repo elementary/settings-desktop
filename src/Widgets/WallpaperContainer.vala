@@ -25,12 +25,11 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
     protected const int THUMB_HEIGHT = 144;
     protected Gtk.Picture image;
 
-    private Gtk.Box card_box;
     private Gtk.Revealer check_revealer;
 
-    public string? thumb_path { get; construct set; }
-    public bool thumb_valid { get; construct; }
-    public string uri { get; construct; }
+    private string? thumb_path = null;
+
+    public string? uri { get; construct; default = null; }
     public uint64 creation_date = 0;
 
     public bool checked {
@@ -49,8 +48,8 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
         }
     }
 
-    public WallpaperContainer (string uri, string? thumb_path, bool thumb_valid) {
-        Object (uri: uri, thumb_path: thumb_path, thumb_valid: thumb_valid);
+    public WallpaperContainer (string uri) {
+        Object (uri: uri);
     }
 
     construct {
@@ -95,6 +94,15 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
             var file = File.new_for_uri (uri);
             try {
                 var info = file.query_info ("*", FileQueryInfoFlags.NONE);
+
+                thumb_path = info.get_attribute_as_string (FileAttribute.THUMBNAIL_PATH);
+
+                if (thumb_path != null && info.get_attribute_boolean (FileAttribute.THUMBNAIL_IS_VALID)) {
+                    update_thumb.begin ();
+                } else {
+                    generate_and_load_thumb ();
+                }
+
                 creation_date = info.get_attribute_uint64 (GLib.FileAttribute.TIME_CREATED);
                 remove_wallpaper_action.set_enabled (info.get_attribute_boolean (GLib.FileAttribute.ACCESS_CAN_DELETE));
             } catch (Error e) {
@@ -123,21 +131,6 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
             });
 
             add_controller (secondary_click_gesture);
-        }
-
-        try {
-            if (uri != null) {
-                if (thumb_path != null && thumb_valid) {
-                    update_thumb.begin ();
-                } else {
-                    generate_and_load_thumb ();
-                }
-            } else {
-                image.set_filename (thumb_path);
-            }
-        } catch (Error e) {
-            critical ("Failed to load wallpaper thumbnail: %s", e.message);
-            return;
         }
     }
 

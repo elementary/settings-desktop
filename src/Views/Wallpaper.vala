@@ -405,9 +405,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                 }
             }
 
-            var thumb_path = info.get_attribute_as_string (FileAttribute.THUMBNAIL_PATH);
-            var thumb_valid = info.get_attribute_boolean (FileAttribute.THUMBNAIL_IS_VALID);
-            var wallpaper = new WallpaperContainer (uri, thumb_path, thumb_valid);
+            var wallpaper = new WallpaperContainer (uri);
 
             wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
 
@@ -426,8 +424,6 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         } catch (Error e) {
             critical ("Unable to add wallpaper: %s", e.message);
         }
-
-        wallpaper_view.invalidate_sort ();
     }
 
     public void cancel_thumbnail_generation () {
