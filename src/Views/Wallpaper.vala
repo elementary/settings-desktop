@@ -516,7 +516,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void undo_removal () {
-        wallpaper_model.append (wallpaper_for_removal);
+        wallpaper_model.insert_sorted (wallpaper_for_removal, wallpapers_sort_function);
         wallpaper_for_removal = null;
     }
 }
