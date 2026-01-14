@@ -406,30 +406,21 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             return;
         }
 
-        try {
-            var info = file.query_info (string.joinv (",", REQUIRED_FILE_ATTRS), 0);
-            var thumb_path = info.get_attribute_as_string (FileAttribute.THUMBNAIL_PATH);
-            var thumb_valid = info.get_attribute_boolean (FileAttribute.THUMBNAIL_IS_VALID);
-            var wallpaper = new WallpaperContainer (uri, thumb_path, thumb_valid);
-            wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
+        var wallpaper = new WallpaperContainer (uri);
+        wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
 
-            wallpaper.trash.connect (() => {
-                send_undo_toast ();
-                mark_for_removal (wallpaper);
-            });
+        wallpaper.trash.connect (() => {
+            send_undo_toast ();
+            mark_for_removal (wallpaper);
+        });
 
-            // Select the wallpaper if it is the current wallpaper
-            if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
-                this.wallpaper_view.select_child ((Gtk.FlowBoxChild) wallpaper.get_parent ());
-                // Set the widget activated without activating it
-                wallpaper.checked = true;
-                active_wallpaper = wallpaper;
-            }
-        } catch (Error e) {
-            critical ("Unable to add wallpaper: %s", e.message);
+        // Select the wallpaper if it is the current wallpaper
+        if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
+            this.wallpaper_view.select_child ((Gtk.FlowBoxChild) wallpaper.get_parent ());
+            // Set the widget activated without activating it
+            wallpaper.checked = true;
+            active_wallpaper = wallpaper;
         }
-
-        wallpaper_view.invalidate_sort ();
     }
 
     public void cancel_thumbnail_generation () {
