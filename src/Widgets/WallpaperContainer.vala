@@ -18,7 +18,7 @@
  *
  */
 
-public class PantheonShell.WallpaperContainer : Gtk.FlowBoxChild {
+public class PantheonShell.WallpaperContainer : Granite.Bin {
     public signal void trash ();
 
     protected const int THUMB_WIDTH = 256;
@@ -38,25 +38,11 @@ public class PantheonShell.WallpaperContainer : Gtk.FlowBoxChild {
             return Gtk.StateFlags.CHECKED in get_state_flags ();
         } set {
             if (value) {
-                card_box.set_state_flags (Gtk.StateFlags.CHECKED, false);
+                parent.set_state_flags (Gtk.StateFlags.CHECKED, false);
                 check_revealer.reveal_child = true;
             } else {
-                card_box.unset_state_flags (Gtk.StateFlags.CHECKED);
+                parent.unset_state_flags (Gtk.StateFlags.CHECKED);
                 check_revealer.reveal_child = false;
-            }
-
-            queue_draw ();
-        }
-    }
-
-    public bool selected {
-        get {
-            return Gtk.StateFlags.SELECTED in get_state_flags ();
-        } set {
-            if (value) {
-                set_state_flags (Gtk.StateFlags.SELECTED, false);
-            } else {
-                unset_state_flags (Gtk.StateFlags.SELECTED);
             }
 
             queue_draw ();
@@ -68,14 +54,11 @@ public class PantheonShell.WallpaperContainer : Gtk.FlowBoxChild {
     }
 
     construct {
-        add_css_class ("wallpaper-container");
-
         image = new Gtk.Picture () {
             content_fit = COVER,
             height_request = THUMB_HEIGHT
         };
-        image.add_css_class (Granite.STYLE_CLASS_CARD);
-        image.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+        image.add_css_class (Granite.CssClass.CARD);
 
         var check = new Gtk.CheckButton () {
             active = true,
@@ -142,9 +125,6 @@ public class PantheonShell.WallpaperContainer : Gtk.FlowBoxChild {
             add_controller (secondary_click_gesture);
         }
 
-        activate.connect (() => {
-            checked = true;
-        });
         try {
             if (uri != null) {
                 if (thumb_path != null && thumb_valid) {
