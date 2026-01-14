@@ -450,8 +450,7 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
             overlay.add_overlay (dock);
             overlay.add_overlay (window_back);
             overlay.add_overlay (window_front);
-            overlay.add_css_class (Granite.STYLE_CLASS_CARD);
-            overlay.add_css_class (Granite.STYLE_CLASS_ROUNDED);
+            overlay.add_css_class (Granite.CssClass.CARD);
 
             var monitor = Gdk.Display.get_default ().get_monitor_at_surface (
                 (((Gtk.Application) Application.get_default ()).active_window).get_surface ()

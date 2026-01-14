@@ -113,9 +113,12 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         var box = new Gtk.Box (VERTICAL, 0);
         box.append (view_overlay);
         box.append (actionbar);
-        box.add_css_class (Granite.STYLE_CLASS_FRAME);
 
-        child = box;
+        var frame = new Gtk.Frame (null) {
+            child = box
+        };
+
+        child = frame;
         add_css_class ("wallpaper");
 
         add_wallpaper_button.clicked.connect (show_wallpaper_chooser);
