@@ -157,13 +157,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                         continue;
                     }
 
-                    var local_uri = file.get_uri ();
-                    var dest = WallpaperOperation.copy_for_library (file);
-                    if (dest != null) {
-                        local_uri = dest.get_uri ();
-                    }
-
-                    add_wallpaper_from_file (file, local_uri);
+                    add_wallpaper_from_file (file);
                 }
             }
         });
@@ -329,15 +323,10 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                     var subdir = directory.resolve_relative_path (file_info.get_name ());
                     yield load_wallpapers (subdir.get_path (), cancellable, false);
                     continue;
-                } else if (!IOHelper.is_valid_file_type (file_info)) {
-                    // Skip non-picture files
-                    continue;
                 }
 
                 var file = directory.resolve_relative_path (file_info.get_name ());
-                string uri = file.get_uri ();
-
-                add_wallpaper_from_file (file, uri);
+                add_wallpaper_from_file (file);
             }
 
             if (toplevel_folder) {
@@ -387,41 +376,55 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     private bool on_drag_data_received (Value val, double x, double y) {
         var file_list = (Gdk.FileList) val;
         foreach (var file in file_list.get_files ()) {
-            var local_uri = file.get_uri ();
-
-            var dest = WallpaperOperation.copy_for_library (file);
-            if (dest != null) {
-                local_uri = dest.get_uri ();
-            }
-
-            add_wallpaper_from_file (file, local_uri);
+            add_wallpaper_from_file (file);
         }
 
         return true;
     }
 
-    private void add_wallpaper_from_file (GLib.File file, string uri) {
+    private void add_wallpaper_from_file (GLib.File file) {
+        var uri = file.get_uri ();
+
         // don't load 'removed' wallpaper on plug reload
         if (wallpaper_for_removal != null && wallpaper_for_removal.uri == uri) {
             return;
         }
 
-        var wallpaper = new WallpaperContainer () {
-            uri = uri
-        };
-        wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
+        try {
+            var info = file.query_info (string.joinv (",", REQUIRED_FILE_ATTRS), 0);
 
-        wallpaper.trash.connect (() => {
-            send_undo_toast ();
-            mark_for_removal (wallpaper);
-        });
+            if (!IOHelper.is_valid_file_type (info)) {
+                Gdk.Display.get_default ().beep ();
+                return;
+            }
 
-        // Select the wallpaper if it is the current wallpaper
-        if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
-            this.wallpaper_view.select_child ((Gtk.FlowBoxChild) wallpaper.get_parent ());
-            // Set the widget activated without activating it
-            wallpaper.checked = true;
-            active_wallpaper = wallpaper;
+            if (!WallpaperOperation.get_is_file_in_bg_dir (file)) {
+                var local_file = WallpaperOperation.copy_for_library (file);
+                if (local_file != null) {
+                    uri = local_file.get_uri ();
+                }
+            }
+
+            var wallpaper = new WallpaperContainer () {
+                uri = uri
+            };
+
+            wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
+
+            wallpaper.trash.connect (() => {
+                send_undo_toast ();
+                mark_for_removal (wallpaper);
+            });
+
+            // Select the wallpaper if it is the current wallpaper
+            if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
+                this.wallpaper_view.select_child ((Gtk.FlowBoxChild) wallpaper.get_parent ());
+                // Set the widget activated without activating it
+                wallpaper.checked = true;
+                active_wallpaper = wallpaper;
+            }
+        } catch (Error e) {
+            critical ("Unable to add wallpaper: %s", e.message);
         }
     }
 
@@ -518,7 +521,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void undo_removal () {
-        wallpaper_model.append (wallpaper_for_removal);
+        wallpaper_model.insert_sorted (wallpaper_for_removal, wallpapers_sort_function);
         wallpaper_for_removal = null;
     }
 }

@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: switchboard-plug-pantheon-shell\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-08 17:25+0000\n"
-"PO-Revision-Date: 2023-07-01 08:07+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Slovenian <https://l10n.elementary.io/projects/switchboard/"
-"switchboard-plug-pantheon-shell/sl/>\n"
+"PO-Revision-Date: 2026-01-21 18:55+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
+"Language-Team: Slovenian <https://l10n.elementaryos.org/projects/settings/"
+"desktop/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-02-12 06:15+0000\n"
 
 #: src/Plug.vala:49
@@ -41,23 +41,19 @@ msgstr "Izgled"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
 #: src/Views/Text.vala:35
-#, fuzzy
-#| msgid "Text size:"
 msgid "Text"
-msgstr "Velikost besedila:"
+msgstr "Besedilo"
 
 #: src/Plug.vala:68 src/Plug.vala:126 src/Plug.vala:127 src/Plug.vala:128
 #: src/Plug.vala:129 src/Plug.vala:130 src/Plug.vala:131 src/Plug.vala:132
 #: src/Views/Dock.vala:13
 msgid "Dock & Panel"
-msgstr ""
+msgstr "Sidrišče in vrhnja plošča"
 
 #: src/Plug.vala:69 src/Plug.vala:143 src/Plug.vala:144 src/Plug.vala:145
 #: src/Plug.vala:146 src/Views/Multitasking.vala:27
-#, fuzzy
-#| msgid "Multitasking View"
 msgid "Multitasking"
-msgstr "Pokaži vsa okna"
+msgstr "Večopravilnost"
 
 #: src/Plug.vala:127
 msgid "Hide Mode"
@@ -77,47 +73,43 @@ msgstr "Zaslon"
 
 #: src/Plug.vala:131
 msgid "Panel translucency"
-msgstr ""
+msgstr "Prosojnost vrhnje plošče"
 
 #: src/Plug.vala:132 src/Views/Dock.vala:123
 msgid "Scroll on the panel to switch workspaces"
-msgstr ""
+msgstr "Podrsajte po vrhnji plošči za menjavo delovnih površin"
 
 #: src/Plug.vala:134
 msgid "Dark style"
-msgstr ""
+msgstr "Temen stil"
 
 #: src/Plug.vala:135 src/Views/Appearance.vala:111
 msgid "Dim Wallpaper With Dark Style"
-msgstr ""
+msgstr "Potemni ozadje v temnem stilu"
 
 #: src/Plug.vala:136 src/Views/Appearance.vala:274
 msgid "Accent Color"
-msgstr ""
+msgstr "Barva poudarkov"
 
 #: src/Plug.vala:137 src/Views/Appearance.vala:303
 msgid "Always Show Scrollbars"
-msgstr ""
+msgstr "Vedno pokaži drsnike"
 
 #: src/Plug.vala:138 src/Views/Appearance.vala:288
 msgid "Reduce Motion"
-msgstr ""
+msgstr "Manj animacij in premikanja"
 
 #: src/Plug.vala:139
-#, fuzzy
-#| msgid "Window animations:"
 msgid "Window animations"
-msgstr "Animacije oken:"
+msgstr "Animacije oken"
 
 #: src/Plug.vala:141 src/Views/Text.vala:42
-#, fuzzy
-#| msgid "Icon Size"
 msgid "Size"
-msgstr "Velikost ikon"
+msgstr "Velikost"
 
 #: src/Plug.vala:142 src/Views/Text.vala:68
 msgid "Dyslexia-friendly"
-msgstr ""
+msgstr "Prijazna disleksiji"
 
 #: src/Plug.vala:144
 msgid "Hot Corners"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-08 17:25+0000\n"
-"PO-Revision-Date: 2025-12-23 08:55+0000\n"
+"PO-Revision-Date: 2026-01-23 22:55+0000\n"
 "Last-Translator: Bas Ernst <50556177+ErnstBas@users.noreply.github.com>\n"
 "Language-Team: Dutch <https://l10n.elementaryos.org/projects/settings/"
 "desktop/nl/>\n"
@@ -201,7 +201,7 @@ msgstr "Leisteen"
 
 #: src/Views/Appearance.vala:253
 msgid "Latte"
-msgstr ""
+msgstr "Latte"
 
 #: src/Views/Appearance.vala:256
 msgid "Automatic based on wallpaper"
