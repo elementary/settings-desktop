@@ -30,10 +30,17 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
     }
 
     construct {
-        var default_font_button = new Gtk.FontDialogButton (new Gtk.FontDialog ()) {
+        var default_font_dialog = new Gtk.FontDialog () {
+            filter = new Gtk.CustomFilter ((item) => {
+                var font_family = ((Pango.FontFamily) item);
+                return !font_family.get_name ().down ().contains ("noto");
+            }),
+            language = Pango.Language.get_default ()
+        };
+
+        var default_font_button = new Gtk.FontDialogButton (default_font_dialog) {
             use_font = true,
             use_size = true,
-            language = Pango.Language.get_default (),
             level = FAMILY
         };
 
@@ -46,7 +53,7 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
             filter = new Gtk.CustomFilter ((item) => {
                 var font_family = ((Pango.FontFamily) item);
                 return font_family.is_monospace ();
-			})
+            })
         };
 
         var mono_font_button = new Gtk.FontDialogButton (mono_font_dialog) {
