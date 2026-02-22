@@ -52,7 +52,8 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
         var mono_font_dialog = new Gtk.FontDialog () {
             filter = new Gtk.CustomFilter ((item) => {
                 var font_family = ((Pango.FontFamily) item);
-                return font_family.is_monospace ();
+                return font_family.is_monospace () &&
+                    !font_family.get_name ().down ().contains ("noto");
             })
         };
 
