@@ -30,11 +30,18 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
     }
 
     construct {
+        var mono_filter = new Gtk.BoolFilter (
+            new Gtk.PropertyExpression (typeof (Pango.FontFamily), null, "is-monospace")
+        );
+
+        var noto_filter = new Gtk.CustomFilter (noto_filter_func);
+
+        var mono_font_filter = new Gtk.EveryFilter ();
+        mono_font_filter.append (noto_filter);
+        mono_font_filter.append (mono_filter);
+
         var default_font_dialog = new Gtk.FontDialog () {
-            filter = new Gtk.CustomFilter ((item) => {
-                var font_family = ((Pango.FontFamily) item);
-                return !font_family.get_name ().down ().contains ("noto");
-            }),
+            filter = noto_filter,
             language = Pango.Language.get_default ()
         };
 
@@ -50,11 +57,7 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
         };
 
         var mono_font_dialog = new Gtk.FontDialog () {
-            filter = new Gtk.CustomFilter ((item) => {
-                var font_family = ((Pango.FontFamily) item);
-                return font_family.is_monospace () &&
-                    !font_family.get_name ().down ().contains ("noto");
-            })
+            filter = mono_font_filter
         };
 
         var mono_font_button = new Gtk.FontDialogButton (mono_font_dialog) {
@@ -144,5 +147,10 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
         var desc = (Pango.FontDescription) font_desc.get_boxed ();
         var font_string = "%s %i".printf (desc.to_string (), ((Variant) user_data).get_int32 ());
         return new Variant.string (font_string);
+    }
+
+    private static bool noto_filter_func (Object item) {
+        var font_family = ((Pango.FontFamily) item);
+        return !font_family.get_name ().contains ("Noto");
     }
 }
