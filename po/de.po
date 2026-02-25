@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
+"POT-Creation-Date: 2026-02-25 17:48+0000\n"
 "PO-Revision-Date: 2024-12-18 23:16+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/switchboard/"
@@ -28,7 +28,7 @@ msgstr "Arbeitsumgebung"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "Dock, aktive Ecken und Hintergrundbild einrichten"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:43
+#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:44
 msgid "Wallpaper"
 msgstr "Hintergrund"
 
@@ -39,7 +39,7 @@ msgid "Appearance"
 msgstr "Erscheinungsbild"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
-#: src/Views/Text.vala:35
+#: src/Views/Text.vala:26
 msgid "Text"
 msgstr "Text"
 
@@ -102,11 +102,11 @@ msgstr "Bewegung verringern"
 msgid "Window animations"
 msgstr "Fensteranimationen"
 
-#: src/Plug.vala:141 src/Views/Text.vala:42
+#: src/Plug.vala:141 src/Views/Text.vala:80
 msgid "Size"
 msgstr "Größe"
 
-#: src/Plug.vala:142 src/Views/Text.vala:68
+#: src/Plug.vala:142
 msgid "Dyslexia-friendly"
 msgstr "Dyslexie-freundlich"
 
@@ -353,54 +353,69 @@ msgstr "Zu einer neuen Arbeitsfläche wechseln"
 msgid "Execute custom command"
 msgstr "Benutzerdefinierten Befehl ausführen"
 
-#: src/Views/Text.vala:71
-msgid ""
-"Bottom-heavy shapes and increased character spacing can help improve "
-"legibility and reading speed."
+#: src/Views/Text.vala:54
+msgid "Interface Font"
 msgstr ""
-"Grundlinienbetonte Formen und größere Zeichenabstände helfen, Leserlichkeit "
-"und Lesegeschwindigkeit zu erhöhen."
 
-#: src/Views/Wallpaper.vala:82
+#: src/Views/Text.vala:55
+msgid "The default font used throughout the operating system."
+msgstr ""
+
+#: src/Views/Text.vala:69
+msgid "Monospace Font"
+msgstr ""
+
+#: src/Views/Text.vala:70
+msgid "Used in Code and Terminal for example."
+msgstr ""
+
+#: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
 msgstr "Foto importieren …"
 
-#: src/Views/Wallpaper.vala:87
+#: src/Views/Wallpaper.vala:90
 msgid "Centered"
 msgstr "Zentriert"
 
-#: src/Views/Wallpaper.vala:88
+#: src/Views/Wallpaper.vala:91
 msgid "Zoom"
 msgstr "Vergrößert"
 
-#: src/Views/Wallpaper.vala:89
+#: src/Views/Wallpaper.vala:92
 msgid "Spanned"
 msgstr "Überspannend"
 
-#: src/Views/Wallpaper.vala:128
+#: src/Views/Wallpaper.vala:144
 msgid "Import"
 msgstr "Importieren"
 
-#: src/Views/Wallpaper.vala:131
+#: src/Views/Wallpaper.vala:147
 msgid "Import Photos"
 msgstr "Fotos importieren"
 
-#: src/Views/Wallpaper.vala:475
+#: src/Views/Wallpaper.vala:491
 msgid "Wallpaper Deleted"
 msgstr "Hintergrundbild gelöscht"
 
-#: src/Views/Wallpaper.vala:476
+#: src/Views/Wallpaper.vala:492
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/Widgets/WallpaperContainer.vala:122
+#: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
 msgstr "Entfernen"
 
-#: src/Widgets/WallpaperContainer.vala:200
+#: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
 msgstr "Künstler: %s"
+
+#~ msgid ""
+#~ "Bottom-heavy shapes and increased character spacing can help improve "
+#~ "legibility and reading speed."
+#~ msgstr ""
+#~ "Grundlinienbetonte Formen und größere Zeichenabstände helfen, "
+#~ "Leserlichkeit und Lesegeschwindigkeit zu erhöhen."
 
 #~ msgid "Set as _Desktop Background"
 #~ msgstr "Als Hintergrund_bild festlegen"

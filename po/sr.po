@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-desktop-plug\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
+"POT-Creation-Date: 2026-02-25 17:48+0000\n"
 "PO-Revision-Date: 2023-06-28 21:58+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/switchboard/"
@@ -27,7 +27,7 @@ msgstr "Радна површ"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "Подесите луку, вруће углове и промените позадину"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:43
+#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:44
 msgid "Wallpaper"
 msgstr "Позадина"
 
@@ -38,7 +38,7 @@ msgid "Appearance"
 msgstr "Изглед"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
-#: src/Views/Text.vala:35
+#: src/Views/Text.vala:26
 #, fuzzy
 #| msgid "Text size"
 msgid "Text"
@@ -107,13 +107,13 @@ msgstr ""
 msgid "Window animations"
 msgstr "Анимације прозора"
 
-#: src/Plug.vala:141 src/Views/Text.vala:42
+#: src/Plug.vala:141 src/Views/Text.vala:80
 #, fuzzy
 #| msgid "Icon Size"
 msgid "Size"
 msgstr "Величина иконице"
 
-#: src/Plug.vala:142 src/Views/Text.vala:68
+#: src/Plug.vala:142
 #, fuzzy
 #| msgid "Dyslexia-friendly text"
 msgid "Dyslexia-friendly"
@@ -381,58 +381,73 @@ msgstr "Пређи на нови радни простор"
 msgid "Execute custom command"
 msgstr "Изврши произвољну наредбу"
 
-#: src/Views/Text.vala:71
-msgid ""
-"Bottom-heavy shapes and increased character spacing can help improve "
-"legibility and reading speed."
+#: src/Views/Text.vala:54
+msgid "Interface Font"
 msgstr ""
-"Доњи тешки облици и повећани размак између знакова могу помоћи у побољшању "
-"читљивости и повећати брзину читања."
 
-#: src/Views/Wallpaper.vala:82
+#: src/Views/Text.vala:55
+msgid "The default font used throughout the operating system."
+msgstr ""
+
+#: src/Views/Text.vala:69
+msgid "Monospace Font"
+msgstr ""
+
+#: src/Views/Text.vala:70
+msgid "Used in Code and Terminal for example."
+msgstr ""
+
+#: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
 msgstr "Увези фотографију…"
 
-#: src/Views/Wallpaper.vala:87
+#: src/Views/Wallpaper.vala:90
 msgid "Centered"
 msgstr "По средини"
 
-#: src/Views/Wallpaper.vala:88
+#: src/Views/Wallpaper.vala:91
 msgid "Zoom"
 msgstr "Увеличај"
 
-#: src/Views/Wallpaper.vala:89
+#: src/Views/Wallpaper.vala:92
 msgid "Spanned"
 msgstr "Распрострто"
 
-#: src/Views/Wallpaper.vala:128
+#: src/Views/Wallpaper.vala:144
 msgid "Import"
 msgstr "Увези"
 
-#: src/Views/Wallpaper.vala:131
+#: src/Views/Wallpaper.vala:147
 #, fuzzy
 #| msgid "Import Photo"
 msgid "Import Photos"
 msgstr "Увези фотографију"
 
-#: src/Views/Wallpaper.vala:475
+#: src/Views/Wallpaper.vala:491
 #, fuzzy
 #| msgid "Wallpaper"
 msgid "Wallpaper Deleted"
 msgstr "Позадина"
 
-#: src/Views/Wallpaper.vala:476
+#: src/Views/Wallpaper.vala:492
 msgid "Undo"
 msgstr "Поништи"
 
-#: src/Widgets/WallpaperContainer.vala:122
+#: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
 msgstr "Уклони"
 
-#: src/Widgets/WallpaperContainer.vala:200
+#: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
 msgstr "Извођач: %s"
+
+#~ msgid ""
+#~ "Bottom-heavy shapes and increased character spacing can help improve "
+#~ "legibility and reading speed."
+#~ msgstr ""
+#~ "Доњи тешки облици и повећани размак између знакова могу помоћи у "
+#~ "побољшању читљивости и повећати брзину читања."
 
 #~ msgid "Set as _Desktop Background"
 #~ msgstr "Постави за позадину _радне површи"

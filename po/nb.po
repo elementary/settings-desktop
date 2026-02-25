@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
+"POT-Creation-Date: 2026-02-25 17:48+0000\n"
 "PO-Revision-Date: 2024-09-19 00:15+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -28,7 +28,7 @@ msgstr "Skrivebord"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "Sett opp dokken, aktive hjørner og endre bakgrunnsbilde"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:43
+#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:44
 msgid "Wallpaper"
 msgstr "Bakgrunnsbilde"
 
@@ -39,7 +39,7 @@ msgid "Appearance"
 msgstr "Utseende"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
-#: src/Views/Text.vala:35
+#: src/Views/Text.vala:26
 msgid "Text"
 msgstr "Tekst"
 
@@ -104,11 +104,11 @@ msgstr "Reduser bevegelse"
 msgid "Window animations"
 msgstr "Vindusanimasjoner"
 
-#: src/Plug.vala:141 src/Views/Text.vala:42
+#: src/Plug.vala:141 src/Views/Text.vala:80
 msgid "Size"
 msgstr "Størrelse"
 
-#: src/Plug.vala:142 src/Views/Text.vala:68
+#: src/Plug.vala:142
 msgid "Dyslexia-friendly"
 msgstr "Dysleksi-vennlig"
 
@@ -379,57 +379,73 @@ msgstr "Bytt til nytt arbeidsområde"
 msgid "Execute custom command"
 msgstr "Utfør egendefinert kommando"
 
-#: src/Views/Text.vala:71
-msgid ""
-"Bottom-heavy shapes and increased character spacing can help improve "
-"legibility and reading speed."
+#: src/Views/Text.vala:54
+msgid "Interface Font"
 msgstr ""
-"Bunntunge former og økt tegnavstand kan hjelpe lesbarheten og lesehastighet."
 
-#: src/Views/Wallpaper.vala:82
+#: src/Views/Text.vala:55
+msgid "The default font used throughout the operating system."
+msgstr ""
+
+#: src/Views/Text.vala:69
+msgid "Monospace Font"
+msgstr ""
+
+#: src/Views/Text.vala:70
+msgid "Used in Code and Terminal for example."
+msgstr ""
+
+#: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
 msgstr "Importer bilde…"
 
-#: src/Views/Wallpaper.vala:87
+#: src/Views/Wallpaper.vala:90
 msgid "Centered"
 msgstr "Midtstilt"
 
-#: src/Views/Wallpaper.vala:88
+#: src/Views/Wallpaper.vala:91
 msgid "Zoom"
 msgstr "Forstørret"
 
-#: src/Views/Wallpaper.vala:89
+#: src/Views/Wallpaper.vala:92
 msgid "Spanned"
 msgstr "Spredt"
 
-#: src/Views/Wallpaper.vala:128
+#: src/Views/Wallpaper.vala:144
 msgid "Import"
 msgstr "Importer"
 
-#: src/Views/Wallpaper.vala:131
+#: src/Views/Wallpaper.vala:147
 #, fuzzy
 #| msgid "Import Photo"
 msgid "Import Photos"
 msgstr "Importer bilde"
 
-#: src/Views/Wallpaper.vala:475
+#: src/Views/Wallpaper.vala:491
 #, fuzzy
 #| msgid "Wallpaper"
 msgid "Wallpaper Deleted"
 msgstr "Bakgrunnsbilde"
 
-#: src/Views/Wallpaper.vala:476
+#: src/Views/Wallpaper.vala:492
 msgid "Undo"
 msgstr "Angre"
 
-#: src/Widgets/WallpaperContainer.vala:122
+#: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
 msgstr "Fjern"
 
-#: src/Widgets/WallpaperContainer.vala:200
+#: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
 msgstr "Artist: %s"
+
+#~ msgid ""
+#~ "Bottom-heavy shapes and increased character spacing can help improve "
+#~ "legibility and reading speed."
+#~ msgstr ""
+#~ "Bunntunge former og økt tegnavstand kan hjelpe lesbarheten og "
+#~ "lesehastighet."
 
 #~ msgid "Set as _Desktop Background"
 #~ msgstr "Bruk som _skrivebordsbakgrunn"

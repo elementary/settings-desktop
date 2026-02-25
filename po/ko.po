@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: switchboard-plug-pantheon-shell\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
+"POT-Creation-Date: 2026-02-25 17:48+0000\n"
 "PO-Revision-Date: 2023-07-01 08:07+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/switchboard/"
@@ -28,7 +28,7 @@ msgstr "바탕화면"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "플랭크, 핫코너 및 배경화면 변경 설정하기"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:43
+#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:44
 msgid "Wallpaper"
 msgstr "배경화면"
 
@@ -39,7 +39,7 @@ msgid "Appearance"
 msgstr "꾸미기"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
-#: src/Views/Text.vala:35
+#: src/Views/Text.vala:26
 msgid "Text"
 msgstr "텍스트"
 
@@ -104,11 +104,11 @@ msgstr ""
 msgid "Window animations"
 msgstr "창 애니메이션"
 
-#: src/Plug.vala:141 src/Views/Text.vala:42
+#: src/Plug.vala:141 src/Views/Text.vala:80
 msgid "Size"
 msgstr "크기"
 
-#: src/Plug.vala:142 src/Views/Text.vala:68
+#: src/Plug.vala:142
 msgid "Dyslexia-friendly"
 msgstr "난독증 친화적"
 
@@ -374,58 +374,73 @@ msgstr "새 작업 공간으로 전환"
 msgid "Execute custom command"
 msgstr "사용자 지정 명렁어 실행"
 
-#: src/Views/Text.vala:71
-msgid ""
-"Bottom-heavy shapes and increased character spacing can help improve "
-"legibility and reading speed."
+#: src/Views/Text.vala:54
+msgid "Interface Font"
 msgstr ""
-"아래가 두툼한 모양과 넓어진 문자 간격은 가독성과 읽기 속도를 향상시키는 데 도"
-"움이 됩니다."
 
-#: src/Views/Wallpaper.vala:82
+#: src/Views/Text.vala:55
+msgid "The default font used throughout the operating system."
+msgstr ""
+
+#: src/Views/Text.vala:69
+msgid "Monospace Font"
+msgstr ""
+
+#: src/Views/Text.vala:70
+msgid "Used in Code and Terminal for example."
+msgstr ""
+
+#: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
 msgstr "사진 가져오기…"
 
-#: src/Views/Wallpaper.vala:87
+#: src/Views/Wallpaper.vala:90
 msgid "Centered"
 msgstr "중앙 정렬"
 
-#: src/Views/Wallpaper.vala:88
+#: src/Views/Wallpaper.vala:91
 msgid "Zoom"
 msgstr "확대"
 
-#: src/Views/Wallpaper.vala:89
+#: src/Views/Wallpaper.vala:92
 msgid "Spanned"
 msgstr "지연됨"
 
-#: src/Views/Wallpaper.vala:128
+#: src/Views/Wallpaper.vala:144
 msgid "Import"
 msgstr "가져오기"
 
-#: src/Views/Wallpaper.vala:131
+#: src/Views/Wallpaper.vala:147
 #, fuzzy
 #| msgid "Import Photo"
 msgid "Import Photos"
 msgstr "사진 가져오기"
 
-#: src/Views/Wallpaper.vala:475
+#: src/Views/Wallpaper.vala:491
 #, fuzzy
 #| msgid "Wallpaper"
 msgid "Wallpaper Deleted"
 msgstr "배경화면"
 
-#: src/Views/Wallpaper.vala:476
+#: src/Views/Wallpaper.vala:492
 msgid "Undo"
 msgstr "되돌리기"
 
-#: src/Widgets/WallpaperContainer.vala:122
+#: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
 msgstr "제거"
 
-#: src/Widgets/WallpaperContainer.vala:200
+#: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
 msgstr "아티스트: %s"
+
+#~ msgid ""
+#~ "Bottom-heavy shapes and increased character spacing can help improve "
+#~ "legibility and reading speed."
+#~ msgstr ""
+#~ "아래가 두툼한 모양과 넓어진 문자 간격은 가독성과 읽기 속도를 향상시키는 "
+#~ "데 도움이 됩니다."
 
 #~ msgid "Set as _Desktop Background"
 #~ msgstr "바탕 화면 배경으로 설정(_D)"

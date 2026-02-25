@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
+"POT-Creation-Date: 2026-02-25 17:48+0000\n"
 "PO-Revision-Date: 2026-01-10 11:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
@@ -23,7 +23,7 @@ msgstr "デスクトップ"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "ドック、ホットコーナーを設定し、壁紙を変更します"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:43
+#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:44
 msgid "Wallpaper"
 msgstr "壁紙"
 
@@ -34,7 +34,7 @@ msgid "Appearance"
 msgstr "外観"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
-#: src/Views/Text.vala:35
+#: src/Views/Text.vala:26
 msgid "Text"
 msgstr "テキスト"
 
@@ -97,11 +97,11 @@ msgstr "視覚効果を減らす"
 msgid "Window animations"
 msgstr "ウィンドウアニメーション"
 
-#: src/Plug.vala:141 src/Views/Text.vala:42
+#: src/Plug.vala:141 src/Views/Text.vala:80
 msgid "Size"
 msgstr "サイズ"
 
-#: src/Plug.vala:142 src/Views/Text.vala:68
+#: src/Plug.vala:142
 msgid "Dyslexia-friendly"
 msgstr "ディスレクシア対応"
 
@@ -343,54 +343,69 @@ msgstr "新しいワークスペースに切り替え"
 msgid "Execute custom command"
 msgstr "カスタムコマンドを実行"
 
-#: src/Views/Text.vala:71
-msgid ""
-"Bottom-heavy shapes and increased character spacing can help improve "
-"legibility and reading speed."
+#: src/Views/Text.vala:54
+msgid "Interface Font"
 msgstr ""
-"下部が強調され、字間が確保された書体を使用します。これにより、読みやすさと読"
-"む速度の改善に役立つ可能性があります。"
 
-#: src/Views/Wallpaper.vala:82
+#: src/Views/Text.vala:55
+msgid "The default font used throughout the operating system."
+msgstr ""
+
+#: src/Views/Text.vala:69
+msgid "Monospace Font"
+msgstr ""
+
+#: src/Views/Text.vala:70
+msgid "Used in Code and Terminal for example."
+msgstr ""
+
+#: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
 msgstr "写真をインポート…"
 
-#: src/Views/Wallpaper.vala:87
+#: src/Views/Wallpaper.vala:90
 msgid "Centered"
 msgstr "中央に表示"
 
-#: src/Views/Wallpaper.vala:88
+#: src/Views/Wallpaper.vala:91
 msgid "Zoom"
 msgstr "画面に合わせる"
 
-#: src/Views/Wallpaper.vala:89
+#: src/Views/Wallpaper.vala:92
 msgid "Spanned"
 msgstr "並べる"
 
-#: src/Views/Wallpaper.vala:128
+#: src/Views/Wallpaper.vala:144
 msgid "Import"
 msgstr "インポート"
 
-#: src/Views/Wallpaper.vala:131
+#: src/Views/Wallpaper.vala:147
 msgid "Import Photos"
 msgstr "写真をインポート"
 
-#: src/Views/Wallpaper.vala:475
+#: src/Views/Wallpaper.vala:491
 msgid "Wallpaper Deleted"
 msgstr "壁紙を削除しました"
 
-#: src/Views/Wallpaper.vala:476
+#: src/Views/Wallpaper.vala:492
 msgid "Undo"
 msgstr "元に戻す"
 
-#: src/Widgets/WallpaperContainer.vala:122
+#: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
 msgstr "削除"
 
-#: src/Widgets/WallpaperContainer.vala:200
+#: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
 msgstr "アーティスト: %s"
+
+#~ msgid ""
+#~ "Bottom-heavy shapes and increased character spacing can help improve "
+#~ "legibility and reading speed."
+#~ msgstr ""
+#~ "下部が強調され、字間が確保された書体を使用します。これにより、読みやすさと"
+#~ "読む速度の改善に役立つ可能性があります。"
 
 #~ msgid "Set as _Desktop Background"
 #~ msgstr "デスクトップの背景として設定(_D)"
