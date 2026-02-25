@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
+"POT-Creation-Date: 2026-02-25 17:48+0000\n"
 "PO-Revision-Date: 2025-11-06 01:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
@@ -86,7 +86,9 @@ msgid "Improved screen reader accessibility"
 msgstr "Förbättrad tillgänglighet för skärmläsare"
 
 #: data/desktop.metainfo.xml.in:117
-msgid "Redesign Dock &amp; Panel settings with helpful description text"
+#, fuzzy
+#| msgid "Redesign Dock &amp; Panel settings with helpful description text"
+msgid "Redesign Dock & Panel settings with helpful description text"
 msgstr ""
 "Omarbeta Docka och panel-inställningarna med användbar beskrivningstext"
 
