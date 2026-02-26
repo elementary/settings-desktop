@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:48+0000\n"
-"PO-Revision-Date: 2026-01-10 11:55+0000\n"
+"PO-Revision-Date: 2026-02-27 08:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/settings/"
 "desktop/sv/>\n"
@@ -350,19 +350,19 @@ msgstr "Kör anpassat kommando"
 
 #: src/Views/Text.vala:54
 msgid "Interface Font"
-msgstr ""
+msgstr "Gränssnittstypsnitt"
 
 #: src/Views/Text.vala:55
 msgid "The default font used throughout the operating system."
-msgstr ""
+msgstr "Det standardtypsnitt som används i hela operativsystemet."
 
 #: src/Views/Text.vala:69
 msgid "Monospace Font"
-msgstr ""
+msgstr "Typsnitt med fast bredd"
 
 #: src/Views/Text.vala:70
 msgid "Used in Code and Terminal for example."
-msgstr ""
+msgstr "Används till exempel i Kod och Terminal."
 
 #: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
