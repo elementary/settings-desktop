@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:48+0000\n"
-"PO-Revision-Date: 2025-11-09 16:55+0000\n"
+"PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/ru/>\n"
@@ -87,8 +87,6 @@ msgid "Improved screen reader accessibility"
 msgstr "Улучшена доступность для экранного диктора"
 
 #: data/desktop.metainfo.xml.in:117
-#, fuzzy
-#| msgid "Redesign Dock &amp; Panel settings with helpful description text"
 msgid "Redesign Dock & Panel settings with helpful description text"
 msgstr ""
 "Переработаны параметры Дока и Панели, добавлены полезные описания к "
