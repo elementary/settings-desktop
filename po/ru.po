@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:48+0000\n"
-"PO-Revision-Date: 2026-02-15 15:55+0000\n"
+"PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/settings/"
 "desktop/ru/>\n"
@@ -345,19 +345,19 @@ msgstr "Выполнить пользовательскую команду"
 
 #: src/Views/Text.vala:54
 msgid "Interface Font"
-msgstr ""
+msgstr "Шрифт интерфейса"
 
 #: src/Views/Text.vala:55
 msgid "The default font used throughout the operating system."
-msgstr ""
+msgstr "Стандартный шрифт, повсеместно используемый в системе."
 
 #: src/Views/Text.vala:69
 msgid "Monospace Font"
-msgstr ""
+msgstr "Моноширинный шрифт"
 
 #: src/Views/Text.vala:70
 msgid "Used in Code and Terminal for example."
-msgstr ""
+msgstr "Используется, например, в приложениях Код и Терминал."
 
 #: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
