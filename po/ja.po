@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:48+0000\n"
-"PO-Revision-Date: 2026-01-10 11:55+0000\n"
+"PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
 "desktop/ja/>\n"
@@ -345,19 +345,19 @@ msgstr "カスタムコマンドを実行"
 
 #: src/Views/Text.vala:54
 msgid "Interface Font"
-msgstr ""
+msgstr "インターフェースのフォント"
 
 #: src/Views/Text.vala:55
 msgid "The default font used throughout the operating system."
-msgstr ""
+msgstr "オペレーティングシステム全体で使われるデフォルトのフォントです。"
 
 #: src/Views/Text.vala:69
 msgid "Monospace Font"
-msgstr ""
+msgstr "等幅フォント"
 
 #: src/Views/Text.vala:70
 msgid "Used in Code and Terminal for example."
-msgstr ""
+msgstr "“コード”や“ターミナル”などで使われるフォントです。"
 
 #: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
