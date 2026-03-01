@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:48+0000\n"
-"PO-Revision-Date: 2025-11-30 18:55+0000\n"
+"PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
 "l10n.elementaryos.org/projects/settings/desktop-plug-extra/zh_TW/>\n"
@@ -84,8 +84,6 @@ msgid "Improved screen reader accessibility"
 msgstr "改善螢幕閱讀器輔助"
 
 #: data/desktop.metainfo.xml.in:117
-#, fuzzy
-#| msgid "Redesign Dock &amp; Panel settings with helpful description text"
 msgid "Redesign Dock & Panel settings with helpful description text"
 msgstr "重新設計 Dock 及面板設定，加上更有幫助的說明文字"
 
