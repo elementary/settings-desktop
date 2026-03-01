@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:48+0000\n"
-"PO-Revision-Date: 2026-01-12 08:55+0000\n"
+"PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
 "l10n.elementaryos.org/projects/settings/desktop/zh_TW/>\n"
@@ -346,19 +346,19 @@ msgstr "執行自訂指令"
 
 #: src/Views/Text.vala:54
 msgid "Interface Font"
-msgstr ""
+msgstr "介面字型"
 
 #: src/Views/Text.vala:55
 msgid "The default font used throughout the operating system."
-msgstr ""
+msgstr "作業系統各處所使用的預設字型。"
 
 #: src/Views/Text.vala:69
 msgid "Monospace Font"
-msgstr ""
+msgstr "等寬字型"
 
 #: src/Views/Text.vala:70
 msgid "Used in Code and Terminal for example."
-msgstr ""
+msgstr "用於《Code》或《終端機》等處的字型。"
 
 #: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
