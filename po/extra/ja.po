@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-25 17:48+0000\n"
-"PO-Revision-Date: 2025-11-13 07:55+0000\n"
+"PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/ja/>\n"
@@ -86,11 +86,8 @@ msgid "Improved screen reader accessibility"
 msgstr "スクリーンリーダーのアクセシビリティを改善"
 
 #: data/desktop.metainfo.xml.in:117
-#, fuzzy
-#| msgid "Redesign Dock &amp; Panel settings with helpful description text"
 msgid "Redesign Dock & Panel settings with helpful description text"
-msgstr ""
-"“ドックとパネル”設定のデザインを変更 (わかりやすいように説明テキストを追加)"
+msgstr "“ドックとパネル”設定のデザインを変更 (わかりやすいように説明テキストを追加)"
 
 #: data/desktop.metainfo.xml.in:118
 msgid "Show or hide optional panel indicators"
