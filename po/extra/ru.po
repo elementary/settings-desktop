@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 17:48+0000\n"
+"POT-Creation-Date: 2026-03-17 17:12+0000\n"
 "PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/settings/"
@@ -32,49 +32,49 @@ msgstr "Настройка дока, активных углов и обоев"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:58
-#: data/desktop.metainfo.xml.in:74 data/desktop.metainfo.xml.in:84
-#: data/desktop.metainfo.xml.in:97 data/desktop.metainfo.xml.in:115
-#: data/desktop.metainfo.xml.in:136
+#: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:61
+#: data/desktop.metainfo.xml.in:71 data/desktop.metainfo.xml.in:87
+#: data/desktop.metainfo.xml.in:97 data/desktop.metainfo.xml.in:110
+#: data/desktop.metainfo.xml.in:128 data/desktop.metainfo.xml.in:149
 msgid "Other updates:"
 msgstr "Остальные обновления:"
 
-#: data/desktop.metainfo.xml.in:50
-msgid "Update dock style"
-msgstr "Обновлён внешний вид дока"
-
-#: data/desktop.metainfo.xml.in:51 data/desktop.metainfo.xml.in:61
-#: data/desktop.metainfo.xml.in:77 data/desktop.metainfo.xml.in:86
-#: data/desktop.metainfo.xml.in:103 data/desktop.metainfo.xml.in:121
-#: data/desktop.metainfo.xml.in:139
+#: data/desktop.metainfo.xml.in:50 data/desktop.metainfo.xml.in:64
+#: data/desktop.metainfo.xml.in:74 data/desktop.metainfo.xml.in:90
+#: data/desktop.metainfo.xml.in:99 data/desktop.metainfo.xml.in:116
+#: data/desktop.metainfo.xml.in:134 data/desktop.metainfo.xml.in:152
 msgid "Updated translations"
 msgstr "Обновлены переводы"
 
-#: data/desktop.metainfo.xml.in:60
+#: data/desktop.metainfo.xml.in:63
+msgid "Update dock style"
+msgstr "Обновлён внешний вид дока"
+
+#: data/desktop.metainfo.xml.in:73
 msgid "Add setting for fullscreen hotcorners"
 msgstr "Добавлена настройка для активных углов в полноэкранном режиме"
 
-#: data/desktop.metainfo.xml.in:76
+#: data/desktop.metainfo.xml.in:89
 msgid "Add setting for scroll to switch workspaces"
 msgstr "Добавлена настройка для смены рабочих столов прокруткой"
 
-#: data/desktop.metainfo.xml.in:93
+#: data/desktop.metainfo.xml.in:106
 msgid "New Features:"
 msgstr "Новые возможности:"
 
-#: data/desktop.metainfo.xml.in:95
+#: data/desktop.metainfo.xml.in:108
 msgid "Always Show Scrollbars setting"
 msgstr "Настройка «Всегда показывать полосы прокрутки»"
 
-#: data/desktop.metainfo.xml.in:99
+#: data/desktop.metainfo.xml.in:112
 msgid "Redundant labels have been cleaned up on the Appearance tab"
 msgstr "Удалены ненужные метки из вкладки «Внешний вид»"
 
-#: data/desktop.metainfo.xml.in:100
+#: data/desktop.metainfo.xml.in:113
 msgid "The Dim Wallpaper setting has moved to the Appearance tab"
 msgstr "Настройка затемнения обоев перемещена во вкладку «Внешний вид»"
 
-#: data/desktop.metainfo.xml.in:101
+#: data/desktop.metainfo.xml.in:114
 msgid ""
 "The style selector now shows of a preview of your wallpaper as well as "
 "previewing the dim setting"
@@ -82,44 +82,44 @@ msgstr ""
 "Выборщик стиля теперь отображает предпросмотр ваших обоев и настройки их "
 "затемнения"
 
-#: data/desktop.metainfo.xml.in:102
+#: data/desktop.metainfo.xml.in:115
 msgid "Improved screen reader accessibility"
 msgstr "Улучшена доступность для экранного диктора"
 
-#: data/desktop.metainfo.xml.in:117
+#: data/desktop.metainfo.xml.in:130
 msgid "Redesign Dock & Panel settings with helpful description text"
 msgstr ""
 "Переработаны параметры Дока и Панели, добавлены полезные описания к "
 "настройкам"
 
-#: data/desktop.metainfo.xml.in:118
+#: data/desktop.metainfo.xml.in:131
 msgid "Show or hide optional panel indicators"
 msgstr ""
 "Добавлена возможность показать или скрыть дополнительные индикаторы панели"
 
-#: data/desktop.metainfo.xml.in:119
+#: data/desktop.metainfo.xml.in:132
 msgid ""
 "Fix translation of slideshow delay value and \"Dim with dark style\" label"
 msgstr ""
 "Исправлены переводы задержки слайд-шоу и текста \"Затемнять при тёмном "
 "стиле\""
 
-#: data/desktop.metainfo.xml.in:120
+#: data/desktop.metainfo.xml.in:133
 msgid ""
 "Fix an issue where wallpapers were not removed when closing System Settings "
 "immediately after"
 msgstr ""
 "Исправлена ошибка, из-за которой обои не удалялись при закрытии приложения"
 
-#: data/desktop.metainfo.xml.in:132
+#: data/desktop.metainfo.xml.in:145
 msgid "New features:"
 msgstr "Новые возможности:"
 
-#: data/desktop.metainfo.xml.in:134
+#: data/desktop.metainfo.xml.in:147
 msgid "Add an option to dim wallpapers when dark style is active"
 msgstr "Добавлена опция для затемнения обоев, когда включён тёмный стиль"
 
-#: data/desktop.metainfo.xml.in:138
+#: data/desktop.metainfo.xml.in:151
 msgid "Use a more vertical layout in the Text view"
 msgstr ""
 "Использование более вертикального расположения элементов во вкладке «Текст»"
