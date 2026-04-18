@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 17:12+0000\n"
-"PO-Revision-Date: 2026-01-13 13:55+0000\n"
+"PO-Revision-Date: 2026-04-19 23:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/settings/"
 "desktop/es/>\n"
@@ -354,19 +354,19 @@ msgstr "Ejecutar comando personalizado"
 
 #: src/Views/Text.vala:54
 msgid "Interface Font"
-msgstr ""
+msgstr "Fuente de la interfaz"
 
 #: src/Views/Text.vala:55
 msgid "The default font used throughout the operating system."
-msgstr ""
+msgstr "La fuente por defecto utilizada a través de todo el sistema operativo."
 
 #: src/Views/Text.vala:69
 msgid "Monospace Font"
-msgstr ""
+msgstr "Fuente mono-espaciada"
 
 #: src/Views/Text.vala:70
 msgid "Used in Code and Terminal for example."
-msgstr ""
+msgstr "Utilizada en aplicaciones como Code o Terminal por ejemplo."
 
 #: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
