@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 17:12+0000\n"
-"PO-Revision-Date: 2024-08-07 18:17+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Greek <https://l10n.elementary.io/projects/switchboard/"
+"PO-Revision-Date: 2026-06-29 01:00+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
+"Language-Team: Greek <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 2026.5\n"
 
 #: data/desktop.metainfo.xml.in:10
 msgid "Desktop Settings"
-msgstr ""
+msgstr "Ρυθμίσεις επιφάνειας εργασίας"
 
 #: data/desktop.metainfo.xml.in:11
 msgid "Configure the dock, hot corners, and change wallpaper"
@@ -29,7 +29,7 @@ msgstr "Ρύθμιση του dock, ενεργών γωνιών και αλλα�
 
 #: data/desktop.metainfo.xml.in:40
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:71 data/desktop.metainfo.xml.in:87
@@ -43,7 +43,7 @@ msgstr ""
 #: data/desktop.metainfo.xml.in:99 data/desktop.metainfo.xml.in:116
 #: data/desktop.metainfo.xml.in:134 data/desktop.metainfo.xml.in:152
 msgid "Updated translations"
-msgstr ""
+msgstr "Ενημερωμένες μεταφράσεις"
 
 #: data/desktop.metainfo.xml.in:63
 msgid "Update dock style"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: data/desktop.metainfo.xml.in:145
 msgid "New features:"
-msgstr ""
+msgstr "Νέες λειτουργίες:"
 
 #: data/desktop.metainfo.xml.in:147
 msgid "Add an option to dim wallpapers when dark style is active"
