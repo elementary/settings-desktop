@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 17:12+0000\n"
-"PO-Revision-Date: 2023-07-01 08:07+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Greek <https://l10n.elementary.io/projects/switchboard/"
-"switchboard-plug-pantheon-shell/el/>\n"
+"PO-Revision-Date: 2026-06-29 01:00+0000\n"
+"Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
+"Language-Team: Greek <https://l10n.elementaryos.org/projects/settings/"
+"desktop/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-02-27 05:45+0000\n"
 
 #: src/Plug.vala:49
@@ -36,13 +36,12 @@ msgstr "Ταπετσαρία"
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
 #: src/Views/Appearance.vala:68
 msgid "Appearance"
-msgstr ""
+msgstr "Εμφάνιση"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
 #: src/Views/Text.vala:26
-#, fuzzy
 msgid "Text"
-msgstr "Μέγεθος εικονιδίου:"
+msgstr "Κείμενο"
 
 #: src/Plug.vala:68 src/Plug.vala:126 src/Plug.vala:127 src/Plug.vala:128
 #: src/Plug.vala:129 src/Plug.vala:130 src/Plug.vala:131 src/Plug.vala:132
@@ -52,14 +51,12 @@ msgstr ""
 
 #: src/Plug.vala:69 src/Plug.vala:143 src/Plug.vala:144 src/Plug.vala:145
 #: src/Plug.vala:146 src/Views/Multitasking.vala:27
-#, fuzzy
-#| msgid "Multitasking View"
 msgid "Multitasking"
-msgstr "Θέαση πολυδιεργασίας"
+msgstr "Πολυδιεργασία"
 
 #: src/Plug.vala:127
 msgid "Hide Mode"
-msgstr ""
+msgstr "Λειτουργία απόκρυψης"
 
 #: src/Plug.vala:128
 msgid "Icon Size"
@@ -91,7 +88,7 @@ msgstr ""
 
 #: src/Plug.vala:136 src/Views/Appearance.vala:274
 msgid "Accent Color"
-msgstr ""
+msgstr "Χρώμα έμφασης"
 
 #: src/Plug.vala:137 src/Views/Appearance.vala:303
 msgid "Always Show Scrollbars"
@@ -103,13 +100,11 @@ msgstr ""
 
 #: src/Plug.vala:139
 msgid "Window animations"
-msgstr ""
+msgstr "Εφέ κίνησης παραθύρων"
 
 #: src/Plug.vala:141 src/Views/Text.vala:80
-#, fuzzy
-#| msgid "Icon Size"
 msgid "Size"
-msgstr "Μέγεθος εικονιδίων"
+msgstr "Μέγεθος"
 
 #: src/Plug.vala:142
 msgid "Dyslexia-friendly"
@@ -138,7 +133,7 @@ msgstr "Προεπιλογή"
 
 #: src/Views/Appearance.vala:100
 msgid "Dark"
-msgstr ""
+msgstr "Σκουρόχρωμο"
 
 #: src/Views/Appearance.vala:122
 msgid "Disabled"
@@ -162,47 +157,47 @@ msgstr ""
 
 #: src/Views/Appearance.vala:223
 msgid "Blueberry"
-msgstr ""
+msgstr "Μύρτιλο"
 
 #: src/Views/Appearance.vala:226
 msgid "Mint"
-msgstr ""
+msgstr "Μέντα"
 
 #: src/Views/Appearance.vala:229
 msgid "Lime"
-msgstr ""
+msgstr "Μοσχολέμονο"
 
 #: src/Views/Appearance.vala:232
 msgid "Banana"
-msgstr ""
+msgstr "Μπανάνα"
 
 #: src/Views/Appearance.vala:235
 msgid "Orange"
-msgstr ""
+msgstr "Πορτοκάλι"
 
 #: src/Views/Appearance.vala:238
 msgid "Strawberry"
-msgstr ""
+msgstr "Φράουλα"
 
 #: src/Views/Appearance.vala:241
 msgid "Bubblegum"
-msgstr ""
+msgstr "Τσιχλόφουσκα"
 
 #: src/Views/Appearance.vala:244
 msgid "Grape"
-msgstr ""
+msgstr "Σταφύλι"
 
 #: src/Views/Appearance.vala:247
 msgid "Cocoa"
-msgstr ""
+msgstr "Κακάο"
 
 #: src/Views/Appearance.vala:250
 msgid "Slate"
-msgstr ""
+msgstr "Σχιστόλιθος"
 
 #: src/Views/Appearance.vala:253
 msgid "Latte"
-msgstr ""
+msgstr "Λάτε"
 
 #: src/Views/Appearance.vala:256
 msgid "Automatic based on wallpaper"
@@ -283,7 +278,7 @@ msgstr ""
 
 #: src/Views/Dock.vala:137
 msgid "Accessibility"
-msgstr ""
+msgstr "Προσβασιμότητα"
 
 #: src/Views/Dock.vala:147
 msgid "Caps Lock ⇪"
@@ -294,10 +289,8 @@ msgid "Num Lock"
 msgstr ""
 
 #: src/Views/Multitasking.vala:34
-#, fuzzy
-#| msgid "When the cursor enters the corner of the display:"
 msgid "When the pointer enters a display corner"
-msgstr "Όταν ο δείκτης μπαίνει στη γωνία της οθόνης:"
+msgstr "Όταν ο κέρσορας μπαίνει σε γωνία της οθόνης"
 
 #: src/Views/Multitasking.vala:38
 msgid "Top Left"
@@ -381,7 +374,7 @@ msgstr ""
 
 #: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
-msgstr ""
+msgstr "Εισαγωγή φωτογραφίας…"
 
 #: src/Views/Wallpaper.vala:90
 msgid "Centered"
@@ -397,11 +390,11 @@ msgstr "Εκτεταμένο"
 
 #: src/Views/Wallpaper.vala:144
 msgid "Import"
-msgstr ""
+msgstr "Εισαγωγή"
 
 #: src/Views/Wallpaper.vala:147
 msgid "Import Photos"
-msgstr ""
+msgstr "Εισαγωγή φωτογραφιών"
 
 #: src/Views/Wallpaper.vala:491
 #, fuzzy
@@ -411,7 +404,7 @@ msgstr "Ταπετσαρία"
 
 #: src/Views/Wallpaper.vala:492
 msgid "Undo"
-msgstr ""
+msgstr "Αναίρεση"
 
 #: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
@@ -420,7 +413,7 @@ msgstr "Αφαίρεση"
 #: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
-msgstr ""
+msgstr "Καλλιτέχνης: %s"
 
 #~ msgid "Set as _Desktop Background"
 #~ msgstr "Ορισμός ως _ταπετσαρίας επιφάνειας εργασίας"
