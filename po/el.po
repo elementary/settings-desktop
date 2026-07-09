@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 17:12+0000\n"
-"PO-Revision-Date: 2026-06-29 01:00+0000\n"
+"PO-Revision-Date: 2026-07-10 15:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/settings/"
 "desktop/el/>\n"
@@ -286,7 +286,7 @@ msgstr ""
 
 #: src/Views/Dock.vala:148
 msgid "Num Lock"
-msgstr ""
+msgstr "Num Lock"
 
 #: src/Views/Multitasking.vala:34
 msgid "When the pointer enters a display corner"
@@ -294,19 +294,19 @@ msgstr "Όταν ο κέρσορας μπαίνει σε γωνία της οθ�
 
 #: src/Views/Multitasking.vala:38
 msgid "Top Left"
-msgstr ""
+msgstr "Πάνω αριστερά"
 
 #: src/Views/Multitasking.vala:39
 msgid "Top Right"
-msgstr ""
+msgstr "Πάνω δεξιά"
 
 #: src/Views/Multitasking.vala:40
 msgid "Bottom Left"
-msgstr ""
+msgstr "Κάτω αριστερά"
 
 #: src/Views/Multitasking.vala:41
 msgid "Bottom Right"
-msgstr ""
+msgstr "Κάτω δεξιά"
 
 #: src/Views/Multitasking.vala:48
 msgid "May interfere with fullscreen video games, for example"
@@ -314,11 +314,11 @@ msgstr ""
 
 #: src/Views/Multitasking.vala:61
 msgid "When entering fullscreen"
-msgstr ""
+msgstr "Κατά την είσοδο σε πλήρη οθόνη"
 
 #: src/Views/Multitasking.vala:62
 msgid "When maximizing"
-msgstr ""
+msgstr "Κατά τη μεγιστοποίηση"
 
 #: src/Views/Multitasking.vala:127
 msgid "Do nothing"
@@ -366,7 +366,7 @@ msgstr ""
 
 #: src/Views/Text.vala:69
 msgid "Monospace Font"
-msgstr ""
+msgstr "Γραμματοσειρά σταθερού πλάτους"
 
 #: src/Views/Text.vala:70
 msgid "Used in Code and Terminal for example."
