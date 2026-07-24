@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 17:12+0000\n"
-"PO-Revision-Date: 2026-07-10 15:01+0000\n"
+"PO-Revision-Date: 2026-07-25 20:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/settings/"
 "desktop/el/>\n"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: src/Plug.vala:134
 msgid "Dark style"
-msgstr ""
+msgstr "Σκουρόχρωμο στυλ"
 
 #: src/Plug.vala:135 src/Views/Appearance.vala:111
 msgid "Dim Wallpaper With Dark Style"
@@ -282,7 +282,7 @@ msgstr "Προσβασιμότητα"
 
 #: src/Views/Dock.vala:147
 msgid "Caps Lock ⇪"
-msgstr ""
+msgstr "Caps Lock ⇪"
 
 #: src/Views/Dock.vala:148
 msgid "Num Lock"
@@ -382,7 +382,7 @@ msgstr "Στο κέντρο"
 
 #: src/Views/Wallpaper.vala:91
 msgid "Zoom"
-msgstr "Μεγέθυνση"
+msgstr "Ζουμ"
 
 #: src/Views/Wallpaper.vala:92
 msgid "Spanned"
@@ -397,10 +397,8 @@ msgid "Import Photos"
 msgstr "Εισαγωγή φωτογραφιών"
 
 #: src/Views/Wallpaper.vala:491
-#, fuzzy
-#| msgid "Wallpaper"
 msgid "Wallpaper Deleted"
-msgstr "Ταπετσαρία"
+msgstr "Η ταπετσαρία διαγράφηκε"
 
 #: src/Views/Wallpaper.vala:492
 msgid "Undo"
