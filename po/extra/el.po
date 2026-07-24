@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-17 17:12+0000\n"
-"PO-Revision-Date: 2026-07-10 15:01+0000\n"
+"PO-Revision-Date: 2026-07-25 20:01+0000\n"
 "Last-Translator: Jim Spentzos <jimspentzos2000@gmail.com>\n"
 "Language-Team: Greek <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/el/>\n"
@@ -36,7 +36,7 @@ msgstr "elementary, Inc."
 #: data/desktop.metainfo.xml.in:97 data/desktop.metainfo.xml.in:110
 #: data/desktop.metainfo.xml.in:128 data/desktop.metainfo.xml.in:149
 msgid "Other updates:"
-msgstr ""
+msgstr "Άλλες ενημερώσεις:"
 
 #: data/desktop.metainfo.xml.in:50 data/desktop.metainfo.xml.in:64
 #: data/desktop.metainfo.xml.in:74 data/desktop.metainfo.xml.in:90
