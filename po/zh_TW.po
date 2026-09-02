@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-17 17:12+0000\n"
+"POT-Creation-Date: 2026-09-02 17:04+0000\n"
 "PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
@@ -28,15 +28,15 @@ msgstr "桌面"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "調整 Dock、熱角、和更改桌布"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:44
-msgid "Wallpaper"
-msgstr "桌布"
-
-#: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
+#: src/Plug.vala:65 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
 #: src/Views/Appearance.vala:68
 msgid "Appearance"
 msgstr "外觀"
+
+#: src/Plug.vala:66 src/Plug.vala:125 src/Views/Wallpaper.vala:44
+msgid "Wallpaper"
+msgstr "桌布"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
 #: src/Views/Text.vala:26
