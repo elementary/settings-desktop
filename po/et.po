@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: switchboard-plug-pantheon-shell\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-17 17:12+0000\n"
+"POT-Creation-Date: 2026-09-02 17:04+0000\n"
 "PO-Revision-Date: 2023-07-01 08:07+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Estonian <https://l10n.elementary.io/projects/switchboard/"
@@ -28,15 +28,15 @@ msgstr "Töölaud"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "Doki ja kiirnurkade konfigureerimine ning taustapildi muutmine"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:44
-msgid "Wallpaper"
-msgstr "Taustapilt"
-
-#: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
+#: src/Plug.vala:65 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
 #: src/Views/Appearance.vala:68
 msgid "Appearance"
 msgstr ""
+
+#: src/Plug.vala:66 src/Plug.vala:125 src/Views/Wallpaper.vala:44
+msgid "Wallpaper"
+msgstr "Taustapilt"
 
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
 #: src/Views/Text.vala:26
