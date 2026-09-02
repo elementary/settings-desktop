@@ -322,7 +322,7 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         interface_settings.bind ("overlay-scrolling", scrollbar_switch, "active", INVERT_BOOLEAN);
 
         var a11y_settings = new GLib.Settings ("io.elementary.settings-daemon.a11y");
-        interface_settings.bind ("reduce-motion", animations_switch, "active", DEFAULT);
+        a11y_settings.bind ("reduce-motion", animations_switch, "active", DEFAULT);
 
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
