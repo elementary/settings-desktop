@@ -289,15 +289,11 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         child = grid;
         add_css_class ("appearance-view");
 
-        // This key should be deprecated. Set only because interface settings is the source of truth
-        var animations_settings = new Settings ("io.elementary.desktop.wm.animations");
-        animations_switch.notify["active"].connect (() => {
-            animations_settings.set_boolean ("enable-animations", !animations_switch.active);
-        });
-
         var interface_settings = new GLib.Settings ("org.gnome.desktop.interface");
         interface_settings.bind ("overlay-scrolling", scrollbar_switch, "active", INVERT_BOOLEAN);
-        interface_settings.bind ("enable-animations", animations_switch, "active", INVERT_BOOLEAN);
+
+        var a11y_settings = new GLib.Settings ("io.elementary.settings-daemon.a11y");
+        a11y_settings.bind ("reduce-motion", animations_switch, "active", DEFAULT);
 
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
