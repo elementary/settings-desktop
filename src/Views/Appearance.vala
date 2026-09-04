@@ -104,20 +104,9 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         prefer_style_box.append (prefer_default_radio);
         prefer_style_box.append (prefer_dark_radio);
 
-        var dim_switch = new Gtk.Switch () {
-            valign = CENTER
-        };
-
-        var dim_label = new Granite.HeaderLabel (_("Dim Wallpaper With Dark Style")) {
-            hexpand = true,
-            mnemonic_widget = dim_switch
-        };
-
-        var dim_box = new Gtk.Box (HORIZONTAL, 12) {
+        var dim_switch = new Granite.SwitchModelButton (_("Dim Wallpaper With Dark Style")) {
             margin_top = 18
         };
-        dim_box.append (dim_label);
-        dim_box.append (dim_switch);
 
         var schedule_disabled_radio = new Gtk.CheckButton.with_label (_("Disabled")) {
             action_name = "desktop-appearance.prefer-dark-schedule",
@@ -202,7 +191,7 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
             row_spacing = 6
         };
         grid.attach (prefer_style_box, 0, 2, 2);
-        grid.attach (dim_box, 0, 3, 2);
+        grid.attach (dim_switch, 0, 3, 2);
         grid.attach (schedule_label, 0, 4, 2);
         grid.attach (schedule_box, 0, 5, 2);
 
@@ -279,54 +268,32 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         grid.attach (accent_label, 0, 8, 2);
         grid.attach (accent_box, 0, 9, 2);
 
-        var animations_switch = new Gtk.Switch () {
-            halign = Gtk.Align.END,
-            hexpand = true,
-            valign = Gtk.Align.CENTER
+        var animations_switch = new Granite.SwitchModelButton (_("Reduce Motion")) {
+            description = _("Disable animations in the window manager and some other interface elements.")
         };
 
-        var animations_label = new Granite.HeaderLabel (_("Reduce Motion")) {
-            mnemonic_widget = animations_switch,
-            secondary_text = _("Disable animations in the window manager and some other interface elements.")
+        var scrollbar_switch = new Granite.SwitchModelButton (_("Always Show Scrollbars")) {
+            description = _("Scrollbars will take up space, even when not in use.")
         };
 
-        var animations_box = new Gtk.Box (HORIZONTAL, 12) {
-            margin_top = 18
+        var a11y_box = new Gtk.ListBox () {
+            margin_top = 18,
+            show_separators = true
         };
-        animations_box.append (animations_label);
-        animations_box.append (animations_switch);
+        a11y_box.add_css_class (Granite.CssClass.CARD);
+        a11y_box.append (new Granite.ListItem () { child = animations_switch });
+        a11y_box.append (new Granite.ListItem () { child = scrollbar_switch });
 
-        var scrollbar_switch = new Gtk.Switch () {
-            valign = CENTER
-        };
-
-        var scrollbar_label = new Granite.HeaderLabel (_("Always Show Scrollbars")) {
-            hexpand = true,
-            mnemonic_widget = scrollbar_switch,
-            secondary_text = _("Scrollbars will take up space, even when not in use.")
-        };
-
-        var scrollbar_box = new Gtk.Box (HORIZONTAL, 12) {
-            margin_top = 18
-        };
-        scrollbar_box.append (scrollbar_label);
-        scrollbar_box.append (scrollbar_switch);
-
-        grid.attach (animations_box, 0, 10, 2);
-        grid.attach (scrollbar_box, 0, 11, 2);
+        grid.attach (a11y_box, 0, 10, 2);
 
         child = grid;
         add_css_class ("appearance-view");
 
-        // This key should be deprecated. Set only because interface settings is the source of truth
-        var animations_settings = new Settings ("io.elementary.desktop.wm.animations");
-        animations_switch.notify["active"].connect (() => {
-            animations_settings.set_boolean ("enable-animations", !animations_switch.active);
-        });
-
         var interface_settings = new GLib.Settings ("org.gnome.desktop.interface");
         interface_settings.bind ("overlay-scrolling", scrollbar_switch, "active", INVERT_BOOLEAN);
-        interface_settings.bind ("enable-animations", animations_switch, "active", INVERT_BOOLEAN);
+
+        var a11y_settings = new GLib.Settings ("io.elementary.settings-daemon.a11y");
+        a11y_settings.bind ("reduce-motion", animations_switch, "active", DEFAULT);
 
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
