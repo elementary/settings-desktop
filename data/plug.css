@@ -54,7 +54,6 @@
 }
 
 .wallpaper flowboxchild {
-    border-radius: 0.75em;
     margin: 1em;
 }
 
@@ -73,13 +72,7 @@
     border-radius: 50%;
     min-height: 20px;
     min-width: 20px;
-    -gtk-icon-transform: scale(0.6);
-}
-
-settingspage.wallpaper actionbar box.end,
-settingspage.wallpaper actionbar box.start {
-    border-spacing: 12px;
-    padding: 6px;
+    -gtk-icon-transform: scale(0.8);
 }
 
 .appearance-view desktop-preview {
