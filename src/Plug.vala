@@ -62,8 +62,8 @@ public class PantheonShell.Plug : Switchboard.Plug {
             var text = new Text ();
 
             stack = new Gtk.Stack ();
-            stack.add_titled (wallpaper_view, "wallpaper", _("Wallpaper"));
             stack.add_titled (appearance, "appearance", _("Appearance"));
+            stack.add_titled (wallpaper_view, "wallpaper", _("Wallpaper"));
             stack.add_titled (text, "text", _("Text"));
             stack.add_titled (dock, "dock", _("Dock & Panel"));
             stack.add_titled (multitasking, "multitasking", _("Multitasking"));

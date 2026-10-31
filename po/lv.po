@@ -7,17 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
-"PO-Revision-Date: 2020-10-02 07:14+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Latvian <https://l10n.elementary.io/projects/switchboard/"
-"switchboard-plug-pantheon-shell/lv/>\n"
+"POT-Creation-Date: 2026-09-02 17:04+0000\n"
+"PO-Revision-Date: 2026-05-29 00:56+0000\n"
+"Last-Translator: Automatic translation add-on <noreply-addon-"
+"autotranslate@weblate.org>\n"
+"Language-Team: Latvian <https://l10n.elementaryos.org/projects/settings/"
+"desktop/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-02-12 06:15+0000\n"
 
 #: src/Plug.vala:49
@@ -28,18 +29,18 @@ msgstr "Darbvirsma"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr ""
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:43
-msgid "Wallpaper"
-msgstr "Ekrāntapete"
-
-#: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
+#: src/Plug.vala:65 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
 #: src/Views/Appearance.vala:68
 msgid "Appearance"
 msgstr ""
 
+#: src/Plug.vala:66 src/Plug.vala:125 src/Views/Wallpaper.vala:44
+msgid "Wallpaper"
+msgstr "Ekrāntapete"
+
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
-#: src/Views/Text.vala:35
+#: src/Views/Text.vala:26
 msgid "Text"
 msgstr ""
 
@@ -102,13 +103,13 @@ msgstr ""
 msgid "Window animations"
 msgstr ""
 
-#: src/Plug.vala:141 src/Views/Text.vala:42
+#: src/Plug.vala:141 src/Views/Text.vala:80
 #, fuzzy
 #| msgid "Icon Size"
 msgid "Size"
 msgstr "Ikonas Izmērs"
 
-#: src/Plug.vala:142 src/Views/Text.vala:68
+#: src/Plug.vala:142
 msgid "Dyslexia-friendly"
 msgstr ""
 
@@ -236,7 +237,7 @@ msgstr "Dokpanelis"
 
 #: src/Views/Dock.vala:66
 msgid "Never"
-msgstr ""
+msgstr "Nekad"
 
 #: src/Views/Dock.vala:69
 msgid "When the focused window is maximized"
@@ -352,51 +353,61 @@ msgstr ""
 msgid "Execute custom command"
 msgstr ""
 
-#: src/Views/Text.vala:71
-msgid ""
-"Bottom-heavy shapes and increased character spacing can help improve "
-"legibility and reading speed."
+#: src/Views/Text.vala:54
+msgid "Interface Font"
 msgstr ""
 
-#: src/Views/Wallpaper.vala:82
+#: src/Views/Text.vala:55
+msgid "The default font used throughout the operating system."
+msgstr ""
+
+#: src/Views/Text.vala:69
+msgid "Monospace Font"
+msgstr ""
+
+#: src/Views/Text.vala:70
+msgid "Used in Code and Terminal for example."
+msgstr ""
+
+#: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
 msgstr ""
 
-#: src/Views/Wallpaper.vala:87
+#: src/Views/Wallpaper.vala:90
 msgid "Centered"
 msgstr "Centrēts"
 
-#: src/Views/Wallpaper.vala:88
+#: src/Views/Wallpaper.vala:91
 msgid "Zoom"
 msgstr "Mērogs"
 
-#: src/Views/Wallpaper.vala:89
+#: src/Views/Wallpaper.vala:92
 msgid "Spanned"
 msgstr ""
 
-#: src/Views/Wallpaper.vala:128
+#: src/Views/Wallpaper.vala:144
 msgid "Import"
 msgstr ""
 
-#: src/Views/Wallpaper.vala:131
+#: src/Views/Wallpaper.vala:147
 msgid "Import Photos"
 msgstr ""
 
-#: src/Views/Wallpaper.vala:475
+#: src/Views/Wallpaper.vala:491
 #, fuzzy
 #| msgid "Wallpaper"
 msgid "Wallpaper Deleted"
 msgstr "Ekrāntapete"
 
-#: src/Views/Wallpaper.vala:476
+#: src/Views/Wallpaper.vala:492
 msgid "Undo"
 msgstr ""
 
-#: src/Widgets/WallpaperContainer.vala:122
+#: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
 msgstr "Noņemt"
 
-#: src/Widgets/WallpaperContainer.vala:200
+#: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
 msgstr ""

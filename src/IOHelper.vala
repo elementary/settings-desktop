@@ -17,11 +17,12 @@
  */
 public class PantheonShell.IOHelper : GLib.Object {
     private const string[] ACCEPTED_TYPES = {
+        "image/gif",
+        "image/heic",
         "image/jpeg",
         "image/png",
-        "image/tiff",
         "image/svg+xml",
-        "image/gif"
+        "image/tiff"
     };
 
     // Check if the filename has a picture file extension.

@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: switchboard-plug-pantheon-shell\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 17:25+0000\n"
-"PO-Revision-Date: 2023-07-01 08:07+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Slovenian <https://l10n.elementary.io/projects/switchboard/"
-"switchboard-plug-pantheon-shell/sl/>\n"
+"POT-Creation-Date: 2026-09-02 17:04+0000\n"
+"PO-Revision-Date: 2026-01-21 18:55+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
+"Language-Team: Slovenian <https://l10n.elementaryos.org/projects/settings/"
+"desktop/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
 "n%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-02-12 06:15+0000\n"
 
 #: src/Plug.vala:49
@@ -29,35 +29,31 @@ msgstr "Namizje"
 msgid "Configure the dock, hot corners, and change wallpaper"
 msgstr "Nastavitve sidrišča, vročih kotov in ozadja"
 
-#: src/Plug.vala:65 src/Plug.vala:125 src/Views/Wallpaper.vala:43
-msgid "Wallpaper"
-msgstr "Ozadje"
-
-#: src/Plug.vala:66 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
+#: src/Plug.vala:65 src/Plug.vala:133 src/Plug.vala:134 src/Plug.vala:135
 #: src/Plug.vala:136 src/Plug.vala:137 src/Plug.vala:138 src/Plug.vala:139
 #: src/Views/Appearance.vala:68
 msgid "Appearance"
 msgstr "Izgled"
 
+#: src/Plug.vala:66 src/Plug.vala:125 src/Views/Wallpaper.vala:44
+msgid "Wallpaper"
+msgstr "Ozadje"
+
 #: src/Plug.vala:67 src/Plug.vala:140 src/Plug.vala:141 src/Plug.vala:142
-#: src/Views/Text.vala:35
-#, fuzzy
-#| msgid "Text size:"
+#: src/Views/Text.vala:26
 msgid "Text"
-msgstr "Velikost besedila:"
+msgstr "Besedilo"
 
 #: src/Plug.vala:68 src/Plug.vala:126 src/Plug.vala:127 src/Plug.vala:128
 #: src/Plug.vala:129 src/Plug.vala:130 src/Plug.vala:131 src/Plug.vala:132
 #: src/Views/Dock.vala:13
 msgid "Dock & Panel"
-msgstr ""
+msgstr "Sidrišče in vrhnja plošča"
 
 #: src/Plug.vala:69 src/Plug.vala:143 src/Plug.vala:144 src/Plug.vala:145
 #: src/Plug.vala:146 src/Views/Multitasking.vala:27
-#, fuzzy
-#| msgid "Multitasking View"
 msgid "Multitasking"
-msgstr "Pokaži vsa okna"
+msgstr "Večopravilnost"
 
 #: src/Plug.vala:127
 msgid "Hide Mode"
@@ -77,47 +73,43 @@ msgstr "Zaslon"
 
 #: src/Plug.vala:131
 msgid "Panel translucency"
-msgstr ""
+msgstr "Prosojnost vrhnje plošče"
 
 #: src/Plug.vala:132 src/Views/Dock.vala:123
 msgid "Scroll on the panel to switch workspaces"
-msgstr ""
+msgstr "Podrsajte po vrhnji plošči za menjavo delovnih površin"
 
 #: src/Plug.vala:134
 msgid "Dark style"
-msgstr ""
+msgstr "Temen stil"
 
 #: src/Plug.vala:135 src/Views/Appearance.vala:111
 msgid "Dim Wallpaper With Dark Style"
-msgstr ""
+msgstr "Potemni ozadje v temnem stilu"
 
 #: src/Plug.vala:136 src/Views/Appearance.vala:274
 msgid "Accent Color"
-msgstr ""
+msgstr "Barva poudarkov"
 
 #: src/Plug.vala:137 src/Views/Appearance.vala:303
 msgid "Always Show Scrollbars"
-msgstr ""
+msgstr "Vedno pokaži drsnike"
 
 #: src/Plug.vala:138 src/Views/Appearance.vala:288
 msgid "Reduce Motion"
-msgstr ""
+msgstr "Manj animacij in premikanja"
 
 #: src/Plug.vala:139
-#, fuzzy
-#| msgid "Window animations:"
 msgid "Window animations"
-msgstr "Animacije oken:"
+msgstr "Animacije oken"
 
-#: src/Plug.vala:141 src/Views/Text.vala:42
-#, fuzzy
-#| msgid "Icon Size"
+#: src/Plug.vala:141 src/Views/Text.vala:80
 msgid "Size"
-msgstr "Velikost ikon"
+msgstr "Velikost"
 
-#: src/Plug.vala:142 src/Views/Text.vala:68
+#: src/Plug.vala:142
 msgid "Dyslexia-friendly"
-msgstr ""
+msgstr "Prijazna disleksiji"
 
 #: src/Plug.vala:144
 msgid "Hot Corners"
@@ -373,53 +365,63 @@ msgstr "Preklopi na nov delovni prostor"
 msgid "Execute custom command"
 msgstr "Poženi ukaz"
 
-#: src/Views/Text.vala:71
-msgid ""
-"Bottom-heavy shapes and increased character spacing can help improve "
-"legibility and reading speed."
+#: src/Views/Text.vala:54
+msgid "Interface Font"
 msgstr ""
 
-#: src/Views/Wallpaper.vala:82
+#: src/Views/Text.vala:55
+msgid "The default font used throughout the operating system."
+msgstr ""
+
+#: src/Views/Text.vala:69
+msgid "Monospace Font"
+msgstr ""
+
+#: src/Views/Text.vala:70
+msgid "Used in Code and Terminal for example."
+msgstr ""
+
+#: src/Views/Wallpaper.vala:85
 msgid "Import Photo…"
 msgstr "Uvozi fotografijo…"
 
-#: src/Views/Wallpaper.vala:87
+#: src/Views/Wallpaper.vala:90
 msgid "Centered"
 msgstr "Sredinsko"
 
-#: src/Views/Wallpaper.vala:88
+#: src/Views/Wallpaper.vala:91
 msgid "Zoom"
 msgstr "Približano"
 
-#: src/Views/Wallpaper.vala:89
+#: src/Views/Wallpaper.vala:92
 msgid "Spanned"
 msgstr "Razpeto"
 
-#: src/Views/Wallpaper.vala:128
+#: src/Views/Wallpaper.vala:144
 msgid "Import"
 msgstr "Uvozi"
 
-#: src/Views/Wallpaper.vala:131
+#: src/Views/Wallpaper.vala:147
 #, fuzzy
 #| msgid "Import Photo"
 msgid "Import Photos"
 msgstr "Uvozi fotografijo"
 
-#: src/Views/Wallpaper.vala:475
+#: src/Views/Wallpaper.vala:491
 #, fuzzy
 #| msgid "Wallpaper"
 msgid "Wallpaper Deleted"
 msgstr "Ozadje"
 
-#: src/Views/Wallpaper.vala:476
+#: src/Views/Wallpaper.vala:492
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: src/Widgets/WallpaperContainer.vala:122
+#: src/Widgets/WallpaperContainer.vala:101
 msgid "Remove"
 msgstr "Odstrani"
 
-#: src/Widgets/WallpaperContainer.vala:200
+#: src/Widgets/WallpaperContainer.vala:256
 #, c-format
 msgid "Artist: %s"
 msgstr "Umetnik: %s"

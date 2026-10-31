@@ -19,15 +19,6 @@
 */
 
 public class PantheonShell.Text : Switchboard.SettingsPage {
-    private const string DYSLEXIA_KEY = "dyslexia-friendly-support";
-    private const string FONT_KEY = "font-name";
-    private const string DOCUMENT_FONT_KEY = "document-font-name";
-    private const string MONOSPACE_FONT_KEY = "monospace-font-name";
-
-    private const string OD_REG_FONT = "OpenDyslexic Regular 9";
-    private const string OD_DOC_FONT = "OpenDyslexic Regular 10";
-    private const string OD_MON_FONT = "OpenDyslexicMono Regular 10";
-
     private uint scale_timeout;
 
     public Text () {
@@ -39,6 +30,53 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
     }
 
     construct {
+        var mono_filter = new Gtk.BoolFilter (
+            new Gtk.PropertyExpression (typeof (Pango.FontFamily), null, "is-monospace")
+        );
+
+        var noto_filter = new Gtk.CustomFilter (noto_filter_func);
+
+        var mono_font_filter = new Gtk.EveryFilter ();
+        mono_font_filter.append (noto_filter);
+        mono_font_filter.append (mono_filter);
+
+        var default_font_dialog = new Gtk.FontDialog () {
+            filter = noto_filter,
+            language = Pango.Language.get_default ()
+        };
+
+        var default_font_button = new Gtk.FontDialogButton (default_font_dialog) {
+            use_font = true,
+            use_size = true,
+            level = FAMILY
+        };
+
+        var default_font_label = new Granite.HeaderLabel (_("Interface Font")) {
+            secondary_text = _("The default font used throughout the operating system."),
+            mnemonic_widget = default_font_button
+        };
+
+        var mono_font_dialog = new Gtk.FontDialog () {
+            filter = mono_font_filter
+        };
+
+        var mono_font_button = new Gtk.FontDialogButton (mono_font_dialog) {
+            use_font = true,
+            use_size = true,
+            level = FAMILY
+        };
+
+        var mono_font_label = new Granite.HeaderLabel (_("Monospace Font")) {
+            secondary_text = _("Used in Code and Terminal for example."),
+            mnemonic_widget = mono_font_button
+        };
+
+        var font_box = new Granite.Box (VERTICAL, HALF);
+        font_box.append (default_font_label);
+        font_box.append (default_font_button);
+        font_box.append (mono_font_label);
+        font_box.append (mono_font_button);
+
         var size_label = new Granite.HeaderLabel (_("Size"));
 
         var size_adjustment = new Gtk.Adjustment (-1, 0.75, 1.5, 0.05, 0, 0);
@@ -61,23 +99,9 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
         size_grid.attach (size_scale, 0, 1);
         size_grid.attach (size_spinbutton, 1, 1);
 
-        var dyslexia_font_switch = new Gtk.Switch () {
-            valign = Gtk.Align.CENTER
-        };
-
-        var dyslexia_font_label = new Granite.HeaderLabel (_("Dyslexia-friendly")) {
-            hexpand = true,
-            mnemonic_widget = dyslexia_font_switch,
-            secondary_text = _("Bottom-heavy shapes and increased character spacing can help improve legibility and reading speed.")
-        };
-
-        var dyslexia_box = new Gtk.Box (HORIZONTAL, 12);
-        dyslexia_box.append (dyslexia_font_label);
-        dyslexia_box.append (dyslexia_font_switch);
-
-        var box = new Gtk.Box (VERTICAL, 24);
+        var box = new Granite.Box (VERTICAL, DOUBLE);
+        box.append (font_box);
         box.append (size_grid);
-        box.append (dyslexia_box);
 
         child = box;
 
@@ -97,23 +121,36 @@ public class PantheonShell.Text : Switchboard.SettingsPage {
             });
         });
 
-        var interface_font = interface_settings.get_string (FONT_KEY);
-        var document_font = interface_settings.get_string (DOCUMENT_FONT_KEY);
-        var monospace_font = interface_settings.get_string (MONOSPACE_FONT_KEY);
+        interface_settings.bind_with_mapping (
+            "font-name", default_font_button, "font-desc", DEFAULT,
+            (SettingsBindGetMappingShared) to_fontbutton_fontdesc,
+            (SettingsBindSetMappingShared) from_fontbutton_fontdesc,
+            new Variant.int32 (9), null
+        );
 
-        dyslexia_font_switch.active = interface_font == OD_REG_FONT || document_font == OD_DOC_FONT || monospace_font == OD_MON_FONT;
+        interface_settings.bind_with_mapping (
+            "monospace-font-name", mono_font_button, "font-desc", DEFAULT,
+            (SettingsBindGetMappingShared) to_fontbutton_fontdesc,
+            (SettingsBindSetMappingShared) from_fontbutton_fontdesc,
+            new Variant.int32 (10), null
+        );
+    }
 
-        dyslexia_font_switch.state_set.connect (() => {
-            if (dyslexia_font_switch.active) {
-                interface_settings.set_string (FONT_KEY, OD_REG_FONT);
-                interface_settings.set_string (DOCUMENT_FONT_KEY, OD_DOC_FONT);
-                interface_settings.set_string (MONOSPACE_FONT_KEY, OD_MON_FONT);
-            } else {
-                interface_settings.reset (FONT_KEY);
-                interface_settings.reset (DOCUMENT_FONT_KEY);
-                interface_settings.reset (MONOSPACE_FONT_KEY);
-            }
-            return Gdk.EVENT_PROPAGATE;
-        });
+    private static bool to_fontbutton_fontdesc (Value font_desc, Variant settings_value, void* user_data) {
+        string font = settings_value.get_string ();
+        var desc = Pango.FontDescription.from_string (font);
+        font_desc.set_boxed (desc);
+        return true;
+    }
+
+    private static Variant from_fontbutton_fontdesc (Value font_desc, VariantType expected_type, void* user_data) {
+        var desc = (Pango.FontDescription) font_desc.get_boxed ();
+        var font_string = "%s %i".printf (desc.to_string (), ((Variant) user_data).get_int32 ());
+        return new Variant.string (font_string);
+    }
+
+    private static bool noto_filter_func (Object item) {
+        var font_family = ((Pango.FontFamily) item);
+        return !font_family.get_name ().contains ("Noto");
     }
 }
