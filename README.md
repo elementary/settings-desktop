@@ -10,7 +10,7 @@ You'll need the following dependencies:
 * libswitchboard-3-dev
 * libgee-0.8-dev
 * libgexiv2-dev
-* libgtk-4-dev (>=4.10)
+* libgtk-4-dev (>=4.22)
 * libgranite-7-dev (>=7.7.0)
 * meson
 * valac
