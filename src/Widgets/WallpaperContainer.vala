@@ -99,7 +99,6 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
         // So we can receive key events
         focusable = true;
         child = frame;
-        height_request = THUMB_HEIGHT;
 
         remove_wallpaper_action = new SimpleAction ("trash", null);
         remove_wallpaper_action.activate.connect (() => trash ());

@@ -60,6 +60,7 @@
 
 .wallpaper gridview child picture {
     margin: 0.666em; /* Needs to be separate to position checkbutton */
+    min-height: 128px;
 }
 
 .wallpaper gridview child:checked .card {
