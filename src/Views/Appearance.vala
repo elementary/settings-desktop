@@ -19,50 +19,6 @@
 */
 
 public class PantheonShell.Appearance : Switchboard.SettingsPage {
-    private enum AccentColor {
-        NO_PREFERENCE,
-        RED,
-        ORANGE,
-        YELLOW,
-        GREEN,
-        MINT,
-        BLUE,
-        PURPLE,
-        PINK,
-        BROWN,
-        GRAY,
-        LATTE;
-
-        public string to_string () {
-            switch (this) {
-                case RED:
-                    return "strawberry";
-                case ORANGE:
-                    return "orange";
-                case YELLOW:
-                    return "banana";
-                case GREEN:
-                    return "lime";
-                case MINT:
-                    return "mint";
-                case BLUE:
-                    return "blueberry";
-                case PURPLE:
-                    return "grape";
-                case PINK:
-                    return "bubblegum";
-                case BROWN:
-                    return "cocoa";
-                case GRAY:
-                    return "slate";
-                case LATTE:
-                    return "latte";
-                default:
-                    return "auto";
-            }
-        }
-    }
-
     public Appearance () {
         Object (
             title: _("Appearance"),
@@ -208,57 +164,27 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
 
         schedule_manual_radio.bind_property ("active", schedule_manual_box, "sensitive", BindingFlags.SYNC_CREATE);
 
-        var blueberry_button = new PrefersAccentColorButton (AccentColor.BLUE);
-        blueberry_button.tooltip_text = _("Blueberry");
-
-        var mint_button = new PrefersAccentColorButton (AccentColor.MINT, blueberry_button);
-        mint_button.tooltip_text = _("Mint");
-
-        var lime_button = new PrefersAccentColorButton (AccentColor.GREEN, blueberry_button);
-        lime_button.tooltip_text = _("Lime");
-
-        var banana_button = new PrefersAccentColorButton (AccentColor.YELLOW, blueberry_button);
-        banana_button.tooltip_text = _("Banana");
-
-        var orange_button = new PrefersAccentColorButton (AccentColor.ORANGE, blueberry_button);
-        orange_button.tooltip_text = _("Orange");
-
-        var strawberry_button = new PrefersAccentColorButton (AccentColor.RED, blueberry_button);
-        strawberry_button.tooltip_text = _("Strawberry");
-
-        var bubblegum_button = new PrefersAccentColorButton (AccentColor.PINK, blueberry_button);
-        bubblegum_button.tooltip_text = _("Bubblegum");
-
-        var grape_button = new PrefersAccentColorButton (AccentColor.PURPLE, blueberry_button);
-        grape_button.tooltip_text = _("Grape");
-
-        var cocoa_button = new PrefersAccentColorButton (AccentColor.BROWN, blueberry_button);
-        cocoa_button.tooltip_text = _("Cocoa");
-
-        var slate_button = new PrefersAccentColorButton (AccentColor.GRAY, blueberry_button);
-        slate_button.tooltip_text = _("Slate");
-
-        var latte_button = new PrefersAccentColorButton (AccentColor.LATTE, blueberry_button);
-        latte_button.tooltip_text = _("Latte");
-
-        var auto_button = new PrefersAccentColorButton (AccentColor.NO_PREFERENCE, blueberry_button);
-        auto_button.tooltip_text = _("Automatic based on wallpaper");
-
-        var accent_box = new Gtk.Box (HORIZONTAL, 6) {
+        var accent_box = new Granite.Box (HORIZONTAL) {
             accessible_role = Gtk.AccessibleRole.LIST
         };
-        accent_box.append (blueberry_button);
-        accent_box.append (mint_button);
-        accent_box.append (lime_button);
-        accent_box.append (banana_button);
-        accent_box.append (orange_button);
-        accent_box.append (strawberry_button);
-        accent_box.append (bubblegum_button);
-        accent_box.append (grape_button);
-        accent_box.append (cocoa_button);
-        accent_box.append (slate_button);
-        accent_box.append (latte_button);
-        accent_box.append (auto_button);
+
+        Granite.AccentColor[] colors = {
+            BLUE,
+            TEAL,
+            GREEN,
+            YELLOW,
+            ORANGE,
+            RED,
+            PINK,
+            PURPLE,
+            BROWN,
+            GRAY,
+            LATTE,
+            AUTOMATIC
+        };
+        foreach (unowned var color in colors) {
+            accent_box.append (new PrefersAccentColorButton (color));
+        }
 
         var accent_label = new Granite.HeaderLabel (_("Accent Color")) {
             margin_top = 18,
@@ -298,53 +224,53 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
 
-        var accent_color_action = new SimpleAction.stateful ("prefers-accent-color", GLib.VariantType.INT32, new Variant.int32 (AccentColor.NO_PREFERENCE));
-
         var color_scheme_action = settings.create_action ("color-scheme");
         var prefer_dark_action = settings.create_action ("prefer-dark-schedule");
 
         var action_group = new SimpleActionGroup ();
-        action_group.add_action (accent_color_action);
         action_group.add_action (color_scheme_action);
         action_group.add_action (prefer_dark_action);
 
         insert_action_group ("desktop-appearance", action_group);
-
-        if (pantheon_act != null) {
-            accent_color_action.set_state (new Variant.int32 (pantheon_act.prefers_accent_color));
-
-            ((DBusProxy) pantheon_act).g_properties_changed.connect ((changed, invalid) => {
-                var accent_color = changed.lookup_value ("PrefersAccentColor", new VariantType ("i"));
-                if (accent_color != null && !accent_color_action.get_state ().equal (accent_color)) {
-                    accent_color_action.set_state (accent_color);
-                }
-            });
-
-            accent_color_action.activate.connect ((value) => {
-                if (!accent_color_action.get_state ().equal (value)) {
-                    accent_color_action.set_state (value);
-                    pantheon_act.prefers_accent_color = value.get_int32 ();
-                }
-            });
-        }
     }
 
     private class PrefersAccentColorButton : Gtk.CheckButton {
-        public AccentColor color { get; construct; }
+        public Granite.AccentColor color { get; construct; }
 
-        public PrefersAccentColorButton (AccentColor color, Gtk.CheckButton? group_member = null) {
-            Object (
-                color: color,
-                group: group_member
-            );
+        private static SimpleActionGroup action_group;
+
+        public PrefersAccentColorButton (Granite.AccentColor color) {
+            Object (color: color);
+        }
+
+        static construct {
+            var interface_settings = new GLib.Settings ("io.elementary.settings-daemon.interface");
+            action_group = new SimpleActionGroup ();
+            action_group.add_action (interface_settings.create_action ("accent-color"));
         }
 
         construct {
-            add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            add_css_class (color.to_string ());
+            tooltip_text = color.to_name ();
+            if (color == AUTOMATIC) {
+                tooltip_text = _("Automatic based on wallpaper");
+            }
 
-            action_name = "desktop-appearance.prefers-accent-color";
-            action_target = new Variant.int32 (color);
+            insert_action_group ("interface", action_group);
+
+            var action_target_string = color.to_css_class ();
+            action_target_string = action_target_string.replace ("teal", "mint");
+
+            action_target = new Variant.string (action_target_string);
+            action_name = "interface.accent-color";
+
+            accessible_role = Gtk.AccessibleRole.RADIO;
+            add_css_class (Granite.CssClass.ACCENT);
+            add_css_class (color.to_css_class ());
+
+            update_property_value (
+                {LABEL},
+                {_("accent color")}
+            );
         }
     }
 
