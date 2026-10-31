@@ -36,29 +36,29 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         public string to_string () {
             switch (this) {
                 case RED:
-                    return "strawberry";
+                    return "red";
                 case ORANGE:
                     return "orange";
                 case YELLOW:
-                    return "banana";
+                    return "yellow";
                 case GREEN:
-                    return "lime";
+                    return "green";
                 case MINT:
                     return "mint";
                 case BLUE:
-                    return "blueberry";
+                    return "blue";
                 case PURPLE:
-                    return "grape";
+                    return "purple";
                 case PINK:
-                    return "bubblegum";
+                    return "pink";
                 case BROWN:
-                    return "cocoa";
+                    return "brown";
                 case GRAY:
-                    return "slate";
+                    return "gray";
                 case LATTE:
                     return "latte";
                 default:
-                    return "auto";
+                    return "automatic";
             }
         }
     }
@@ -159,34 +159,6 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
             mnemonic_widget = schedule_box
         };
 
-        Pantheon.AccountsService? pantheon_act = null;
-
-        string? user_path = null;
-        try {
-            FDO.Accounts? accounts_service = GLib.Bus.get_proxy_sync (
-                GLib.BusType.SYSTEM,
-               "org.freedesktop.Accounts",
-               "/org/freedesktop/Accounts"
-            );
-
-            user_path = accounts_service.find_user_by_name (GLib.Environment.get_user_name ());
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        if (user_path != null) {
-            try {
-                pantheon_act = GLib.Bus.get_proxy_sync (
-                    GLib.BusType.SYSTEM,
-                    "org.freedesktop.Accounts",
-                    user_path,
-                    GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES
-                );
-            } catch (Error e) {
-                warning ("Unable to get AccountsService proxy, color scheme preference may be incorrect");
-            }
-        }
-
         var grid = new Gtk.Grid () {
             row_spacing = 6
         };
@@ -211,37 +183,37 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var blueberry_button = new PrefersAccentColorButton (AccentColor.BLUE);
         blueberry_button.tooltip_text = _("Blueberry");
 
-        var mint_button = new PrefersAccentColorButton (AccentColor.MINT, blueberry_button);
+        var mint_button = new PrefersAccentColorButton (AccentColor.MINT);
         mint_button.tooltip_text = _("Mint");
 
-        var lime_button = new PrefersAccentColorButton (AccentColor.GREEN, blueberry_button);
+        var lime_button = new PrefersAccentColorButton (AccentColor.GREEN);
         lime_button.tooltip_text = _("Lime");
 
-        var banana_button = new PrefersAccentColorButton (AccentColor.YELLOW, blueberry_button);
+        var banana_button = new PrefersAccentColorButton (AccentColor.YELLOW);
         banana_button.tooltip_text = _("Banana");
 
-        var orange_button = new PrefersAccentColorButton (AccentColor.ORANGE, blueberry_button);
+        var orange_button = new PrefersAccentColorButton (AccentColor.ORANGE);
         orange_button.tooltip_text = _("Orange");
 
-        var strawberry_button = new PrefersAccentColorButton (AccentColor.RED, blueberry_button);
+        var strawberry_button = new PrefersAccentColorButton (AccentColor.RED);
         strawberry_button.tooltip_text = _("Strawberry");
 
-        var bubblegum_button = new PrefersAccentColorButton (AccentColor.PINK, blueberry_button);
+        var bubblegum_button = new PrefersAccentColorButton (AccentColor.PINK);
         bubblegum_button.tooltip_text = _("Bubblegum");
 
-        var grape_button = new PrefersAccentColorButton (AccentColor.PURPLE, blueberry_button);
+        var grape_button = new PrefersAccentColorButton (AccentColor.PURPLE);
         grape_button.tooltip_text = _("Grape");
 
-        var cocoa_button = new PrefersAccentColorButton (AccentColor.BROWN, blueberry_button);
+        var cocoa_button = new PrefersAccentColorButton (AccentColor.BROWN);
         cocoa_button.tooltip_text = _("Cocoa");
 
-        var slate_button = new PrefersAccentColorButton (AccentColor.GRAY, blueberry_button);
+        var slate_button = new PrefersAccentColorButton (AccentColor.GRAY);
         slate_button.tooltip_text = _("Slate");
 
-        var latte_button = new PrefersAccentColorButton (AccentColor.LATTE, blueberry_button);
+        var latte_button = new PrefersAccentColorButton (AccentColor.LATTE);
         latte_button.tooltip_text = _("Latte");
 
-        var auto_button = new PrefersAccentColorButton (AccentColor.NO_PREFERENCE, blueberry_button);
+        var auto_button = new PrefersAccentColorButton (AccentColor.NO_PREFERENCE);
         auto_button.tooltip_text = _("Automatic based on wallpaper");
 
         var accent_box = new Gtk.Box (HORIZONTAL, 6) {
@@ -298,53 +270,49 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
 
-        var accent_color_action = new SimpleAction.stateful ("prefers-accent-color", GLib.VariantType.INT32, new Variant.int32 (AccentColor.NO_PREFERENCE));
-
         var color_scheme_action = settings.create_action ("color-scheme");
         var prefer_dark_action = settings.create_action ("prefer-dark-schedule");
 
         var action_group = new SimpleActionGroup ();
-        action_group.add_action (accent_color_action);
         action_group.add_action (color_scheme_action);
         action_group.add_action (prefer_dark_action);
 
         insert_action_group ("desktop-appearance", action_group);
-
-        if (pantheon_act != null) {
-            accent_color_action.set_state (new Variant.int32 (pantheon_act.prefers_accent_color));
-
-            ((DBusProxy) pantheon_act).g_properties_changed.connect ((changed, invalid) => {
-                var accent_color = changed.lookup_value ("PrefersAccentColor", new VariantType ("i"));
-                if (accent_color != null && !accent_color_action.get_state ().equal (accent_color)) {
-                    accent_color_action.set_state (accent_color);
-                }
-            });
-
-            accent_color_action.activate.connect ((value) => {
-                if (!accent_color_action.get_state ().equal (value)) {
-                    accent_color_action.set_state (value);
-                    pantheon_act.prefers_accent_color = value.get_int32 ();
-                }
-            });
-        }
     }
 
     private class PrefersAccentColorButton : Gtk.CheckButton {
         public AccentColor color { get; construct; }
 
-        public PrefersAccentColorButton (AccentColor color, Gtk.CheckButton? group_member = null) {
-            Object (
-                color: color,
-                group: group_member
-            );
+        private static SimpleActionGroup action_group;
+
+        public PrefersAccentColorButton (AccentColor color) {
+            Object (color: color);
+        }
+
+        static construct {
+            var interface_settings = new GLib.Settings ("io.elementary.settings-daemon.interface");
+            action_group = new SimpleActionGroup ();
+            action_group.add_action (interface_settings.create_action ("accent-color"));
         }
 
         construct {
-            add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
-            add_css_class (color.to_string ());
+            insert_action_group ("interface", action_group);
 
-            action_name = "desktop-appearance.prefers-accent-color";
-            action_target = new Variant.int32 (color);
+            action_target = new Variant.string (color.to_string ());
+            action_name = "interface.accent-color";
+
+            var css_color = color.to_string ();
+            css_color = css_color.replace ("gray", "slate");
+            css_color = css_color.replace ("automatic", "auto");
+
+            accessible_role = Gtk.AccessibleRole.RADIO;
+            add_css_class (Granite.STYLE_CLASS_COLOR_BUTTON);
+            add_css_class (css_color);
+
+            update_property_value (
+                {LABEL},
+                {_("accent color")}
+            );
         }
     }
 

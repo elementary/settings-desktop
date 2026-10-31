@@ -1,6 +1,5 @@
 plug_files = files(
     'IOHelper.vala',
-    'PantheonAccountsServicePlugin.vala',
     'Plug.vala',
     'ThumbnailGenerator.vala',
     'WallpaperOperation.vala',
