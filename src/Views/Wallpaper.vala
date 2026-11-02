@@ -250,17 +250,14 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             if (active_wallpaper == solid_color) {
                 active_wallpaper.checked = false;
 
-                var child = wallpaper_selection.get_item (0);
-                for (var pos = 0; child != null; pos++) {
-                    var container = (WallpaperContainer) child;
+                for (var pos = 0; pos < wallpaper_selection.n_items; pos++) {
+                    var container = (WallpaperContainer) wallpaper_selection.get_item (pos);
                     if (container.uri == current_wallpaper_path) {
                         container.checked = true;
                         wallpaper_selection.set_selected (pos);
                         active_wallpaper = container;
                         break;
                     }
-
-                    child = wallpaper_selection.get_item (pos);
                 }
             }
         } else {
