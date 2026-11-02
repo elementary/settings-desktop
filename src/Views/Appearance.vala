@@ -270,13 +270,12 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
 
+        var accent_color_action = new GLib.Settings ("io.elementary.settings-daemon.interface").create_action ("accent-color");
         var color_scheme_action = settings.create_action ("color-scheme");
         var prefer_dark_action = settings.create_action ("prefer-dark-schedule");
 
         var action_group = new SimpleActionGroup ();
-        action_group.add_action (
-            new GLib.Settings ("io.elementary.settings-daemon.interface").create_action ("accent-color")
-        );
+        action_group.add_action (accent_color_action);
         action_group.add_action (color_scheme_action);
         action_group.add_action (prefer_dark_action);
 
