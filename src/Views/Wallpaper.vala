@@ -328,7 +328,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                 finished = true;
 
                 if (gnome_background_settings.get_string ("picture-options") == "none") {
-                    uint pos = -1;
+                    uint pos;
                     if (wallpaper_model.find (solid_color, out pos)) {
                         wallpaper_selection.set_selected (pos);
                         solid_color.checked = true;
@@ -492,7 +492,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void mark_for_removal (WallpaperContainer wallpaper) {
-        uint pos = -1;
+        uint pos;
         if (wallpaper_model.find (wallpaper, out pos)) {
             wallpaper_model.remove (pos);
             wallpaper_for_removal = wallpaper;
