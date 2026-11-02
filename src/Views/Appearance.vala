@@ -276,6 +276,9 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var action_group = new SimpleActionGroup ();
         action_group.add_action (color_scheme_action);
         action_group.add_action (prefer_dark_action);
+        action_group.add_action (
+            new GLib.Settings ("io.elementary.settings-daemon.interface").create_action ("accent-color")
+        );
 
         insert_action_group ("desktop-appearance", action_group);
     }
@@ -283,23 +286,13 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
     private class PrefersAccentColorButton : Gtk.CheckButton {
         public AccentColor color { get; construct; }
 
-        private static SimpleActionGroup action_group;
-
         public PrefersAccentColorButton (AccentColor color) {
             Object (color: color);
         }
 
-        static construct {
-            var interface_settings = new GLib.Settings ("io.elementary.settings-daemon.interface");
-            action_group = new SimpleActionGroup ();
-            action_group.add_action (interface_settings.create_action ("accent-color"));
-        }
-
         construct {
-            insert_action_group ("interface", action_group);
-
             action_target = new Variant.string (color.to_string ());
-            action_name = "interface.accent-color";
+            action_name = "desktop-appearance.accent-color";
 
             var css_color = color.to_string ();
             css_color = css_color.replace ("gray", "slate");
