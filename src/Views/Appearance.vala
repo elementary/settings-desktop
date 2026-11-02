@@ -274,11 +274,11 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var prefer_dark_action = settings.create_action ("prefer-dark-schedule");
 
         var action_group = new SimpleActionGroup ();
-        action_group.add_action (color_scheme_action);
-        action_group.add_action (prefer_dark_action);
         action_group.add_action (
             new GLib.Settings ("io.elementary.settings-daemon.interface").create_action ("accent-color")
         );
+        action_group.add_action (color_scheme_action);
+        action_group.add_action (prefer_dark_action);
 
         insert_action_group ("desktop-appearance", action_group);
     }
