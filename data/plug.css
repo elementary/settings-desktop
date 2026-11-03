@@ -21,13 +21,13 @@
     background-image:
         radial-gradient(
             circle,
-            alpha(@accent_color, 0.4) 70%,
-            alpha(@accent_color, 0) 1px
+            color-mix(in srgb, @accent_color 40%, transparent) 70%,
+            transparent 1px
         ),
         linear-gradient(
             to bottom,
-            alpha(@accent_color_500, 0.1),
-            alpha(@accent_color_500, 0.1)
+            color-mix(in srgb, @accent_color 10%, transparent),
+            color-mix(in srgb, @accent_color 10%, transparent)
         );
     background-repeat: no-repeat;
     background-size: 48px 48px, cover;
@@ -65,8 +65,8 @@
 .wallpaper flowboxchild:checked .card {
     box-shadow:
         0 0 0 4px @accent_color,
-        0 0 0 1px alpha(#000, 0.05),
-        0 3px 3px alpha(#000, 0.22);
+        0 0 0 1px color-mix(in srgb, black 5%, transparent),
+        0 3px 3px color-mix(in srgb, black 22%, transparent);
 }
 
 .wallpaper flowboxchild check {
@@ -104,35 +104,35 @@ settingspage.wallpaper actionbar box.start {
 }
 
 .appearance-view desktop-preview.dim .shell {
-    background-color: alpha(black, 0.3);
+    background-color: color-mix(in srgb, black 30%, transparent);
 }
 
 .appearance-view desktop-preview .dock {
     border-radius: 2px;
     min-height: 0.6em;
     min-width: 5em;
-    background: alpha(#fafafa, 0.6);
+    background: color-mix(in srgb, #fafafa 60%, transparent);
     box-shadow:
-        inset 0 -1px 0 0 alpha(white, 0.1),
-        inset 0 1px 0 0 alpha(white, 0.15),
-        inset 1px 0 0 0 alpha(white, 0.035),
-        inset -1px 0 0 0 alpha(white, 0.035),
-        0 0 0 1px alpha(black, 0.1),
-        0 1px 3px alpha(black, 0.10),
-        0 3px 9px alpha(black, 0.15);
+        inset 0 -1px 0 0 color-mix(in srgb, white 10%, transparent),
+        inset 0 1px 0 0 color-mix(in srgb, white 15%, transparent),
+        inset 1px 0 0 0 color-mix(in srgb, white 3.5%, transparent),
+        inset -1px 0 0 0 color-mix(in srgb, white 3.5%, transparent),
+        0 0 0 1px color-mix(in srgb, black 10%, transparent),
+        0 1px 3px color-mix(in srgb, black 10%, transparent),
+        0 3px 9px color-mix(in srgb, black 15%, transparent);
     margin: 0.25em;
 }
 
 .appearance-view desktop-preview.dark .dock {
-    background: alpha(#444, 0.6);
+    background: color-mix(in srgb, #444 60%, transparent);
     box-shadow:
-        inset 0 -1px 0 0 alpha(white, 0.05),
-        inset 0 1px 0 0 alpha(white, 0.07),
-        inset 1px 0 0 0 alpha(white, 0.0175),
-        inset -1px 0 0 0 alpha(white, 0.0175),
-        0 0 0 1px alpha(black, 0.7),
-        0 1px 2px alpha(black, 0.1),
-        0 2px 4px alpha(black, 0.3);
+        inset 0 -1px 0 0 color-mix(in srgb, white 5%, transparent),
+        inset 0 1px 0 0 color-mix(in srgb, white 7%, transparent),
+        inset 1px 0 0 0 color-mix(in srgb, white 1.75%, transparent),
+        inset -1px 0 0 0 color-mix(in srgb, white 1.75%, transparent),
+        0 0 0 1px color-mix(in srgb, black 70%, transparent),
+        0 1px 2px color-mix(in srgb, black 10%, transparent),
+        0 2px 4px color-mix(in srgb, black 30%, transparent);
 }
 
 .appearance-view desktop-preview .window {
@@ -155,23 +155,23 @@ settingspage.wallpaper actionbar box.start {
     background: #fafafa;
     box-shadow:
         inset 0 1px 0 0 white,
-        inset 0 -1px 0 0 alpha(white, 0.8),
-        inset 1px 0 0 0 alpha(white, 0.5),
-        inset -1px 0 0 0 alpha(white, 0.5),
-        0 0 0 1px alpha(black, 0.1),
-        0 1px 2px alpha(black, 0.1),
-        0 2px 4px alpha(black, 0.3);
+        inset 0 -1px 0 0 color-mix(in srgb, white 80%, transparent),
+        inset 1px 0 0 0 color-mix(in srgb, white 50%, transparent),
+        inset -1px 0 0 0 color-mix(in srgb, white 50%, transparent),
+        0 0 0 1px color-mix(in srgb, black 10%, transparent),
+        0 1px 2px color-mix(in srgb, black 10%, transparent),
+        0 2px 4px color-mix(in srgb, black 30%, transparent);
 }
 
 .appearance-view desktop-preview .window.back,
 .appearance-view desktop-preview.dark .window.front {
     background: #444;
     box-shadow:
-        inset 0 1px 0 0 alpha(white, 0.15),
-        inset 0 -1px 0 0 alpha(white, 0.1),
-        inset 1px 0 0 0 alpha(white, 0.035),
-        inset -1px 0 0 0 alpha(white, 0.035),
-        0 0 0 1px alpha(black, 0.7),
-        0 1px 2px alpha(black, 0.1),
-        0 2px 4px alpha(black, 0.3);
+        inset 0 1px 0 0 color-mix(in srgb, white 15%, transparent),
+        inset 0 -1px 0 0 color-mix(in srgb, white 10%, transparent),
+        inset 1px 0 0 0 color-mix(in srgb, white 3.5%, transparent),
+        inset -1px 0 0 0 color-mix(in srgb, white 3.5%, transparent),
+        0 0 0 1px color-mix(in srgb, black 70%, transparent),
+        0 1px 2px color-mix(in srgb, black 10%, transparent),
+        0 2px 4px color-mix(in srgb, black 30%, transparent);
 }
