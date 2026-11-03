@@ -25,7 +25,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     private Gtk.GridView wallpaper_view;
     private Gtk.Overlay view_overlay;
     private Gtk.ComboBoxText combo;
-    private Gtk.ColorButton color_button;
+    private Gtk.ColorDialogButton color_button;
 
     private GLib.ListStore wallpaper_model;
     private Gtk.SingleSelection wallpaper_selection;
@@ -97,10 +97,10 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             rgba_color = { 1, 1, 1, 1 };
         }
 
-        color_button = new Gtk.ColorButton () {
+        color_button = new Gtk.ColorDialogButton (new Gtk.ColorDialog ()) {
             rgba = rgba_color
         };
-        color_button.color_set.connect (update_color);
+        color_button.notify["rgba"].connect (update_color);
 
         load_settings ();
 
@@ -225,7 +225,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     private void update_color () {
         if (finished) {
             set_combo_disabled_if_necessary ();
-            create_solid_color_container (color_button.rgba.to_string ());
+            create_solid_color_container (color_button.get_rgba ().to_string ());
 
             var pos = wallpaper_model.insert_sorted (solid_color, wallpapers_sort_function);
 
@@ -323,7 +323,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             }
 
             if (toplevel_folder) {
-                create_solid_color_container (color_button.rgba.to_string ());
+                create_solid_color_container (color_button.get_rgba ().to_string ());
                 wallpaper_model.append (solid_color);
                 finished = true;
 
