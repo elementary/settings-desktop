@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 17:04+0000\n"
+"POT-Creation-Date: 2026-11-03 14:31+0000\n"
 "PO-Revision-Date: 2026-05-29 00:56+0000\n"
 "Last-Translator: Automatic translation add-on <noreply-addon-"
 "autotranslate@weblate.org>\n"
@@ -80,23 +80,23 @@ msgstr ""
 msgid "Dark style"
 msgstr "गडद शैली"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:111
+#: src/Plug.vala:135 src/Views/Appearance.vala:107
 #, fuzzy
 #| msgid "Dark style"
 msgid "Dim Wallpaper With Dark Style"
 msgstr "गडद शैली"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:274
+#: src/Plug.vala:136 src/Views/Appearance.vala:235
 #, fuzzy
 #| msgid "Accent color"
 msgid "Accent Color"
 msgstr "एक्सेंट रंग"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:303
+#: src/Plug.vala:137 src/Views/Appearance.vala:247
 msgid "Always Show Scrollbars"
 msgstr ""
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:288
+#: src/Plug.vala:138 src/Views/Appearance.vala:243
 msgid "Reduce Motion"
 msgstr ""
 
@@ -145,82 +145,88 @@ msgstr "डिफॉल्ट"
 msgid "Dark"
 msgstr "गडद"
 
-#: src/Views/Appearance.vala:122
+#: src/Views/Appearance.vala:111
 msgid "Disabled"
 msgstr "अक्षम"
 
-#: src/Views/Appearance.vala:129
+#: src/Views/Appearance.vala:118
 msgid "Sunset to Sunrise"
 msgstr "सूर्योदयापासून सूर्यास्तापर्यंत"
 
-#: src/Views/Appearance.vala:136
+#: src/Views/Appearance.vala:125
 msgid "From:"
 msgstr "पासून:"
 
-#: src/Views/Appearance.vala:143
+#: src/Views/Appearance.vala:132
 msgid "To:"
 msgstr "पर्यंत:"
 
-#: src/Views/Appearance.vala:169
+#: src/Views/Appearance.vala:158
 msgid "Schedule"
 msgstr "निर्धारित करा"
 
-#: src/Views/Appearance.vala:223
+#: src/Views/Appearance.vala:184
 msgid "Blueberry"
 msgstr "ब्लूबेरी"
 
-#: src/Views/Appearance.vala:226
+#: src/Views/Appearance.vala:187
 msgid "Mint"
 msgstr "पुदीना"
 
-#: src/Views/Appearance.vala:229
+#: src/Views/Appearance.vala:190
 msgid "Lime"
 msgstr "लिंबू"
 
-#: src/Views/Appearance.vala:232
+#: src/Views/Appearance.vala:193
 msgid "Banana"
 msgstr "केळे"
 
-#: src/Views/Appearance.vala:235
+#: src/Views/Appearance.vala:196
 msgid "Orange"
 msgstr "नारिंगी"
 
-#: src/Views/Appearance.vala:238
+#: src/Views/Appearance.vala:199
 msgid "Strawberry"
 msgstr "स्ट्रॉबेरी"
 
-#: src/Views/Appearance.vala:241
+#: src/Views/Appearance.vala:202
 msgid "Bubblegum"
 msgstr "बबलगम"
 
-#: src/Views/Appearance.vala:244
+#: src/Views/Appearance.vala:205
 msgid "Grape"
 msgstr "द्राक्ष"
 
-#: src/Views/Appearance.vala:247
+#: src/Views/Appearance.vala:208
 msgid "Cocoa"
 msgstr "कोकाआ"
 
-#: src/Views/Appearance.vala:250
+#: src/Views/Appearance.vala:211
 msgid "Slate"
 msgstr "स्लेट"
 
-#: src/Views/Appearance.vala:253
+#: src/Views/Appearance.vala:214
 msgid "Latte"
 msgstr ""
 
-#: src/Views/Appearance.vala:256
+#: src/Views/Appearance.vala:217
 msgid "Automatic based on wallpaper"
 msgstr ""
 
-#: src/Views/Appearance.vala:290
+#: src/Views/Appearance.vala:244
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 
-#: src/Views/Appearance.vala:306
+#: src/Views/Appearance.vala:248
 msgid "Scrollbars will take up space, even when not in use."
 msgstr ""
+
+#: src/Views/Appearance.vala:306
+#, fuzzy
+#| msgid "Accent color"
+msgid "accent color"
+msgstr "एक्सेंट रंग"
 
 #: src/Views/Dock.vala:20
 #, fuzzy
@@ -465,9 +471,6 @@ msgstr "कलाकारः %s"
 
 #~ msgid "Cancel"
 #~ msgstr "रद्द करा"
-
-#~ msgid "Accent color"
-#~ msgstr "एक्सेंट रंग"
 
 #, c-format
 #~ msgid "%d second"

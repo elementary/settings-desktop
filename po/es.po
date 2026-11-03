@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 17:04+0000\n"
+"POT-Creation-Date: 2026-11-03 14:31+0000\n"
 "PO-Revision-Date: 2026-04-19 23:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/settings/"
@@ -82,19 +82,19 @@ msgstr "Desplácese sobre el panel para cambiar espacios de trabajo"
 msgid "Dark style"
 msgstr "Estilo oscuro"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:111
+#: src/Plug.vala:135 src/Views/Appearance.vala:107
 msgid "Dim Wallpaper With Dark Style"
 msgstr "Atenuar el fondo de escritorio con el estilo oscuro"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:274
+#: src/Plug.vala:136 src/Views/Appearance.vala:235
 msgid "Accent Color"
 msgstr "Color de énfasis"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:303
+#: src/Plug.vala:137 src/Views/Appearance.vala:247
 msgid "Always Show Scrollbars"
 msgstr "Siempre mostrar las barras de desplazamiento"
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:288
+#: src/Plug.vala:138 src/Views/Appearance.vala:243
 msgid "Reduce Motion"
 msgstr "Reducir el movimiento"
 
@@ -137,86 +137,92 @@ msgstr "Predeterminado"
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/Views/Appearance.vala:122
+#: src/Views/Appearance.vala:111
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: src/Views/Appearance.vala:129
+#: src/Views/Appearance.vala:118
 msgid "Sunset to Sunrise"
 msgstr "Del atardecer al amanecer"
 
-#: src/Views/Appearance.vala:136
+#: src/Views/Appearance.vala:125
 msgid "From:"
 msgstr "Desde:"
 
-#: src/Views/Appearance.vala:143
+#: src/Views/Appearance.vala:132
 msgid "To:"
 msgstr "Hasta:"
 
-#: src/Views/Appearance.vala:169
+#: src/Views/Appearance.vala:158
 msgid "Schedule"
 msgstr "Programar"
 
-#: src/Views/Appearance.vala:223
+#: src/Views/Appearance.vala:184
 msgid "Blueberry"
 msgstr "Arándano"
 
-#: src/Views/Appearance.vala:226
+#: src/Views/Appearance.vala:187
 msgid "Mint"
 msgstr "Menta"
 
-#: src/Views/Appearance.vala:229
+#: src/Views/Appearance.vala:190
 msgid "Lime"
 msgstr "Lima"
 
-#: src/Views/Appearance.vala:232
+#: src/Views/Appearance.vala:193
 msgid "Banana"
 msgstr "Plátano"
 
-#: src/Views/Appearance.vala:235
+#: src/Views/Appearance.vala:196
 msgid "Orange"
 msgstr "Naranja"
 
-#: src/Views/Appearance.vala:238
+#: src/Views/Appearance.vala:199
 msgid "Strawberry"
 msgstr "Fresa"
 
-#: src/Views/Appearance.vala:241
+#: src/Views/Appearance.vala:202
 msgid "Bubblegum"
 msgstr "Chicle"
 
-#: src/Views/Appearance.vala:244
+#: src/Views/Appearance.vala:205
 msgid "Grape"
 msgstr "Uva"
 
-#: src/Views/Appearance.vala:247
+#: src/Views/Appearance.vala:208
 msgid "Cocoa"
 msgstr "Cacao"
 
-#: src/Views/Appearance.vala:250
+#: src/Views/Appearance.vala:211
 msgid "Slate"
 msgstr "Pizarra"
 
-#: src/Views/Appearance.vala:253
+#: src/Views/Appearance.vala:214
 msgid "Latte"
 msgstr "Café con leche"
 
-#: src/Views/Appearance.vala:256
+#: src/Views/Appearance.vala:217
 msgid "Automatic based on wallpaper"
 msgstr "Automático, en función del fondo"
 
-#: src/Views/Appearance.vala:290
+#: src/Views/Appearance.vala:244
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 "Deshabilita las animaciones en la gestión de ventana y en otros elementos de "
 "la interfaz."
 
-#: src/Views/Appearance.vala:306
+#: src/Views/Appearance.vala:248
 msgid "Scrollbars will take up space, even when not in use."
 msgstr ""
 "Las barras de desplazamiento ocuparán espacio, incluso cuando no están en "
 "uso."
+
+#: src/Views/Appearance.vala:306
+#, fuzzy
+#| msgid "Accent color"
+msgid "accent color"
+msgstr "Color de realce"
 
 #: src/Views/Dock.vala:20
 msgid "Dock Icon Size"
@@ -444,9 +450,6 @@ msgstr "Artista: %s"
 
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"
-
-#~ msgid "Accent color"
-#~ msgstr "Color de realce"
 
 #, c-format
 #~ msgid "%d second"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 17:04+0000\n"
+"POT-Creation-Date: 2026-11-03 14:31+0000\n"
 "PO-Revision-Date: 2024-06-18 10:45+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/switchboard/"
@@ -77,19 +77,19 @@ msgstr ""
 msgid "Dark style"
 msgstr "მუქი სტილი"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:111
+#: src/Plug.vala:135 src/Views/Appearance.vala:107
 msgid "Dim Wallpaper With Dark Style"
 msgstr "დაბნელება ბნელი სტილით"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:274
+#: src/Plug.vala:136 src/Views/Appearance.vala:235
 msgid "Accent Color"
 msgstr "აქცენტის ფერი"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:303
+#: src/Plug.vala:137 src/Views/Appearance.vala:247
 msgid "Always Show Scrollbars"
 msgstr ""
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:288
+#: src/Plug.vala:138 src/Views/Appearance.vala:243
 msgid "Reduce Motion"
 msgstr "მოძრაობის შემცირება"
 
@@ -132,82 +132,88 @@ msgstr "ნაგულისხმები"
 msgid "Dark"
 msgstr "ბნელი"
 
-#: src/Views/Appearance.vala:122
+#: src/Views/Appearance.vala:111
 msgid "Disabled"
 msgstr "გამორთულია"
 
-#: src/Views/Appearance.vala:129
+#: src/Views/Appearance.vala:118
 msgid "Sunset to Sunrise"
 msgstr "დაისიდან აისამდე"
 
-#: src/Views/Appearance.vala:136
+#: src/Views/Appearance.vala:125
 msgid "From:"
 msgstr "საიდან:"
 
-#: src/Views/Appearance.vala:143
+#: src/Views/Appearance.vala:132
 msgid "To:"
 msgstr "სადამდე:"
 
-#: src/Views/Appearance.vala:169
+#: src/Views/Appearance.vala:158
 msgid "Schedule"
 msgstr "განრიგი"
 
-#: src/Views/Appearance.vala:223
+#: src/Views/Appearance.vala:184
 msgid "Blueberry"
 msgstr "მოცვი"
 
-#: src/Views/Appearance.vala:226
+#: src/Views/Appearance.vala:187
 msgid "Mint"
 msgstr "პიტნა"
 
-#: src/Views/Appearance.vala:229
+#: src/Views/Appearance.vala:190
 msgid "Lime"
 msgstr "ლიმონის ფერი"
 
-#: src/Views/Appearance.vala:232
+#: src/Views/Appearance.vala:193
 msgid "Banana"
 msgstr "ბანანი"
 
-#: src/Views/Appearance.vala:235
+#: src/Views/Appearance.vala:196
 msgid "Orange"
 msgstr "ნარინჯისფერი"
 
-#: src/Views/Appearance.vala:238
+#: src/Views/Appearance.vala:199
 msgid "Strawberry"
 msgstr "მარწყვი"
 
-#: src/Views/Appearance.vala:241
+#: src/Views/Appearance.vala:202
 msgid "Bubblegum"
 msgstr "საღეჭი რეზინი"
 
-#: src/Views/Appearance.vala:244
+#: src/Views/Appearance.vala:205
 msgid "Grape"
 msgstr "ყურძენი"
 
-#: src/Views/Appearance.vala:247
+#: src/Views/Appearance.vala:208
 msgid "Cocoa"
 msgstr "კოკო"
 
-#: src/Views/Appearance.vala:250
+#: src/Views/Appearance.vala:211
 msgid "Slate"
 msgstr "ფიქალი"
 
-#: src/Views/Appearance.vala:253
+#: src/Views/Appearance.vala:214
 msgid "Latte"
 msgstr ""
 
-#: src/Views/Appearance.vala:256
+#: src/Views/Appearance.vala:217
 msgid "Automatic based on wallpaper"
 msgstr "ავტომატური, ფონის სურათზე დაყრდნობით"
 
-#: src/Views/Appearance.vala:290
+#: src/Views/Appearance.vala:244
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 
-#: src/Views/Appearance.vala:306
+#: src/Views/Appearance.vala:248
 msgid "Scrollbars will take up space, even when not in use."
 msgstr ""
+
+#: src/Views/Appearance.vala:306
+#, fuzzy
+#| msgid "Accent color"
+msgid "accent color"
+msgstr "აქცენტის ფერი"
 
 #: src/Views/Dock.vala:20
 msgid "Dock Icon Size"
@@ -418,9 +424,6 @@ msgstr "შემსრულებელი: %s"
 
 #~ msgid "Cancel"
 #~ msgstr "გაუქმება"
-
-#~ msgid "Accent color"
-#~ msgstr "აქცენტის ფერი"
 
 #~ msgid "Reduce motion"
 #~ msgstr "მოძრაობის შემცირება"

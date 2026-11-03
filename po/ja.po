@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 17:04+0000\n"
+"POT-Creation-Date: 2026-11-03 14:31+0000\n"
 "PO-Revision-Date: 2026-03-02 11:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/settings/"
@@ -77,19 +77,19 @@ msgstr "パネル上でスクロールすると、ワークスペースを切り
 msgid "Dark style"
 msgstr "ダークモード"
 
-#: src/Plug.vala:135 src/Views/Appearance.vala:111
+#: src/Plug.vala:135 src/Views/Appearance.vala:107
 msgid "Dim Wallpaper With Dark Style"
 msgstr "ダークモード時に壁紙を暗くする"
 
-#: src/Plug.vala:136 src/Views/Appearance.vala:274
+#: src/Plug.vala:136 src/Views/Appearance.vala:235
 msgid "Accent Color"
 msgstr "アクセントカラー"
 
-#: src/Plug.vala:137 src/Views/Appearance.vala:303
+#: src/Plug.vala:137 src/Views/Appearance.vala:247
 msgid "Always Show Scrollbars"
 msgstr "スクロールバーを常に表示"
 
-#: src/Plug.vala:138 src/Views/Appearance.vala:288
+#: src/Plug.vala:138 src/Views/Appearance.vala:243
 msgid "Reduce Motion"
 msgstr "視覚効果を減らす"
 
@@ -132,84 +132,90 @@ msgstr "デフォルト"
 msgid "Dark"
 msgstr "ダーク"
 
-#: src/Views/Appearance.vala:122
+#: src/Views/Appearance.vala:111
 msgid "Disabled"
 msgstr "無効"
 
-#: src/Views/Appearance.vala:129
+#: src/Views/Appearance.vala:118
 msgid "Sunset to Sunrise"
 msgstr "日没から日の出まで"
 
-#: src/Views/Appearance.vala:136
+#: src/Views/Appearance.vala:125
 msgid "From:"
 msgstr "開始:"
 
-#: src/Views/Appearance.vala:143
+#: src/Views/Appearance.vala:132
 msgid "To:"
 msgstr "終了:"
 
-#: src/Views/Appearance.vala:169
+#: src/Views/Appearance.vala:158
 msgid "Schedule"
 msgstr "スケジュール"
 
-#: src/Views/Appearance.vala:223
+#: src/Views/Appearance.vala:184
 msgid "Blueberry"
 msgstr "ブルーベリー"
 
-#: src/Views/Appearance.vala:226
+#: src/Views/Appearance.vala:187
 msgid "Mint"
 msgstr "ミント"
 
-#: src/Views/Appearance.vala:229
+#: src/Views/Appearance.vala:190
 msgid "Lime"
 msgstr "ライム"
 
-#: src/Views/Appearance.vala:232
+#: src/Views/Appearance.vala:193
 msgid "Banana"
 msgstr "バナナ"
 
-#: src/Views/Appearance.vala:235
+#: src/Views/Appearance.vala:196
 msgid "Orange"
 msgstr "オレンジ"
 
-#: src/Views/Appearance.vala:238
+#: src/Views/Appearance.vala:199
 msgid "Strawberry"
 msgstr "ストロベリー"
 
-#: src/Views/Appearance.vala:241
+#: src/Views/Appearance.vala:202
 msgid "Bubblegum"
 msgstr "ピンク"
 
-#: src/Views/Appearance.vala:244
+#: src/Views/Appearance.vala:205
 msgid "Grape"
 msgstr "グレープ"
 
-#: src/Views/Appearance.vala:247
+#: src/Views/Appearance.vala:208
 msgid "Cocoa"
 msgstr "ココア"
 
-#: src/Views/Appearance.vala:250
+#: src/Views/Appearance.vala:211
 msgid "Slate"
 msgstr "スレート"
 
-#: src/Views/Appearance.vala:253
+#: src/Views/Appearance.vala:214
 msgid "Latte"
 msgstr "ラテ"
 
-#: src/Views/Appearance.vala:256
+#: src/Views/Appearance.vala:217
 msgid "Automatic based on wallpaper"
 msgstr "壁紙に基づいて自動的に設定"
 
-#: src/Views/Appearance.vala:290
+#: src/Views/Appearance.vala:244
 msgid ""
 "Disable animations in the window manager and some other interface elements."
 msgstr ""
 "ウィンドウマネージャーなどのインターフェース要素におけるアニメーションを無効"
 "化します。"
 
-#: src/Views/Appearance.vala:306
+#: src/Views/Appearance.vala:248
 msgid "Scrollbars will take up space, even when not in use."
 msgstr "スクロールバーが使用中でない場合も、表示領域を使用します。"
+
+#: src/Views/Appearance.vala:306
+#, fuzzy
+#| msgid "Accent color"
+msgid "accent color"
+msgstr "アクセントカラー"
 
 #: src/Views/Dock.vala:20
 msgid "Dock Icon Size"
@@ -432,9 +438,6 @@ msgstr "アーティスト: %s"
 
 #~ msgid "Cancel"
 #~ msgstr "キャンセル"
-
-#~ msgid "Accent color"
-#~ msgstr "アクセントカラー"
 
 #~ msgid "Reduce motion"
 #~ msgstr "視覚効果を減らす"

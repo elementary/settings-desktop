@@ -115,34 +115,6 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
             mnemonic_widget = schedule_box
         };
 
-        Pantheon.AccountsService? pantheon_act = null;
-
-        string? user_path = null;
-        try {
-            FDO.Accounts? accounts_service = GLib.Bus.get_proxy_sync (
-                GLib.BusType.SYSTEM,
-               "org.freedesktop.Accounts",
-               "/org/freedesktop/Accounts"
-            );
-
-            user_path = accounts_service.find_user_by_name (GLib.Environment.get_user_name ());
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        if (user_path != null) {
-            try {
-                pantheon_act = GLib.Bus.get_proxy_sync (
-                    GLib.BusType.SYSTEM,
-                    "org.freedesktop.Accounts",
-                    user_path,
-                    GLib.DBusProxyFlags.GET_INVALIDATED_PROPERTIES
-                );
-            } catch (Error e) {
-                warning ("Unable to get AccountsService proxy, color scheme preference may be incorrect");
-            }
-        }
-
         var grid = new Gtk.Grid () {
             row_spacing = 6
         };
@@ -224,10 +196,12 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
 
+        var accent_color_action = new GLib.Settings ("io.elementary.settings-daemon.interface").create_action ("accent-color");
         var color_scheme_action = settings.create_action ("color-scheme");
         var prefer_dark_action = settings.create_action ("prefer-dark-schedule");
 
         var action_group = new SimpleActionGroup ();
+        action_group.add_action (accent_color_action);
         action_group.add_action (color_scheme_action);
         action_group.add_action (prefer_dark_action);
 
@@ -237,16 +211,8 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
     private class PrefersAccentColorButton : Gtk.CheckButton {
         public Granite.AccentColor color { get; construct; }
 
-        private static SimpleActionGroup action_group;
-
         public PrefersAccentColorButton (Granite.AccentColor color) {
             Object (color: color);
-        }
-
-        static construct {
-            var interface_settings = new GLib.Settings ("io.elementary.settings-daemon.interface");
-            action_group = new SimpleActionGroup ();
-            action_group.add_action (interface_settings.create_action ("accent-color"));
         }
 
         construct {
@@ -255,13 +221,11 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
                 tooltip_text = _("Automatic based on wallpaper");
             }
 
-            insert_action_group ("interface", action_group);
-
             var action_target_string = color.to_css_class ();
             action_target_string = action_target_string.replace ("teal", "mint");
 
             action_target = new Variant.string (action_target_string);
-            action_name = "interface.accent-color";
+            action_name = "desktop-appearance.accent-color";
 
             accessible_role = Gtk.AccessibleRole.RADIO;
             add_css_class (Granite.CssClass.ACCENT);
