@@ -328,7 +328,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                 finished = true;
 
                 if (gnome_background_settings.get_string ("picture-options") == "none") {
-                    uint pos;
+                    uint pos = Gtk.INVALID_LIST_POSITION;
                     if (wallpaper_model.find (solid_color, out pos)) {
                         wallpaper_selection.set_selected (pos);
                         solid_color.checked = true;
@@ -336,7 +336,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                     }
                 }
 
-                uint pos = -1;
+                uint pos = Gtk.INVALID_LIST_POSITION;
                 if (active_wallpaper != null && wallpaper_model.find (active_wallpaper, out pos)) {
                     wallpaper_view.scroll_to (pos, NONE, null);
                 }
@@ -349,7 +349,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void create_solid_color_container (string color) {
-        uint pos = -1;
+        uint pos = Gtk.INVALID_LIST_POSITION;
         if (solid_color != null && wallpaper_model.find (solid_color, out pos)) {
             wallpaper_model.remove (pos);
             solid_color.destroy ();
@@ -492,7 +492,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void mark_for_removal (WallpaperContainer wallpaper) {
-        uint pos;
+        uint pos = Gtk.INVALID_LIST_POSITION;
         if (wallpaper_model.find (wallpaper, out pos)) {
             wallpaper_model.remove (pos);
             wallpaper_for_removal = wallpaper;
