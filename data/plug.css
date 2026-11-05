@@ -21,17 +21,17 @@
     background-image:
         radial-gradient(
             circle,
-            color-mix(in srgb, @accent_color 40%, transparent) 70%,
+            color-mix(in srgb, var(--accent-color) 40%, transparent) 70%,
             transparent 1px
         ),
         linear-gradient(
             to bottom,
-            color-mix(in srgb, @accent_color 10%, transparent),
-            color-mix(in srgb, @accent_color 10%, transparent)
+            color-mix(in srgb, var(--accent-color) 10%, transparent),
+            color-mix(in srgb, var(--accent-color) 10%, transparent)
         );
     background-repeat: no-repeat;
     background-size: 48px 48px, cover;
-    color: @selected_fg_color;
+    color: var(--selected-fg-color);
     font-weight: 600;
     min-height: 3.5em;
     padding: 12px;
@@ -54,7 +54,6 @@
 }
 
 .wallpaper flowboxchild {
-    border-radius: 0.75em;
     margin: 1em;
 }
 
@@ -64,7 +63,7 @@
 
 .wallpaper flowboxchild:checked .card {
     box-shadow:
-        0 0 0 4px @accent_color,
+        0 0 0 4px var(--accent-color),
         0 0 0 1px color-mix(in srgb, black 5%, transparent),
         0 3px 3px color-mix(in srgb, black 22%, transparent);
 }
@@ -73,13 +72,7 @@
     border-radius: 50%;
     min-height: 20px;
     min-width: 20px;
-    -gtk-icon-transform: scale(0.6);
-}
-
-settingspage.wallpaper actionbar box.end,
-settingspage.wallpaper actionbar box.start {
-    border-spacing: 12px;
-    padding: 6px;
+    -gtk-icon-transform: scale(0.8);
 }
 
 .appearance-view desktop-preview {

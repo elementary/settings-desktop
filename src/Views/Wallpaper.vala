@@ -105,7 +105,6 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         load_settings ();
 
         var actionbar = new Gtk.ActionBar ();
-        actionbar.add_css_class (Granite.STYLE_CLASS_FLAT);
         actionbar.pack_start (add_wallpaper_button);
         actionbar.pack_end (color_button);
         actionbar.pack_end (combo);
