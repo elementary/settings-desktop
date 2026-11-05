@@ -28,6 +28,8 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
     protected const int THUMB_HEIGHT = 144;
     protected Gtk.Picture image;
 
+    private static float monitor_ratio;
+
     private GLib.Menu menu_model;
     private GLib.SimpleAction remove_wallpaper_action;
     private Gtk.Revealer check_revealer;
@@ -57,10 +59,18 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
         }
     }
 
+    static construct {
+        var monitor = Gdk.Display.get_default ().get_monitor_at_surface (
+            (((Gtk.Application) Application.get_default ()).active_window).get_surface ()
+        );
+
+        monitor_ratio = (float) monitor.geometry.width / monitor.geometry.height;
+    }
+
     construct {
         image = new Gtk.Picture () {
-            content_fit = COVER,
-            height_request = THUMB_HEIGHT
+            can_shrink = true,
+            content_fit = COVER
         };
         image.add_css_class (Granite.CssClass.CARD);
 
@@ -82,12 +92,13 @@ public class PantheonShell.WallpaperContainer : Granite.Bin {
         };
         overlay.add_overlay (check_revealer);
 
-        halign = CENTER;
-        valign = CENTER;
+        var frame = new Gtk.AspectFrame (0.5f, 0.5f, monitor_ratio, false) {
+            child = overlay
+        };
 
         // So we can receive key events
         focusable = true;
-        child = overlay;
+        child = frame;
 
         remove_wallpaper_action = new SimpleAction ("trash", null);
         remove_wallpaper_action.activate.connect (() => trash ());

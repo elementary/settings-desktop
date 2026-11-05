@@ -22,13 +22,13 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
     private static GLib.Settings gnome_background_settings;
 
-    private Gtk.ScrolledWindow wallpaper_scrolled_window;
-    private Gtk.FlowBox wallpaper_view;
+    private Gtk.GridView wallpaper_view;
     private Gtk.Overlay view_overlay;
     private Gtk.ComboBoxText combo;
     private Gtk.ColorDialogButton color_button;
 
     private GLib.ListStore wallpaper_model;
+    private Gtk.SingleSelection wallpaper_selection;
     private WallpaperContainer active_wallpaper = null;
     private SolidColorContainer solid_color = null;
     private WallpaperContainer wallpaper_for_removal = null;
@@ -56,22 +56,22 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
         wallpaper_model = new GLib.ListStore (typeof (WallpaperContainer));
 
-        wallpaper_view = new Gtk.FlowBox () {
-            activate_on_single_click = true,
-            homogeneous = true,
-            selection_mode = SINGLE,
-            min_children_per_line = 3,
-            max_children_per_line = 5
+        wallpaper_selection = new Gtk.SingleSelection (wallpaper_model);
+
+        var factory = new Gtk.SignalListItemFactory ();
+        factory.bind.connect (on_bind);
+
+        wallpaper_view = new Gtk.GridView (wallpaper_selection, factory) {
+            max_columns = 5,
+            single_click_activate = true
         };
-        wallpaper_view.bind_model (wallpaper_model, create_widget_func);
-        wallpaper_view.add_css_class (Granite.STYLE_CLASS_VIEW);
-        wallpaper_view.child_activated.connect (update_checked_wallpaper);
+        wallpaper_view.activate.connect (update_checked_wallpaper);
         wallpaper_view.add_controller (drop_target);
 
         var color = gnome_background_settings.get_string ("primary-color");
         create_solid_color_container (color);
 
-        wallpaper_scrolled_window = new Gtk.ScrolledWindow () {
+        var wallpaper_scrolled_window = new Gtk.ScrolledWindow () {
             child = wallpaper_view,
             hscrollbar_policy = NEVER,
             hexpand = true,
@@ -126,14 +126,10 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         drop_target.drop.connect (on_drag_data_received);
     }
 
-    private Gtk.Widget create_widget_func (Object object) {
-        var wallpaper_container = (WallpaperContainer) object;
-
-        var flowbox_child = new Gtk.FlowBoxChild () {
-            child = wallpaper_container
-        };
-
-        return flowbox_child;
+    private void on_bind (Object obj) {
+        var list_item = (Gtk.ListItem) obj;
+        var wallpaper_container = (WallpaperContainer) list_item.item;
+        list_item.child = wallpaper_container;
     }
 
     private void show_wallpaper_chooser () {
@@ -197,8 +193,8 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         gnome_background_settings.set_string ("picture-uri-dark", "");
     }
 
-    private void update_checked_wallpaper (Gtk.FlowBox box, Gtk.FlowBoxChild child) {
-        var children = (WallpaperContainer) child.get_child ();
+    private void update_checked_wallpaper (uint position) {
+        var children = (WallpaperContainer) wallpaper_selection.get_item (position);
 
         if (!(children is SolidColorContainer)) {
             current_wallpaper_path = children.uri;
@@ -231,9 +227,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             set_combo_disabled_if_necessary ();
             create_solid_color_container (color_button.get_rgba ().to_string ());
 
-            wallpaper_model.insert_sorted (solid_color, wallpapers_sort_function);
+            var pos = wallpaper_model.insert_sorted (solid_color, wallpapers_sort_function);
 
-            wallpaper_view.select_child ((Gtk.FlowBoxChild) solid_color.get_parent ());
+            wallpaper_selection.set_selected (pos);
 
             if (active_wallpaper != null) {
                 active_wallpaper.checked = false;
@@ -254,17 +250,14 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             if (active_wallpaper == solid_color) {
                 active_wallpaper.checked = false;
 
-                var child = wallpaper_view.get_first_child ();
-                while (child != null) {
-                    var container = (WallpaperContainer) child;
+                for (var pos = 0; pos < wallpaper_selection.n_items; pos++) {
+                    var container = (WallpaperContainer) wallpaper_selection.get_item (pos);
                     if (container.uri == current_wallpaper_path) {
                         container.checked = true;
-                        wallpaper_view.select_child ((Gtk.FlowBoxChild) container.get_parent ());
+                        wallpaper_selection.set_selected (pos);
                         active_wallpaper = container;
                         break;
                     }
-
-                    child = child.get_next_sibling ();
                 }
             }
         } else {
@@ -335,15 +328,17 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                 finished = true;
 
                 if (gnome_background_settings.get_string ("picture-options") == "none") {
-                    wallpaper_view.select_child ((Gtk.FlowBoxChild) solid_color.get_parent ());
-                    solid_color.checked = true;
-                    active_wallpaper = solid_color;
+                    uint pos = Gtk.INVALID_LIST_POSITION;
+                    if (wallpaper_model.find (solid_color, out pos)) {
+                        wallpaper_selection.set_selected (pos);
+                        solid_color.checked = true;
+                        active_wallpaper = solid_color;
+                    }
                 }
 
-                if (active_wallpaper != null) {
-                    Gtk.Allocation alloc;
-                    active_wallpaper.get_allocation (out alloc);
-                    wallpaper_scrolled_window.get_vadjustment ().value = alloc.y;
+                uint pos = Gtk.INVALID_LIST_POSITION;
+                if (active_wallpaper != null && wallpaper_model.find (active_wallpaper, out pos)) {
+                    wallpaper_view.scroll_to (pos, NONE, null);
                 }
             }
         } catch (Error err) {
@@ -354,14 +349,9 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void create_solid_color_container (string color) {
-        if (solid_color != null) {
-            wallpaper_view.unselect_child ((Gtk.FlowBoxChild) solid_color.get_parent ());
-
-            uint pos = -1;
-            if (wallpaper_model.find (solid_color, out pos)) {
-                wallpaper_model.remove (pos);
-            }
-
+        uint pos = Gtk.INVALID_LIST_POSITION;
+        if (solid_color != null && wallpaper_model.find (solid_color, out pos)) {
+            wallpaper_model.remove (pos);
             solid_color.destroy ();
         }
 
@@ -409,7 +399,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
                 uri = uri
             };
 
-            wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
+            var pos = wallpaper_model.insert_sorted (wallpaper, wallpapers_sort_function);
 
             wallpaper.trash.connect (() => {
                 send_undo_toast ();
@@ -418,7 +408,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
             // Select the wallpaper if it is the current wallpaper
             if (current_wallpaper_path.has_suffix (uri) && gnome_background_settings.get_string ("picture-options") != "none") {
-                this.wallpaper_view.select_child ((Gtk.FlowBoxChild) wallpaper.get_parent ());
+                wallpaper_selection.set_selected (pos);
                 // Set the widget activated without activating it
                 wallpaper.checked = true;
                 active_wallpaper = wallpaper;
@@ -502,7 +492,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
     }
 
     private void mark_for_removal (WallpaperContainer wallpaper) {
-        uint pos = -1;
+        uint pos = Gtk.INVALID_LIST_POSITION;
         if (wallpaper_model.find (wallpaper, out pos)) {
             wallpaper_model.remove (pos);
             wallpaper_for_removal = wallpaper;
