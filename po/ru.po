@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-03 14:31+0000\n"
-"PO-Revision-Date: 2026-03-02 11:55+0000\n"
+"PO-Revision-Date: 2026-11-05 09:04+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementaryos.org/projects/settings/"
 "desktop/ru/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 2026.5\n"
 "X-Launchpad-Export-Date: 2017-02-25 05:57+0000\n"
 
 #: src/Plug.vala:49
@@ -212,10 +212,8 @@ msgid "Scrollbars will take up space, even when not in use."
 msgstr "Полосы прокрутки будут занимать место, даже когда не используются."
 
 #: src/Views/Appearance.vala:306
-#, fuzzy
-#| msgid "Accent color"
 msgid "accent color"
-msgstr "Цветовой акцент"
+msgstr "цветовой акцент"
 
 #: src/Views/Dock.vala:20
 msgid "Dock Icon Size"
