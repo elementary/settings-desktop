@@ -265,7 +265,10 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         interface_settings.bind ("overlay-scrolling", scrollbar_switch, "active", INVERT_BOOLEAN);
 
         var a11y_settings = new GLib.Settings ("io.elementary.settings-daemon.a11y");
-        a11y_settings.bind ("reduced-motion", animations_switch, "active", DEFAULT);
+        a11y_settings.bind_with_mapping (
+            "reduced-motion", animations_switch, "active", DEFAULT,
+            reduced_motion_get_mapping, reduced_motion_set_mapping, null, null
+        );
 
         var background_settings = new GLib.Settings ("io.elementary.desktop.background");
         background_settings.bind ("dim-wallpaper-in-dark-style", dim_switch, "active", DEFAULT);
@@ -280,6 +283,17 @@ public class PantheonShell.Appearance : Switchboard.SettingsPage {
         action_group.add_action (prefer_dark_action);
 
         insert_action_group ("desktop-appearance", action_group);
+    }
+
+    private static bool reduced_motion_get_mapping (Value value, Variant variant) {
+        var val = variant.get_string ();
+        value.set_boolean (val == "reduce");
+        return true;
+    }
+
+    private static Variant reduced_motion_set_mapping (Value value, VariantType expected_type) {
+        var val = value.get_boolean () ? "reduce" : "no-preference";
+        return new Variant.string (val);
     }
 
     private class PrefersAccentColorButton : Gtk.CheckButton {
