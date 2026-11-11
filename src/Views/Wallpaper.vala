@@ -155,6 +155,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
 
                     add_wallpaper_from_file (file);
                 }
+                ThumbnailGenerator.get_default ().queue_thumbnails ();
             }
         });
     }
@@ -281,9 +282,20 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
         last_cancellable = cancellable;
 
         clean_wallpapers ();
+        load_wallpaper_directories.begin (cancellable);
+    }
 
+    private async void load_wallpaper_directories (Cancellable cancellable) {
         foreach (unowned string directory in WallpaperOperation.get_bg_directories ()) {
-            load_wallpapers.begin (directory, cancellable);
+            if (cancellable.is_cancelled ()) {
+                return;
+            }
+
+            yield load_wallpapers (directory, cancellable);
+        }
+
+        if (!cancellable.is_cancelled ()) {
+            ThumbnailGenerator.get_default ().queue_thumbnails ();
         }
     }
 
@@ -369,6 +381,7 @@ public class PantheonShell.Wallpaper : Switchboard.SettingsPage {
             add_wallpaper_from_file (file);
         }
 
+        ThumbnailGenerator.get_default ().queue_thumbnails ();
         return true;
     }
 
