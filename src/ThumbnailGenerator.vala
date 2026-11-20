@@ -38,8 +38,10 @@ public class PantheonShell.ThumbnailGenerator {
 
     private static ThumbnailGenerator? instance = null;
     private Thumbnailer? thumbnailer = null;
-    private Gee.HashMap<uint32, ThumbnailReadyWrapper> queued_delegates = new Gee.HashMap<uint32, ThumbnailReadyWrapper> ();
+    private Gee.HashMap<uint32, Gee.HashMap<string, ThumbnailReadyWrapper>> queued_delegates = new Gee.HashMap<uint32, Gee.HashMap<string, ThumbnailReadyWrapper>> ();
     private Gee.ArrayList<uint32> handles = new Gee.ArrayList<uint32> ();
+    private Gee.HashMap<string, ThumbnailReadyWrapper> pending_delegates = new Gee.HashMap<string, ThumbnailReadyWrapper> ();
+    private string pending_thumb_size = "normal";
 
     public static ThumbnailGenerator get_default () {
         if (instance == null) {
@@ -54,7 +56,12 @@ public class PantheonShell.ThumbnailGenerator {
             thumbnailer = Bus.get_proxy_sync (BusType.SESSION, THUMBNAILER_DBUS_ID, THUMBNAILER_DBUS_PATH);
             thumbnailer.ready.connect ((handle, uris) => {
                 if (queued_delegates.has_key (handle)) {
-                    queued_delegates [handle].cb ();
+                    var delegates = queued_delegates[handle];
+                    foreach (var uri in uris) {
+                        if (delegates.has_key (uri)) {
+                            delegates[uri].cb ();
+                        }
+                    }
                 }
             });
 
@@ -68,6 +75,8 @@ public class PantheonShell.ThumbnailGenerator {
     }
 
     public void dequeue_all () {
+        pending_delegates.clear ();
+
         foreach (var handle in handles) {
             try {
                 thumbnailer.dequeue (handle);
@@ -78,23 +87,38 @@ public class PantheonShell.ThumbnailGenerator {
     }
 
     public void get_thumbnail (string uri, uint size, ThumbnailReady callback) {
-        string thumb_size = "normal";
-
         if (size > 128) {
-            thumb_size = "large";
+            pending_thumb_size = "large";
         }
 
         if (thumbnailer != null) {
             var wrapper = new ThumbnailReadyWrapper ();
             wrapper.cb = callback;
+            pending_delegates.set (uri, wrapper);
+        }
+    }
 
-            try {
-                var handle = thumbnailer.queue ({ uri }, { get_mime_type (uri) }, thumb_size, "default", 0);
-                handles.add (handle);
-                queued_delegates.@set (handle, wrapper);
-            } catch (GLib.Error e) {
-                warning ("Unable to queue thumbnail generation for '%s': %s", uri, e.message);
-            }
+    public void queue_thumbnails () {
+        if (thumbnailer == null || pending_delegates.is_empty) {
+            return;
+        }
+
+        var delegates = pending_delegates;
+        pending_delegates = new Gee.HashMap<string, ThumbnailReadyWrapper> ();
+
+        var uris = delegates.keys.to_array ();
+        var mime_types = new string[uris.length];
+
+        for (var i = 0; i < uris.length; i++) {
+            mime_types[i] = get_mime_type (uris[i]);
+        }
+
+        try {
+            var handle = thumbnailer.queue (uris, mime_types, pending_thumb_size, "default", 0);
+            handles.add (handle);
+            queued_delegates.set (handle, delegates);
+        } catch (GLib.Error e) {
+            warning ("Unable to queue thumbnail generation: %s", e.message);
         }
     }
 

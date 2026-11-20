@@ -20,6 +20,7 @@ public class PantheonShell.IOHelper : GLib.Object {
         "image/gif",
         "image/heic",
         "image/jpeg",
+        "image/jxl",
         "image/png",
         "image/svg+xml",
         "image/tiff"
