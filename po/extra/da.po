@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-03 14:31+0000\n"
-"PO-Revision-Date: 2026-11-20 22:04+0000\n"
+"PO-Revision-Date: 2026-11-22 21:04+0000\n"
 "Last-Translator: CodeBeats <nicholai67@hotmail.com>\n"
 "Language-Team: Danish <https://l10n.elementaryos.org/projects/settings/"
 "desktop-plug-extra/da/>\n"
@@ -29,7 +29,7 @@ msgstr "Konfigurer dokken, varme hjørner, og skift skrivebordsbaggrund"
 
 #: data/desktop.metainfo.xml.in:40
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/desktop.metainfo.xml.in:48 data/desktop.metainfo.xml.in:61
 #: data/desktop.metainfo.xml.in:71 data/desktop.metainfo.xml.in:87
