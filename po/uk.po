@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maya\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-03 14:31+0000\n"
-"PO-Revision-Date: 2026-09-11 22:01+0000\n"
+"PO-Revision-Date: 2026-11-27 23:46+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/settings/"
 "desktop/uk/>\n"
@@ -219,10 +219,8 @@ msgstr ""
 "Смуга прокручування забиратиме простір, навіть коли не використовується."
 
 #: src/Views/Appearance.vala:306
-#, fuzzy
-#| msgid "Accent color"
 msgid "accent color"
-msgstr "Основний колір"
+msgstr "основний колір"
 
 #: src/Views/Dock.vala:20
 msgid "Dock Icon Size"
